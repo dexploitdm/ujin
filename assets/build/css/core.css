@@ -148,9 +148,6 @@ header.header-bg .header-layout {
   background: linear-gradient(153deg, #342B48 33.79%, #0F4F57 69.42%, #0EF5FF 100%);
   min-height: 800px; }
 
-.head-box-web {
-  background-image: url(../../images/covers/head-web.svg); }
-
 .head-box-layout {
   padding-top: 92px; }
 
@@ -198,7 +195,7 @@ header.header-bg .header-layout {
   font-weight: 300; }
 
 .opportunities {
-  padding-top: 73px; }
+  padding: 73px 0 60px 0; }
 
 .opportunities-layout {
   display: -ms-flexbox;
@@ -215,7 +212,7 @@ header.header-bg .header-layout {
 
 .opportunities-tabs {
   -ms-flex-preferred-size: 90%;
-  flex-basis: 90%; }
+      flex-basis: 90%; }
 
 .opportunities-icons {
   margin-top: 40px; }
@@ -304,27 +301,37 @@ ul.tabs li:last-child {
 .mobile-app {
   text-align: center;
   cursor: default; }
+  .mobile-app p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 100%;
+    color: #2D3C3E; }
+  .mobile-app-layout {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    padding-top: 16px; }
+    .mobile-app-layout_item {
+      padding: 0 14px; }
+      .mobile-app-layout_item span {
+        display: block;
+        font-weight: 300;
+        font-size: 14px; }
+      .mobile-app-layout_item:first-child {
+        position: relative; }
+        .mobile-app-layout_item:first-child:after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 22px;
+          background-color: #0EF5FF;
+          right: 0;
+          top: 18px; }
 
-.mobile-app p {
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 100%;
-  color: #2D3C3E; }
-
-.mobile-app-layout {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-  justify-content: center; }
-
-.mobile-app-layout_item {
-  padding-right: 28px; }
-
-.mobile-app-layout_item span {
-  display: block; }
-
-.mobile-app-layout_item:first-child {
-  position: relative; }
-
-.mobile-app-layout_item:first-child:after {
-  content: ''; }
+.solutions {
+  background-color: #2D3C3E; }
+  .solutions-layout {
+    padding-top: 86px; }
+    .solutions-layout .title-h2 {
+      color: #fff; }

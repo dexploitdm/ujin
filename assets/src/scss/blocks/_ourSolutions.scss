@@ -1,0 +1,9 @@
+.solutions {
+  background-color: $color-dark;
+  &-layout {
+    padding-top: 86px;
+    .title-h2 {
+      color: $color-white;
+    }
+  }
+}
