@@ -1,28 +1,37 @@
 .head-box {
-  background: linear-gradient(153deg, #342B48 33.79%, #0F4F57 69.42%, #0EF5FF 100%);
+  background: linear-gradient(153deg, #342B48 33.79%, #0F4F57 69.42%, $color-default 100%);
   min-height: 800px; }
+
 .head-box-web {
-  background-image: url(../../images/covers/head-web.svg); }
+  background-image: url(../../images/covers/head-web.svg);
+}
 .head-box-layout {
-  padding-top: 92px; }
+  padding-top: 92px;
+}
 .head-box-layout.double-box {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+}
 .head-box-layout .head-box-cover {
-  padding-right: 30px; }
+  padding-right: 30px;
+}
 .head-box-layout .head-box-desc {
-  padding-top: 150px; }
+  padding-top: 150px;
+}
 .head-box-layout .head-box-desc .title-h1 {
   color: #fff;
   line-height: 100%;
-  text-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
+  text-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
 .head-box-layout .head-box-desc-boxes {
   display: -ms-flexbox;
   display: flex;
-  padding-top: 14px; }
+  padding-top: 14px;
+}
 .head-box-layout .head-box-desc-boxes.flex-wrap {
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
 .head-box-layout .head-box-desc-boxes.flex-wrap .head-box-desc-boxes-item {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%; }
@@ -34,7 +43,7 @@
 .head-box-layout .head-box-desc-boxes-item.icon-fix {
   margin-left: -28px; }
 .head-box-layout .head-box-desc-boxes-item span {
-  color: #0EF5FF;
+  color: $color-default;
   font-size: 18px;
   line-height: 130%;
   font-weight: 300; }

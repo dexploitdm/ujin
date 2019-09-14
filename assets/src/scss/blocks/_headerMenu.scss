@@ -10,21 +10,21 @@
   color: #fff;
   text-decoration: none; }
 .u-menu-list-item a.active {
-  color: #0EF5FF;
-  border-bottom: 1px solid #0EF5FF;
+  color: $color-default;
+  border-bottom: 1px solid $color-default;
   padding-bottom: 24px;
   margin-bottom: -24px; }
 .u-menu-list-item:last-child {
   margin-right: 0; }
 .u-menu-list-item.active {
-  border-bottom: 1px solid #0EF5FF;
+  border-bottom: 1px solid $color-default;
   padding-bottom: 24px;
   margin-bottom: -24px; }
 .u-menu-list-item.active a {
-  color: #0EF5FF; }
+  color: $color-default; }
 .u-menu-list-item:hover {
-  border-bottom: 1px solid #0EF5FF;
+  border-bottom: 1px solid $color-default;
   padding-bottom: 24px;
   margin-bottom: -24px; }
 .u-menu-list-item:hover a {
-  color: #0EF5FF; }
+  color: $color-default; }
