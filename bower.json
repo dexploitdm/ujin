@@ -1,0 +1,21 @@
+{
+  "name": "ujin",
+  "description": "Create homes",
+  "main": "index.js",
+  "authors": [
+    "Dexploitdm"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/dexploitdm/ujin",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/src/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
