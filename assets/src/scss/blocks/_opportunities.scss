@@ -1,0 +1,29 @@
+.opportunities {
+  padding-top: 73px; }
+.opportunities-layout {
+  display: -ms-flexbox;
+  display: flex; }
+.opportunities-desc {
+  color: #2D3C3E; }
+.opportunities-desc p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  padding-top: 42px; }
+.opportunities-tabs {
+  -ms-flex-preferred-size: 90%;
+  flex-basis: 90%; }
+.opportunities-icons {
+  margin-top: 40px; }
+.opportunities-icons_item {
+  text-align: center;
+  margin-bottom: 128px;
+  position: relative; }
+.opportunities-icons_item span {
+  display: block;
+  position: absolute;
+  top: 68px;
+  right: 0;
+  left: 0;
+  max-width: 240px;
+  margin: 0 auto; }

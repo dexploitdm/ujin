@@ -17,11 +17,12 @@ var path = {
         js: 'assets/build/js/',
         css: 'assets/build/css/',
         img: 'assets/build/images/',
-        fonts: 'assets/build/fonts/'
+        fonts: 'assets/build/fonts/',
+        copy: 'assets/build/js/vendor/'
     },
     src: {
         html: 'assets/src/*.html',
-        js: 'assets/src/js/main.js',
+        js: 'assets/src/js/app.js',
         style: 'assets/src/scss/core.scss',
         img: 'assets/src/images/**/*.*',
         fonts: 'assets/src/fonts/**/*.*'
@@ -35,6 +36,7 @@ var path = {
     },
     clean: './assets/build/*'
 };
+var sourceFiles = ['node_modules/jquery/dist/jquery.js'];
 /* настройки сервера */
 var config = {
     server: {
@@ -57,6 +59,7 @@ var gulp = require('gulp'),  // подключаем Gulp
     jpegrecompress = require('imagemin-jpeg-recompress'), // плагин для сжатия jpeg
     pngquant = require('imagemin-pngquant'), // плагин для сжатия png
     rimraf = require('gulp-rimraf'), // плагин для удаления файлов и каталогов
+    copy  = require('gulp-copy'),
     rename = require('gulp-rename');
 
 /* задачи */
@@ -128,6 +131,12 @@ gulp.task('image:build', function () {
         .pipe(gulp.dest(path.build.img)); // выгрузка готовых файлов
 });
 
+// копирование js
+gulp.task('copy:build', function () {
+    return gulp.src(sourceFiles)
+        .pipe(gulp.dest(path.build.copy));
+});
+
 // удаление каталога build
 gulp.task('clean:build', function () {
     return gulp.src(path.clean, { read: false })
@@ -146,6 +155,7 @@ gulp.task('build',
             'html:build',
             'css:build',
             'js:build',
+            'copy:build',
             'fonts:build',
             'image:build'
         )

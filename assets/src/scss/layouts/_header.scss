@@ -1,0 +1,45 @@
+
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9; }
+header .header-layout {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  padding-top: 28px;
+  transition: .3s; }
+header .header-layout .logo {
+  -ms-flex-order: 1;
+  order: 1; }
+header .header-layout .u-menu {
+  -ms-flex-order: 2;
+  order: 2; }
+header .header-layout .call {
+  -ms-flex-order: 3;
+  order: 3;
+  text-align: right; }
+header .header-layout .call-set .call-link {
+  color: #0EF5FF;
+  font-size: 14px;
+  line-height: 92%;
+  text-decoration: underline; }
+header .header-layout .call-phone {
+  padding-top: 8px; }
+header .header-layout .call-phone a {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 92%;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 15px rgba(14, 245, 255, 0.6); }
+header.header-bg {
+  background-color: rgba(52, 43, 72, 0.7); }
+header.header-bg .header-layout {
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 9px; }

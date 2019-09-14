@@ -1,0 +1,21 @@
+.mobile-app {
+  text-align: center;
+  cursor: default; }
+.mobile-app p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  color: #2D3C3E; }
+.mobile-app-layout {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center; }
+.mobile-app-layout_item {
+  padding-right: 28px; }
+.mobile-app-layout_item span {
+  display: block; }
+.mobile-app-layout_item:first-child {
+  position: relative; }
+.mobile-app-layout_item:first-child:after {
+  content: ''; }
