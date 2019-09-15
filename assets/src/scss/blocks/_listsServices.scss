@@ -1,0 +1,22 @@
+.lists-services {
+    &-layout {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  &-box {
+    flex-basis: 33.333%;
+    .services-head {
+      display: flex;
+      align-items: center;
+      p {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: $color-blue;
+        padding-left: 10px;
+      }
+    }
+  }
+
+}

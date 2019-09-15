@@ -122,7 +122,9 @@ header .header-layout .call-phone a {
   text-shadow: 0 0 15px rgba(14, 245, 255, 0.6); }
 
 header.header-bg {
-  background-color: rgba(52, 43, 72, 0.7); }
+  background-color: rgba(45, 60, 62, 0.9);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  pointer-events: auto; }
 
 header.header-bg .header-layout {
   -ms-flex-align: center;
@@ -789,6 +791,29 @@ ul.tabs li:last-child {
             display: block;
             color: #B8C2C4;
             padding-left: 24px; }
+
+.lists-services-layout {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.lists-services-box {
+  -ms-flex-preferred-size: 33.333%;
+      flex-basis: 33.333%; }
+  .lists-services-box .services-head {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+    .lists-services-box .services-head p {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 120%;
+      color: #0090A1;
+      padding-left: 10px; }
 
 .u-controls .u-input {
   padding: 14px 0 14px 16px;
