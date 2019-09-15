@@ -44,7 +44,21 @@ function initHeader(){
     });
 }
 
+function initLists() {
+    const itemList = $('.js-open-list');
+    itemList.click(function() {
+        let currentList = $(this).parent().parent().parent();
+        currentList.hasClass('list-open') ? currentList.removeClass('list-open') : openList(currentList)
+
+    });
+    function openList(currentList) {
+        itemList.removeClass('list-open');
+        currentList.addClass('list-open')
+    }
+}
+
 $( document ).ready(function() {
     initTabs();
     initHeader();
+    initLists();
 });

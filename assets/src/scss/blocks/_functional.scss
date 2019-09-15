@@ -1,0 +1,108 @@
+.functional {
+  background-color: $color-dark;
+  position: relative;
+  min-height: 967px;
+  .title-h2 {
+    color: $color-white;
+  }
+  &-layout {
+    padding-top: 80px;
+    display: flex;
+  }
+  &-desc {
+    max-width: 800px;
+    z-index: 9;
+    &-content {
+      padding: 40px 0;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 120%;
+      color: $color-white;
+      max-width: 600px;
+    }
+  }
+  &-cover {
+    position: absolute;
+    top: -65px;
+  }
+}
+//Раскрывающие списки
+.u-list {
+  &-head {
+    margin-top: 20px;
+    margin-left: -32px;
+    display: flex;
+    align-items: center;
+    background-color: $color-dark;
+    &-block {
+      margin-left: -14px;
+      span {
+        color: $color-orange;
+        font-size: 18px;
+      }
+      p {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: $color-default;
+        cursor: pointer;
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          width: 14px;
+          height: 8px;
+          right: -29px;
+          top: 14px;
+          background-size: cover;
+          transition: .3s;
+          background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1L6 6L1 0.999999' stroke='%23FF9500' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        }
+      }
+    }
+  }
+  &-content {
+    display: none;
+    margin: 0 0 20px -20px;
+    background-color: #2c3b3d;
+    padding-left: 20px;
+    ul {
+      column-count: 2;
+      li {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 130%;
+        color: $color-white;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 30px;
+        &:before {
+          content: '';
+          position: absolute;
+          width: 19px;
+          height: 18px;
+          left: 0;
+          background-size: cover;
+          top: 2px;
+          background-image: url(../images/icons/ic_check_orange.svg);
+        }
+      }
+    }
+  }
+  &-item {
+    &.list-open {
+      border: 1px solid $color-gray;
+      .u-list-content {
+        display: block;
+      }
+      .u-list-head-block {
+        p {
+          &:after {
+            transform: rotate(177deg);
+          }
+        }
+      }
+    }
+  }
+}
