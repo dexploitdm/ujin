@@ -1,9 +1,45 @@
 .solutions {
   background-color: $color-dark;
+  color: $color-white;
   &-layout {
     padding-top: 86px;
     .title-h2 {
       color: $color-white;
+      padding-bottom: 40px;
+    }
+  }
+  &-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-block {
+    &_title {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 120%;
+    }
+    &-desc {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 130%;
+      color: #FBFBFB;
+      ul {
+        li {
+          position: relative;
+          padding: 15px 0 15px 35px;
+          &:before {
+            content: '';
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            left: 0;
+            top: 0;
+            //background-image: url("data:image/svg+xml,%3Csvg width='35' height='34' viewBox='0 0 35 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_d)'%3E%3Cpath d='M22 17.5C22 18.5878 21.6774 19.6512 21.0731 20.5556C20.4687 21.4601 19.6098 22.1651 18.6048 22.5813C17.5998 22.9976 16.4939 23.1065 15.427 22.8943C14.3601 22.6821 13.3801 22.1583 12.6109 21.3891C11.8417 20.6199 11.3179 19.6399 11.1057 18.573C10.8935 17.5061 11.0024 16.4002 11.4187 15.3952C11.8349 14.3902 12.5399 13.5313 13.4444 12.9269C14.3488 12.3226 15.4122 12 16.5 12' stroke='%230EF5FF' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M12.5 14.5L16.5 18.5L24 11' stroke='%230EF5FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d' x='0' y='0' width='35' height='34' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='5'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.054902 0 0 0 0 0.960784 0 0 0 0 1 0 0 0 0.8 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+            background-image: url(../images/icons/ic_list.png);
+
+          }
+        }
+      }
     }
   }
 }

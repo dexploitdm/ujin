@@ -145,7 +145,8 @@ header.header-bg .header-layout {
   color: #0EF5FF; }
 
 .head-box {
-  background: linear-gradient(153deg, #342B48 33.79%, #0F4F57 69.42%, #0EF5FF 100%);
+  background-image: url(../images/covers/bg_ban.svg);
+  background-size: cover;
   min-height: 800px; }
 
 .head-box-layout {
@@ -330,8 +331,35 @@ ul.tabs li:last-child {
           top: 18px; }
 
 .solutions {
-  background-color: #2D3C3E; }
+  background-color: #2D3C3E;
+  color: #fff; }
   .solutions-layout {
     padding-top: 86px; }
     .solutions-layout .title-h2 {
-      color: #fff; }
+      color: #fff;
+      padding-bottom: 40px; }
+  .solutions-flex {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+  .solutions-block_title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%; }
+  .solutions-block-desc {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 130%;
+    color: #FBFBFB; }
+    .solutions-block-desc ul li {
+      position: relative;
+      padding: 15px 0 15px 35px; }
+      .solutions-block-desc ul li:before {
+        content: '';
+        position: absolute;
+        width: 42px;
+        height: 42px;
+        left: 0;
+        top: 0;
+        background-image: url(../images/icons/ic_list.png); }

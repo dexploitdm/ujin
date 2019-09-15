@@ -1,5 +1,7 @@
 .head-box {
-  background: linear-gradient(153deg, #342B48 33.79%, #0F4F57 69.42%, $color-default 100%);
+  //background: linear-gradient(153deg, #342B48 33.79%, #0F4F57 69.42%, $color-default 100%);
+  background-image: url(../images/covers/bg_ban.svg);
+  background-size: cover;
   min-height: 800px; }
 
 .head-box-web {
