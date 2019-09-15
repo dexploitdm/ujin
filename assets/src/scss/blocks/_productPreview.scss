@@ -3,11 +3,13 @@
   padding-bottom: 100px;
   &-layout {
     padding-top: 60px;
-    display: flex;
-    justify-content: space-between;
+    //display: flex;
+    //justify-content: space-between;
   }
   .product-box {
     min-height: 430px;
+    flex-basis: 33.333%;
+    margin-bottom: 70px;
     position: relative;
     &:before {
       content: '';
@@ -18,27 +20,24 @@
       opacity: 0.3;
       border: 1px solid $color-gray;
     }
-    &:after {
-      content: '';
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      opacity: 0.3;
-      border: 1px solid $color-gray;
-    }
     &-layout {
-
+      position: relative;
+      padding: 0 30px 0 59px;
     }
     &-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       &__title {
-
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 120%;
+        color: $color-dark;
       }
       &__icon {
         position: relative;
+        width: 32px;
+        height: 32px;
         &:after {
           content: '';
           position: absolute;
@@ -46,6 +45,87 @@
           height: 32px;
           background-size: cover;
           background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='15' stroke='%230090A1' stroke-width='2'/%3E%3Cpath d='M23.7071 16.7071C24.0976 16.3166 24.0976 15.6834 23.7071 15.2929L17.3431 8.92893C16.9526 8.53841 16.3195 8.53841 15.9289 8.92893C15.5384 9.31946 15.5384 9.95262 15.9289 10.3431L21.5858 16L15.9289 21.6569C15.5384 22.0474 15.5384 22.6805 15.9289 23.0711C16.3195 23.4616 16.9526 23.4616 17.3431 23.0711L23.7071 16.7071ZM9 17H23V15H9V17Z' fill='%230090A1'/%3E%3C/svg%3E%0A");
+        }
+      }
+    }
+    &-cover {
+      text-align: center;
+      max-height: 190px;
+      padding-top: 15px;
+      img {
+        height: auto;
+      }
+    }
+    &-desc {
+      padding-top: 30px;
+      &_price {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 120%;
+        color: $color-default;
+        padding-bottom: 20px;
+      }
+      &_content {
+        strong {
+
+        }
+        ul {
+          &.two {
+            margin-top: 16px;
+            column-count: 2;
+            li:first-child {
+              margin: 0;
+            }
+          }
+          li {
+            position: relative;
+            padding-left: 20px;
+            margin: 19px 0;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 100%;
+            &:before {
+              content: '';
+              position: absolute;
+              width: 15px;
+              height: 15px;
+              left: 0;
+              background-size: cover;
+              top: 0;
+              background-image: url(../images/icons/ic_check.svg);
+            }
+          }
+        }
+      }
+    }
+    &-bg {
+      img {
+        width: 100%;
+      }
+      .product-box-link {
+        background-color: $color-dark;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 30px 0 35px 32px;
+        cursor: pointer;
+        span {
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 130%;
+          color: $color-default;
+          position: relative;
+          &:after {
+            content: '';
+            position: absolute;
+            width: 17px;
+            height: 15px;
+            right: -23px;
+            top: 4px;
+            background-size: cover;
+            background-image: url("data:image/svg+xml,%3Csvg width='18' height='16' viewBox='0 0 18 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.7071 8.70711C18.0976 8.31658 18.0976 7.68342 17.7071 7.29289L11.3431 0.928932C10.9526 0.538408 10.3195 0.538408 9.92893 0.928932C9.53841 1.31946 9.53841 1.95262 9.92893 2.34315L15.5858 8L9.92893 13.6569C9.53841 14.0474 9.53841 14.6805 9.92893 15.0711C10.3195 15.4616 10.9526 15.4616 11.3431 15.0711L17.7071 8.70711ZM0.5 9H17V7H0.5V9Z' fill='%230EF5FF'/%3E%3C/svg%3E%0A");
+          }
         }
       }
     }

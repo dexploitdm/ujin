@@ -6,6 +6,8 @@
 @import "base/common";
 
 @import "layouts/header";
+@import "layouts/footer";
+
 @import "blocks/headerMenu";
 @import "blocks/headBanner";
 @import "blocks/opportunities";
@@ -14,3 +16,6 @@
 @import "blocks/ourSolutions";
 @import "blocks/button";
 @import "blocks/productPreview";
+@import "blocks/boxesDesc";
+
+@import "blocks/form/input";

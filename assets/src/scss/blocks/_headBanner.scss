@@ -29,6 +29,7 @@
   display: -ms-flexbox;
   display: flex;
   padding-top: 14px;
+
 }
 .head-box-layout .head-box-desc-boxes.flex-wrap {
   -ms-flex-wrap: wrap;
@@ -48,4 +49,31 @@
   color: $color-default;
   font-size: 18px;
   line-height: 130%;
-  font-weight: 300; }
+  font-weight: 300;
+}
+.head-box-layout .other-desc {
+    .title-h1 {
+      max-width: 800px;
+    }
+  .other-desc-content {
+    padding-top: 30px;
+  }
+  .head-box-desc-boxes {
+    margin-left: -28px;
+    &-item {
+      span {
+        max-width: 160px;
+        margin-left: -18px;
+      }
+    }
+  }
+  &-content {
+    p {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 140%;
+      color: $color-white;
+      max-width: 536px;
+    }
+  }
+}

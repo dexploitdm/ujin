@@ -1,0 +1,76 @@
+.boxes-desc {
+  padding-top: 72px;
+  padding-bottom: 54px;
+  &-content {
+    .boxes-title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 120%;
+      color: $color-dark;
+      max-width: 668px;
+    }
+    .boxes-mini {
+      padding-top: 30px;
+      max-width: 550px;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 130%;
+      color: $color-dark;
+    }
+  }
+  &-layout {
+    position: relative;
+    margin-top: 62px;
+  }
+  &-download {
+    width: 500px;
+    height: 180px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $color-dark;
+    &-layout {
+      padding: 20px 20px 32px 32px;
+      .download-title {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 130%;
+        color: $color-white;
+        max-width: 330px;
+        padding-bottom: 10px;
+      }
+      .download-link {
+        display: flex;
+        align-items: center;
+        &-box {
+          margin-left: 10px;
+          .download-pull {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 130%;
+            color: $color-default;
+            text-decoration: none;
+            padding-left: 24px;
+            position: relative;
+            &:before {
+              content: '';
+              position: absolute;
+              width: 14px;
+              height: 18px;
+              left: 0;
+              background-image: url("data:image/svg+xml,%3Csvg width='16' height='18' viewBox='0 0 16 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1C9 0.447715 8.55228 0 8 0C7.44772 0 7 0.447715 7 1H9ZM7.29289 17.7071C7.68342 18.0976 8.31658 18.0976 8.70711 17.7071L15.0711 11.3431C15.4616 10.9526 15.4616 10.3195 15.0711 9.92893C14.6805 9.53841 14.0474 9.53841 13.6569 9.92893L8 15.5858L2.34315 9.92893C1.95262 9.53841 1.31946 9.53841 0.928932 9.92893C0.538408 10.3195 0.538408 10.9526 0.928932 11.3431L7.29289 17.7071ZM7 1V17H9V1H7Z' fill='%230EF5FF'/%3E%3C/svg%3E%0A");
+            }
+          }
+          .download-info {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 130%;
+            display: block;
+            color: $color-gray;
+            padding-left: 24px;
+          }
+        }
+      }
+    }
+  }
+}
