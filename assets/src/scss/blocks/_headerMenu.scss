@@ -7,8 +7,10 @@
 .u-menu-list-item {
   margin-right: 34px; }
 .u-menu-list-item a {
+  font-family: 'Roboto', sans-serif;
   color: #fff;
-  text-decoration: none; }
+  text-decoration: none;
+}
 .u-menu-list-item a.active {
   color: $color-default;
   border-bottom: 1px solid $color-default;
