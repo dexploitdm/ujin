@@ -792,28 +792,57 @@ ul.tabs li:last-child {
             color: #B8C2C4;
             padding-left: 24px; }
 
-.lists-services-layout {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: center;
-      justify-content: center; }
-
-.lists-services-box {
-  -ms-flex-preferred-size: 33.333%;
-      flex-basis: 33.333%; }
-  .lists-services-box .services-head {
+.lists-services {
+  padding-bottom: 70px; }
+  .lists-services-layout {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-        align-items: center; }
-    .lists-services-box .services-head p {
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 120%;
-      color: #0090A1;
-      padding-left: 10px; }
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: center;
+        justify-content: center; }
+  .lists-services-box {
+    -ms-flex-preferred-size: 33.333%;
+        flex-basis: 33.333%;
+    margin-bottom: 40px; }
+    .lists-services-box .services-head {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      padding-bottom: 22px; }
+      .lists-services-box .services-head p {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: #0090A1;
+        padding-left: 10px; }
+    .lists-services-box ul {
+      margin-left: 30px;
+      max-width: 317px; }
+    .lists-services-box li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 26px;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 130%;
+      color: #2D3C3E; }
+      .lists-services-box li:before {
+        content: '';
+        position: absolute;
+        width: 19px;
+        height: 18px;
+        left: 0;
+        background-size: cover;
+        top: 2px;
+        background-image: url(../images/icons/ic_check_orange.svg); }
+  .lists-services-text {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    color: #2D3C3E; }
 
 .u-controls .u-input {
   padding: 14px 0 14px 16px;
