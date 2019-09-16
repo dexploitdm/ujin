@@ -1,22 +1,24 @@
 .functional {
   background-color: $color-dark;
   position: relative;
-  min-height: 967px;
+  min-height: 1010px;
   .title-h2 {
     color: $color-white;
   }
   &-layout {
     padding-top: 80px;
     display: flex;
+    position: relative;
+    height: 859px;
   }
   &-desc {
     max-width: 800px;
     z-index: 9;
     &.block-big {
-      max-width: 855px;
+      max-width: 723px;
     }
     &.block-full {
-      max-width: 960px;
+      max-width: 773px;
     }
     &-content {
       padding: 40px 0;
@@ -30,7 +32,8 @@
   }
   &-cover {
     position: absolute;
-    top: -65px;
+    right: 0;
+    bottom: -75px;
     &.position-two {
       position: initial;
     }
@@ -153,6 +156,7 @@
 }
 //Раскрывающие списки
 .u-list {
+  max-width: 750px;
   &-head {
     margin-top: 20px;
     margin-left: -32px;
