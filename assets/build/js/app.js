@@ -48,12 +48,11 @@ function initLists() {
     const itemList = $('.js-open-list');
     itemList.click(function() {
         let currentList = $(this).parent().parent().parent();
-        currentList.hasClass('list-open') ? currentList.removeClass('list-open') : openList(currentList)
-
+        currentList.hasClass('list-open') ? currentList.removeClass('list-open') : listing(currentList)
     });
-    function openList(currentList) {
-        itemList.removeClass('list-open');
-        currentList.addClass('list-open')
+    function listing(currentList){
+        itemList.parent().parent().parent().removeClass('list-open');
+        currentList.addClass('list-open');
     }
 }
 

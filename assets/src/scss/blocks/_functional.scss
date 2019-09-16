@@ -12,6 +12,12 @@
   &-desc {
     max-width: 800px;
     z-index: 9;
+    &.block-big {
+      max-width: 855px;
+    }
+    &.block-full {
+      max-width: 960px;
+    }
     &-content {
       padding: 40px 0;
       font-style: normal;
@@ -25,6 +31,124 @@
   &-cover {
     position: absolute;
     top: -65px;
+    &.position-two {
+      position: initial;
+    }
+  }
+  &-lists {
+    padding-top: 60px;
+    margin-left: -30px;
+    &_item {
+      margin-bottom: 24px;
+    }
+    &-layout {
+
+    }
+    &-head {
+      display: flex;
+      align-items: center;
+      span {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: $color-default;
+        margin-left: -18px;
+      }
+    }
+    ul {
+      padding-top: 20px;
+      margin-left: 58px;
+      li {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 130%;
+        color: $color-white;
+        padding-left: 30px;
+        margin-bottom: 20px;
+        position: relative;
+        &:before {content: '';
+          position: absolute;
+          width: 19px;
+          height: 18px;
+          left: 0;
+          background-size: cover;
+          top: 2px;
+          background-image: url(../images/icons/ic_check_orange.svg);
+        }
+      }
+    }
+  }
+  &-box {
+    padding-top: 50px;
+    &-item {
+      margin-bottom: 42px;
+      img {
+        margin-left: -30px;
+      }
+      .text-neon {
+        max-width: 366px;
+        display: block;
+        margin-top: -10px;
+      }
+    }
+  }
+  &-tabs {
+    padding-top: 40px;
+    .tabs {
+      li {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: $color-white;
+        padding-bottom: 18px;
+      }
+    }
+    .tab_container {
+      background: transparent;
+      .functional-lists {
+        padding-top: 0;
+        margin-left: 0;
+        &-head {
+          span {
+            margin-left: 16px;
+          }
+        }
+        ul {
+          max-width: 306px;
+          margin-left: 20px;
+        }
+      }
+    }
+    &.full-tabs {
+      .tab_content {
+        padding-top: 132px;
+      }
+      .grid-two {
+        display: block;
+        margin-left: -30px;
+      }
+
+      .functional-lists {
+        &-head {
+          span {
+            margin-left: -14px;
+          }
+        }
+        ul {
+          margin-left: 36px;
+        }
+      }
+
+    }
+  }
+  &-app {
+    &-layout {
+        a {
+          &:first-child {
+            margin-right: 13px;
+          }
+        }
+    }
   }
 }
 //Раскрывающие списки

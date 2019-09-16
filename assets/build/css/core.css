@@ -75,6 +75,12 @@ ul {
       color: #fff;
       text-decoration: none; }
 
+.text-neon {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  color: #0EF5FF; }
+
 header {
   position: fixed;
   left: 0;
@@ -376,8 +382,8 @@ footer {
   padding-top: 42px; }
 
 .opportunities-tabs {
-  -ms-flex-preferred-size: 90%;
-      flex-basis: 90%; }
+  -ms-flex-preferred-size: 96%;
+      flex-basis: 96%; }
 
 .opportunities-icons {
   margin-top: 40px; }
@@ -857,6 +863,10 @@ ul.tabs li:last-child {
   .functional-desc {
     max-width: 800px;
     z-index: 9; }
+    .functional-desc.block-big {
+      max-width: 855px; }
+    .functional-desc.block-full {
+      max-width: 960px; }
     .functional-desc-content {
       padding: 40px 0;
       font-style: normal;
@@ -868,6 +878,83 @@ ul.tabs li:last-child {
   .functional-cover {
     position: absolute;
     top: -65px; }
+    .functional-cover.position-two {
+      position: initial; }
+  .functional-lists {
+    padding-top: 60px;
+    margin-left: -30px; }
+    .functional-lists_item {
+      margin-bottom: 24px; }
+    .functional-lists-head {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center; }
+      .functional-lists-head span {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: #0EF5FF;
+        margin-left: -18px; }
+    .functional-lists ul {
+      padding-top: 20px;
+      margin-left: 58px; }
+      .functional-lists ul li {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 130%;
+        color: #fff;
+        padding-left: 30px;
+        margin-bottom: 20px;
+        position: relative; }
+        .functional-lists ul li:before {
+          content: '';
+          position: absolute;
+          width: 19px;
+          height: 18px;
+          left: 0;
+          background-size: cover;
+          top: 2px;
+          background-image: url(../images/icons/ic_check_orange.svg); }
+  .functional-box {
+    padding-top: 50px; }
+    .functional-box-item {
+      margin-bottom: 42px; }
+      .functional-box-item img {
+        margin-left: -30px; }
+      .functional-box-item .text-neon {
+        max-width: 366px;
+        display: block;
+        margin-top: -10px; }
+  .functional-tabs {
+    padding-top: 40px; }
+    .functional-tabs .tabs li {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 120%;
+      color: #fff;
+      padding-bottom: 18px; }
+    .functional-tabs .tab_container {
+      background: transparent; }
+      .functional-tabs .tab_container .functional-lists {
+        padding-top: 0;
+        margin-left: 0; }
+        .functional-tabs .tab_container .functional-lists-head span {
+          margin-left: 16px; }
+        .functional-tabs .tab_container .functional-lists ul {
+          max-width: 306px;
+          margin-left: 20px; }
+    .functional-tabs.full-tabs .tab_content {
+      padding-top: 132px; }
+    .functional-tabs.full-tabs .grid-two {
+      display: block;
+      margin-left: -30px; }
+    .functional-tabs.full-tabs .functional-lists-head span {
+      margin-left: -14px; }
+    .functional-tabs.full-tabs .functional-lists ul {
+      margin-left: 36px; }
+  .functional-app-layout a:first-child {
+    margin-right: 13px; }
 
 .u-list-head {
   margin-top: 20px;
@@ -933,6 +1020,15 @@ ul.tabs li:last-child {
   .u-list-item.list-open .u-list-head-block p:after {
     -webkit-transform: rotate(177deg);
             transform: rotate(177deg); }
+
+.partners {
+  padding: 100px 0; }
+  .partners-layout {
+    padding-top: 46px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
 
 .u-controls .u-input {
   padding: 14px 0 14px 16px;
