@@ -13,4 +13,9 @@
   outline: none;
   cursor: pointer;
   box-shadow: 4px 9px 16px -7px rgba(0, 0, 0, 0.72);
+  &-white {
+    background-color: $color-white;
+    color: $color-blue;
+    border: 1px solid $color-blue;
+  }
 }

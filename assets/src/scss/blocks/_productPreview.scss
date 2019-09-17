@@ -1,6 +1,9 @@
 .product-preview {
     padding-top: 75px;
   padding-bottom: 100px;
+  &.full-list {
+    padding-bottom: 0;
+  }
   &-layout {
     padding-top: 60px;
     //display: flex;
@@ -64,10 +67,24 @@
         line-height: 120%;
         color: $color-default;
         padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        .old {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 120%;
+          text-decoration-line: line-through;
+          color: #2D3C3E;
+          opacity: 0.5;
+          padding-left: 28px;
+        }
       }
       &_content {
-        strong {
-
+        &_box {
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 130%;
+          color: $color-dark;
         }
         ul {
           &.two {

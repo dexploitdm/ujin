@@ -77,3 +77,28 @@
     }
   }
 }
+
+//Banner two
+.head-box-two {
+  background-image: url(../images/covers/home-bg2.png);
+  min-height: 616px;
+  background-size: contain;
+  &-layout {
+    &-content {
+      padding-top: 250px;
+      max-width: 820px;
+      .title-h1 {
+        color: $color-white;
+      }
+    }
+  }
+  &-desc {
+    padding-top: 50px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+    color: $color-white;
+    max-width: 796px;
+  }
+
+}

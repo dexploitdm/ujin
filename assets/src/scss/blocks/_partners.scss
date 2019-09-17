@@ -6,3 +6,62 @@
     justify-content: space-between;
   }
 }
+.partner-form {
+  background-image: url(../images/covers/partner-bg.png);
+  min-height: 616px;
+  background-size: cover;
+  padding-top: 90px;
+  padding-bottom: 80px;
+  &-desc {
+    padding-top: 50px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    color: $color-dark;
+    max-width: 800px;
+  }
+  &-box {
+    padding-top: 30px;
+    max-width: 520px;
+    margin: 0 auto;
+    &-text {
+      text-align: center;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 130%;
+      color: $color-dark;
+      a {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 120%;
+        color: $color-blue;
+        display: block;
+        padding: 12px 0;
+        text-decoration: none;
+      }
+    }
+    form {
+      text-align: center;
+      padding-top: 12px;
+    }
+    .u-controls {
+      margin-bottom: 30px;
+      .u-input {
+        background: $color-white;
+        border: 1px solid $color-blue;
+        box-sizing: border-box;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 130%;
+        color: $color-blue;
+        width: 366px;
+        &::-webkit-input-placeholder { color: $color-blue; }
+        &:-ms-input-placeholder { color: $color-blue; }
+        &::-ms-input-placeholder { color: $color-blue; }
+        &::placeholder { color: $color-blue; }
+      }
+    }
+
+  }
+
+}
