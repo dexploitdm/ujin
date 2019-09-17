@@ -1133,6 +1133,27 @@ ul.tabs li:last-child {
         .partner-form-box .u-controls .u-input::placeholder {
           color: #0090A1; }
 
+.projects {
+  padding-top: 90px;
+  padding-bottom: 50px; }
+  .projects .grid-three {
+    grid-column-gap: 50px; }
+  .projects-block {
+    margin-bottom: 50px; }
+    .projects-block-title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 120%;
+      color: #2D3C3E;
+      min-height: 58px;
+      padding-bottom: 60px; }
+    .projects-block-desc {
+      padding-top: 22px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 130%;
+      color: #2D3C3E; }
+
 .u-controls .u-input {
   padding: 14px 0 14px 16px;
   font-style: normal;

@@ -1,0 +1,29 @@
+.projects {
+  padding-top: 90px;
+  padding-bottom: 50px;
+
+  .grid-three {
+    grid-column-gap: 50px;
+  }
+  &-block {
+    margin-bottom: 50px;
+    &-title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 120%;
+      color: $color-dark;
+      min-height: 58px;
+      padding-bottom: 60px;
+    }
+    &-cover {
+
+    }
+    &-desc {
+      padding-top: 22px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 130%;
+      color: $color-dark;
+    }
+  }
+}
