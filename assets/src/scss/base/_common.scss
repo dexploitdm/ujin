@@ -82,3 +82,7 @@ ul {
   line-height: 120%;
   color: $color-default;
 }
+.empty-block {
+  min-height: 135px;
+  background: $color-dark;
+}
