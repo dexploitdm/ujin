@@ -370,6 +370,28 @@ footer {
   color: #fff;
   max-width: 536px; }
 
+.head-box-count {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin-left: 14em; }
+  .head-box-count-item .head-box-number {
+    font-weight: 900;
+    font-size: 260px;
+    line-height: 308px;
+    -webkit-transform: matrix(1, 0.57, 0, 0.89, 0, 0);
+            transform: matrix(1, 0.57, 0, 0.89, 0, 0);
+    color: #fff7f7; }
+  .head-box-count-item .head-box-title {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 43px;
+    color: #fff;
+    text-shadow: -15px 8px 30px rgba(0, 0, 0, 0.5);
+    -webkit-transform: matrix(1, -0.57, 0, 0.89, 0, 0);
+            transform: matrix(1, -0.57, 0, 0.89, 0, 0); }
+
 .head-box-two {
   background-image: url(../images/covers/home-bg2.png);
   min-height: 616px;

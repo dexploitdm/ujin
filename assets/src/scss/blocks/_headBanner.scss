@@ -77,7 +77,29 @@
     }
   }
 }
-
+//Счетчик
+.head-box-count {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 14em;
+  &-item {
+    .head-box-number {
+      font-weight: 900;
+      font-size: 260px;
+      line-height: 308px;
+      transform: matrix(1, 0.57, 0, 0.89, 0, 0);
+      color: #fff7f7;
+    }
+    .head-box-title {
+      font-weight: 900;
+      font-size: 36px;
+      line-height: 43px;
+      color: $color-white;
+      text-shadow: -15px 8px 30px rgba(0, 0, 0, 0.5);
+      transform: matrix(1, -0.57, 0, 0.89, 0, 0);
+    }
+  }
+}
 //Banner two
 .head-box-two {
   background-image: url(../images/covers/home-bg2.png);
@@ -100,5 +122,4 @@
     color: $color-white;
     max-width: 796px;
   }
-
 }
