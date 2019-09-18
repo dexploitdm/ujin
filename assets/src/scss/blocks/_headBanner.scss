@@ -81,11 +81,16 @@
 .head-box-count {
   display: flex;
   justify-content: space-between;
-  margin-left: 14em;
+  max-width: 100%;
+  position: relative;
+  &-layout {
+    position: relative;
+  }
   &-item {
+    position: absolute;
     .head-box-number {
       font-weight: 900;
-      font-size: 260px;
+      font-size: 220px;
       line-height: 308px;
       transform: matrix(1, 0.57, 0, 0.89, 0, 0);
       color: #fff7f7;
@@ -97,6 +102,23 @@
       color: $color-white;
       text-shadow: -15px 8px 30px rgba(0, 0, 0, 0.5);
       transform: matrix(1, -0.57, 0, 0.89, 0, 0);
+
+      position: absolute;
+      bottom: 50px;
+      right: -171px;
+      max-width: 155px;
+    }
+    &:first-child {
+      bottom: -29em;
+      left: 19em;
+    }
+    &:nth-child(2) {
+      left: 33em;
+      bottom: -21em;
+    }
+    &:last-child {
+      right: 10em;
+      top: -7em;
     }
   }
 }
