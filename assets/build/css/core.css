@@ -1194,6 +1194,33 @@ ul.tabs li:last-child {
       line-height: 130%;
       color: #2D3C3E; }
 
+.product-item {
+  padding-top: 55px; }
+  .product-item-layout {
+    padding-top: 60px; }
+  .product-item .tabs li {
+    font-size: 24px;
+    line-height: 120%; }
+    .product-item .tabs li.active {
+      color: #0090A1;
+      border-bottom: 1px solid #0090A1; }
+    .product-item .tabs li:hover {
+      color: #0090A1;
+      border-bottom: 1px solid #0090A1; }
+  .product-item-box-content .product-info {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 130%;
+    color: #2D3C3E;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    border-bottom: 1px solid #B8C2C4;
+    margin-bottom: 20px; }
+    .product-item-box-content .product-info.not-border {
+      border: 0; }
+
 .u-controls .u-input {
   padding: 14px 0 14px 16px;
   font-style: normal;

@@ -1,0 +1,40 @@
+.product-item {
+  padding-top: 55px;
+  &-layout {
+    padding-top: 60px;
+  }
+  .tabs {
+    li {
+      font-size: 24px;
+      line-height: 120%;
+      &.active {
+        color: $color-blue;
+        border-bottom: 1px solid $color-blue;
+      }
+      &:hover {
+        color: $color-blue;
+        border-bottom: 1px solid $color-blue;
+      }
+    }
+  }
+  &-box {
+    &-content {
+      .product-info {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 130%;
+        color: $color-dark;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $color-gray;
+        margin-bottom: 20px;
+        &.not-border {
+          border: 0;
+        }
+        &-item {
+
+        }
+      }
+    }
+  }
+}
