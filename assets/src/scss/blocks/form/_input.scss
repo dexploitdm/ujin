@@ -8,3 +8,22 @@
     color: $color-gray;
   }
 }
+.u-form {
+  text-align: center;
+  .u-controls {
+    margin-bottom: 20px;
+    .u-input {
+      background: $color-white;
+      border: 1px solid $color-blue;
+      box-sizing: border-box;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 130%;
+      color: $color-blue;
+      &::-webkit-input-placeholder { color: $color-blue; }
+      &:-ms-input-placeholder { color: $color-blue; }
+      &::-ms-input-placeholder { color: $color-blue; }
+      &::placeholder { color: $color-blue; }
+    }
+  }
+}

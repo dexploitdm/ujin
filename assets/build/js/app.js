@@ -56,8 +56,22 @@ function initLists() {
     }
 }
 
+function initCardImages() {
+    const coverImg = $('.js-cover-product'),
+        miniBoxImages = $('.js-img-cover');
+
+    miniBoxImages.bind("click", function() {
+        let currentUrl = $(this).children().attr('src');
+        coverImg.attr("src", currentUrl);
+
+        miniBoxImages.removeClass('active');
+        $(this).addClass('active')
+    });
+}
+
 $( document ).ready(function() {
     initTabs();
     initHeader();
     initLists();
+    initCardImages();
 });
