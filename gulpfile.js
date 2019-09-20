@@ -36,7 +36,7 @@ var path = {
     },
     clean: './assets/build/*'
 };
-var sourceFiles = ['node_modules/jquery/dist/jquery.js'];
+var sourceFiles = ['node_modules/jquery/dist/jquery.js','node_modules/swiper/js/swiper.js'];
 /* настройки сервера */
 var config = {
     server: {

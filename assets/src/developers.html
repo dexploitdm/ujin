@@ -7,7 +7,6 @@
     <meta name="author" content="Dexploitdm | Дмитрий Паршаков">
     <meta name="theme-color" content="#464646">
     <link href="./css/core.css" rel="stylesheet">
-
 </head>
 <body><script id="__bs_script__">//<![CDATA[
 document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
@@ -252,6 +251,110 @@ document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.7
         </div>
     </div>
 
+    <div class="projects-slider">
+        <div class="projects-slider-head box">
+            <h2 class="title-h2">Реализованные проекты</h2>
+            <div class="projects-all">
+                <a href="projects.html">
+                    Все проекты
+                </a>
+            </div>
+        </div>
+
+
+
+        <div class="p-slider box">
+            <div class="swiper-container">
+                <!-- Add Pagination -->
+
+                <!-- Add Arrows -->
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide p-slider-box">
+                        <div class="p-slider-box-cover" style="background-image: url(images/demo/projects/pro1.png); ">
+<!--                            <img src="images/demo/projects/pro1.png">-->
+                        </div>
+                        <div class="p-slider-box-desc">
+                            <div class="p-slider-head">
+                                <div class="p-slider-head-arrow">
+                                    <div class="box-btn">
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                                <div class="p-slider-head-title">
+                                    <a href="#">ЖК “Гулливер”
+                                        <span>г. Пермь — 2017</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-slider-body">
+                                <p>
+                                    Гулливер - не просто жилой комплекс, это маленький город в самом центре Перми.
+
+                                    6 сдвоенных домов комфорт-класса и 2 дома бизнес-класса
+                                    объединяет собственная зеленая зона, детские и спортивные площадки, муниципальный детский сад.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide p-slider-box">
+                        <div class="p-slider-box-cover" style="background-image: url(images/demo/projects/pro2.jpg); ">
+<!--                            <img src="images/demo/projects/pro2.jpg">-->
+                        </div>
+                        <div class="p-slider-box-desc">
+                            <div class="p-slider-head">
+                                <div class="p-slider-head-arrow">
+                                    <div class="box-btn">
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                                <div class="p-slider-head-title">
+                                    <a href="#">ЖК “Гулливер”
+                                        <span>г. Пермь — 2017</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-slider-body">
+                                <p>
+                                    Гулливер - не просто жилой комплекс, это маленький город в самом центре Перми.
+
+                                    6 сдвоенных домов комфорт-класса и 2 дома бизнес-класса
+                                    объединяет собственная зеленая зона, детские и спортивные площадки, муниципальный детский сад.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
 
 </main>
 <footer>
@@ -352,6 +455,18 @@ document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.7
 </footer>
 
 <script src="./js/vendor/jquery.js"></script>
+<script src="./js/vendor/swiper.js"></script>
 <script src="./js/app.js"></script>
-
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
 </body></html>
