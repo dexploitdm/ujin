@@ -1,5 +1,6 @@
 .partners {
   padding: 100px 0;
+  transition: .3s;
   &-layout {
     padding-top: 46px;
     display: flex;
@@ -12,6 +13,7 @@
   background-size: cover;
   padding-top: 90px;
   padding-bottom: 80px;
+  transition: .3s;
   &-desc {
     padding-top: 50px;
     font-weight: 500;
@@ -24,6 +26,7 @@
     padding-top: 30px;
     max-width: 520px;
     margin: 0 auto;
+    transition: .3s;
     &-text {
       text-align: center;
       font-weight: 300;
@@ -55,6 +58,7 @@
         line-height: 130%;
         color: $color-blue;
         width: 366px;
+        transition: .3s;
         &::-webkit-input-placeholder { color: $color-blue; }
         &:-ms-input-placeholder { color: $color-blue; }
         &::-ms-input-placeholder { color: $color-blue; }
@@ -64,4 +68,40 @@
 
   }
 
+}
+@media (max-width: $tablet-media) {
+  .partner-form {
+    min-height: auto;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    &-desc {
+      font-size: 20px;
+      line-height: 120%;
+    }
+  }
+}
+@media (max-width: $mobile-media) {
+  .partner-form {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    &-desc {
+      padding-top: 15px;
+      font-size: 12px;
+      line-height: 120%;
+    }
+    &-box {
+      &-text {
+        font-size: 12px;
+        line-height: 120%;
+        a {
+          font-size: 18px;
+        }
+      }
+      .u-controls {
+        .u-input {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

@@ -1822,7 +1822,8 @@ ul.tabs li:last-child {
               transform: rotate(177deg); }
 
 .partners {
-  padding: 100px 0; }
+  padding: 100px 0;
+  transition: .3s; }
   .partners-layout {
     padding-top: 46px;
     display: -ms-flexbox;
@@ -1835,7 +1836,8 @@ ul.tabs li:last-child {
   min-height: 616px;
   background-size: cover;
   padding-top: 90px;
-  padding-bottom: 80px; }
+  padding-bottom: 80px;
+  transition: .3s; }
   .partner-form-desc {
     padding-top: 50px;
     font-weight: 500;
@@ -1846,7 +1848,8 @@ ul.tabs li:last-child {
   .partner-form-box {
     padding-top: 30px;
     max-width: 520px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    transition: .3s; }
     .partner-form-box-text {
       text-align: center;
       font-weight: 300;
@@ -1874,7 +1877,8 @@ ul.tabs li:last-child {
         font-size: 18px;
         line-height: 130%;
         color: #0090A1;
-        width: 366px; }
+        width: 366px;
+        transition: .3s; }
         .partner-form-box .u-controls .u-input::-webkit-input-placeholder {
           color: #0090A1; }
         .partner-form-box .u-controls .u-input:-ms-input-placeholder {
@@ -1883,6 +1887,31 @@ ul.tabs li:last-child {
           color: #0090A1; }
         .partner-form-box .u-controls .u-input::placeholder {
           color: #0090A1; }
+
+@media (max-width: 968px) {
+  .partner-form {
+    min-height: auto;
+    padding-top: 30px;
+    padding-bottom: 50px; }
+    .partner-form-desc {
+      font-size: 20px;
+      line-height: 120%; } }
+
+@media (max-width: 768px) {
+  .partner-form {
+    padding-top: 30px;
+    padding-bottom: 50px; }
+    .partner-form-desc {
+      padding-top: 15px;
+      font-size: 12px;
+      line-height: 120%; }
+    .partner-form-box-text {
+      font-size: 12px;
+      line-height: 120%; }
+      .partner-form-box-text a {
+        font-size: 18px; }
+    .partner-form-box .u-controls .u-input {
+      width: 100%; } }
 
 .projects {
   padding-top: 90px;
