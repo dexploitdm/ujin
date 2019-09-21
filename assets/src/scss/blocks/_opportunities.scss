@@ -1,10 +1,14 @@
 .opportunities {
-  padding: 73px 0 60px 0; }
+  padding-top: 73px;
+  padding-bottom: 60px;
+}
 .opportunities-layout {
   display: -ms-flexbox;
   display: flex; }
 .opportunities-desc {
-  color: $color-dark; }
+  color: $color-dark;
+  transition: .3s;
+}
 .opportunities-desc p {
   font-weight: 500;
   font-size: 24px;
@@ -12,6 +16,7 @@
   padding-top: 42px; }
 .opportunities-tabs {
   flex-basis: 96%;
+  transition: .3s;
 }
 .opportunities-icons {
   margin-top: 40px; }
@@ -27,3 +32,72 @@
   left: 0;
   max-width: 240px;
   margin: 0 auto; }
+
+@media (max-width: $large-media){
+  .opportunities {
+      &-desc {
+        flex-basis: 78%;
+      }
+    &-tabs {
+      margin-left: auto;
+    }
+  }
+}
+@media (max-width: $tablet-media){
+  .opportunities {
+    &-layout {
+      flex-wrap: wrap;
+    }
+    .title-h2 {
+      font-weight: bold;
+    }
+    &-desc {
+      padding-bottom: 25px;
+      p {
+        font-size: 20px;
+        padding-top: 26px;
+      }
+    }
+    &-tabs {
+      flex-basis: 100%;
+    }
+  }
+}
+@media (max-width: $mobile-media){
+  .opportunities {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    &-desc {
+      flex-basis: 100%;
+      p {
+        font-size: 12px;
+        padding-top: 20px;
+      }
+    }
+    .grid-three {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+@media (max-width: 681px){
+  .opportunities {
+    .grid-three {
+      grid-template-columns: 1fr;
+    }
+    &-icons_item {
+      margin-bottom: 20px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      img {
+        max-width: 34px;
+      }
+      span {
+        position: initial;
+        font-size: 12px;
+        margin-left: 16px;
+      }
+    }
+  }
+
+}

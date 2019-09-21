@@ -44,9 +44,21 @@ ul.tabs li:last-child {
 .tab_drawer_heading {
   display: none; }
 
+@media (max-width: $mobile-media){
+  ul.tabs li {
+    font-size: 12px;
+    padding-bottom: 12px;
+  }
+  .tab_content {
+    padding-top: 16px;
+    p {
+      font-size: 12px;
+      line-height: normal;
+    }
+  }
+}
 @media screen and (max-width: 480px) {
-  .tabs {
-    display: none; }
+
   .tab_drawer_heading {
     color: #fff;
     margin: 0;

@@ -34,3 +34,19 @@
   }
 }
 
+@media (max-width: $mobile-media){
+  .mobile-app {
+    p {
+      font-size: 12px;
+      line-height: normal;
+    }
+    &-layout {
+      &_item {
+        span {
+          font-size: 12px;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
