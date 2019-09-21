@@ -277,7 +277,11 @@
       }
     }
   }
+  .solutions-flex-item {
+    margin-bottom: 0;
+  }
   .solutions-boxes {
+    padding-top: 0;
     &-title {
       font-size: 14px;
     }

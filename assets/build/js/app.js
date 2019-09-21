@@ -111,9 +111,32 @@ function initSolutions() {
         jQuery('.swiper-slide').removeAttr('style');
     }
 }
+//Services
+var mySwiperServices = undefined;
+function initServices() {
+    var screenWidth = $(window).width();
+    if(screenWidth < 992 && mySwiperServices == undefined) {
+        mySwiperServices = new Swiper('.swiper-container3', {
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    } else if (screenWidth > 991 && mySwiperServices != undefined) {
+        mySwiperServices.destroy();
+        mySwiperServices = undefined;
+        jQuery('.swiper-wrapper').removeAttr('style');
+        jQuery('.swiper-slide').removeAttr('style');
+    }
+}
 
 $(window).on('resize', function(){
     initSolutions();
+    initServices();
 });
 
 
@@ -124,4 +147,5 @@ $( document ).ready(function() {
     initCardImages();
     openMobileMenu();
     initSolutions();
+    initServices();
 });

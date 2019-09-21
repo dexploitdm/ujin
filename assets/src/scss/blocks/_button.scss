@@ -18,6 +18,19 @@
     color: $color-blue;
     border: 1px solid $color-blue;
   }
+  &-download {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      height: 14px;
+      width: 12px;
+      top: 12px;
+      left: 32px;
+      background-size: cover;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='14' viewBox='0 0 12 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.75 1C6.75 0.585786 6.41421 0.25 6 0.25C5.58579 0.25 5.25 0.585786 5.25 1H6.75ZM5.46967 13.5303C5.76256 13.8232 6.23744 13.8232 6.53033 13.5303L11.3033 8.75736C11.5962 8.46447 11.5962 7.98959 11.3033 7.6967C11.0104 7.40381 10.5355 7.40381 10.2426 7.6967L6 11.9393L1.75736 7.6967C1.46447 7.40381 0.989593 7.40381 0.696699 7.6967C0.403806 7.98959 0.403806 8.46447 0.696699 8.75736L5.46967 13.5303ZM5.25 1V13H6.75V1H5.25Z' fill='white'/%3E%3C/svg%3E%0A");
+    }
+  }
   @media (max-width: $mobile-media){
     font-size: 14px;
   }

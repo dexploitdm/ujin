@@ -1,6 +1,7 @@
 .boxes-desc {
   padding-top: 72px;
   padding-bottom: 54px;
+  transition: .3s;
   &-content {
     .boxes-title {
       font-weight: bold;
@@ -16,6 +17,7 @@
       font-size: 18px;
       line-height: 130%;
       color: $color-dark;
+      transition: .3s;
     }
   }
   &-layout {
@@ -71,6 +73,54 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: $large-media) {
+  .boxes-desc {
+    &-layout {
+      display: flex;
+    }
+    .boxes-desc {
+      &-download {
+        position: initial;
+      }
+    }
+  }
+}
+@media (max-width: $tablet-media) {
+  .boxes-desc {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    &-layout {
+      display: inherit;
+      margin-top: 20px;
+    }
+    &-download {
+      display: none;
+    }
+  }
+}
+@media (max-width: $mobile-media) {
+  .boxes-desc {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    &-layout {
+      display: inherit;
+      margin-top: 20px;
+    }
+    &-download {
+      display: none;
+    }
+    .boxes-title {
+      font-size: 12px;
+      line-height: normal;
+    }
+    .boxes-mini {
+      padding-top: 16px;
+      font-size: 12px;
+      line-height: normal;
     }
   }
 }
