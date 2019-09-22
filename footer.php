@@ -56,27 +56,27 @@
             <div class="footer-layout-menu-item">
                 <a href="#" class="menu-title">О компании</a>
                 <ul>
-                    <li><a href="#">О нас</a> </li>
-                    <li><a href="#">Партнерам</a> </li>
-                    <li><a href="#">СМИ о нас</a> </li>
-                    <li><a href="#">База знаний</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">О нас</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Партнерам</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">СМИ о нас</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">База знаний</a> </li>
                 </ul>
             </div>
             <div class="footer-layout-menu-item">
                 <a href="#" class="menu-title">Продукты</a>
                 <ul>
-                    <li><a href="#">Для застройщиков</a> </li>
-                    <li><a href="#">Для гостиниц</a> </li>
-                    <li><a href="#">Для УК и ТСЖс</a> </li>
-                    <li><a href="#">Каталог</a> </li>
-                    <li><a href="#">Маркетплейс</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/property-developers">Для застройщиков</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/hotels">Для гостиниц</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/communal-services/">Для УК и ТСЖс</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/catalogs">Каталог</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Маркетплейс</a> </li>
                 </ul>
             </div>
             <div class="footer-layout-menu-item">
                 <a href="#" class="menu-title">Приложения</a>
                 <ul>
-                    <li><a href="#">Ujin SmartHome</a> </li>
-                    <li><a href="#">Ujin Bussines</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Ujin SmartHome</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Ujin Bussines</a> </li>
                 </ul>
             </div>
         </div>
@@ -101,5 +101,17 @@
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/swiper.js"></script>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/app.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
 </body>
 </html>

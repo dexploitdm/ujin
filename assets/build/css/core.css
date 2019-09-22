@@ -1755,6 +1755,12 @@ ul.tabs li:last-child {
           background-size: cover;
           top: 2px;
           background-image: url(../images/icons/ic_check_orange.svg); }
+  .functional-jkh .functional-desc-content {
+    padding-bottom: 0; }
+  .functional-jkh .functional-lists {
+    padding-top: 10px; }
+  .functional-jkh .functional-lists_item {
+    margin-bottom: 2px; }
   .functional-box {
     padding-top: 50px;
     transition: .3s; }

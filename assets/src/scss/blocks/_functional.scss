@@ -88,6 +88,17 @@
       }
     }
   }
+  &-jkh {
+    .functional-desc-content {
+      padding-bottom: 0;
+    }
+    .functional-lists {
+      padding-top: 10px;
+    }
+    .functional-lists_item {
+      margin-bottom: 2px;
+    }
+  }
   &-box {
     padding-top: 50px;
     transition: .3s;

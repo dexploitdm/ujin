@@ -15,7 +15,9 @@
 <header class="">
     <div class="header-layout box">
         <div class="logo">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/logo.svg" title="ujin">
+           <a href="<?php echo get_site_url(); ?>/">
+               <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/logo.svg" title="ujin">
+           </a>
         </div>
         <div class="u-menu">
             <?php wp_nav_menu(array(
