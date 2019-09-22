@@ -118,7 +118,7 @@ function initServices() {
     if(screenWidth < 992 && mySwiperServices == undefined) {
         mySwiperServices = new Swiper('.swiper-container3', {
             pagination: {
-                el: '.swiper-pagination',
+               // el: '.swiper-pagination',
                 type: 'fraction',
             },
             navigation: {
