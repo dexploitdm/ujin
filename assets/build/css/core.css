@@ -2564,7 +2564,9 @@ ul.tabs li:last-child {
 
 .gallery-product {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
   .gallery-product .woocommerce-product-gallery__image {
     margin-right: 10px; }
     .gallery-product .woocommerce-product-gallery__image a img {

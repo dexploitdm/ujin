@@ -306,6 +306,7 @@
 }
 .gallery-product {
   display: flex;
+  align-items: center;
   .woocommerce-product-gallery__image {
     margin-right: 10px;
     a {
