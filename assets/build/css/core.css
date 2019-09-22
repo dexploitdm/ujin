@@ -1845,7 +1845,9 @@ ul.tabs li:last-child {
     .functional-desc {
       max-width: initial; }
     .functional-layout {
-      height: auto; } }
+      height: auto; }
+    .functional.functional-small .functional-cover.position-two {
+      width: 40%; } }
 
 @media (max-width: 1100px) {
   .functional .title-h2 {
@@ -2013,7 +2015,30 @@ ul.tabs li:last-child {
       font-size: 12px;
       line-height: normal; }
     .functional-box-item img {
-      max-width: 50px; } }
+      max-width: 50px; }
+  .functional-small .functional-tabs {
+    padding-top: 50px; }
+  .functional-small .functional-tabs.full-tabs .tab_content {
+    padding-top: 20px; }
+  .functional-small .functional-tabs.full-tabs .functional-lists {
+    margin-top: 10px;
+    margin-left: 0;
+    max-height: initial;
+    overflow: hidden; }
+    .functional-small .functional-tabs.full-tabs .functional-lists-head {
+      margin-left: -14px; }
+      .functional-small .functional-tabs.full-tabs .functional-lists-head img {
+        max-width: 52px; }
+      .functional-small .functional-tabs.full-tabs .functional-lists-head span {
+        margin-left: 0; }
+    .functional-small .functional-tabs.full-tabs .functional-lists ul {
+      margin-left: 5px; }
+      .functional-small .functional-tabs.full-tabs .functional-lists ul li {
+        top: 4px; }
+  .functional-small .functional-cover.position-two {
+    position: inherit; }
+    .functional-small .functional-cover.position-two img {
+      max-width: 290px; } }
 
 .partners {
   padding: 100px 0;

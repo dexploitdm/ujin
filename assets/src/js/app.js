@@ -30,6 +30,10 @@ function initTabs(){
 }
 
 
+function initTabsProducts(){
+
+}
+
 
 function initHeader(){
     //header
@@ -142,6 +146,7 @@ $(window).on('resize', function(){
 
 $( document ).ready(function() {
     initTabs();
+    initTabsProducts();
     initHeader();
     initLists();
     initCardImages();
