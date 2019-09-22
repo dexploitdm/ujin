@@ -104,6 +104,7 @@ function initCardImages() {
         $(this).addClass('active')
     });
 }
+
 function openMobileMenu() {
     const btnMenu = $('.js-open-menu'),
         header = $('header');
@@ -170,6 +171,23 @@ function initServices() {
     }
 }
 
+function initGalleryProductImg() {
+    const coverImg = $('.js-cover-product'),
+        miniBoxImages2 = $('.woocommerce-product-gallery__image');
+
+    miniBoxImages2.children().removeAttr('href');
+
+
+    miniBoxImages2.bind("click", function() {
+        let currentUrl = $(this).children().children().attr('src');
+        console.log(currentUrl)
+        coverImg.attr("src", currentUrl);
+
+        miniBoxImages2.removeClass('active');
+        $(this).addClass('active')
+    });
+}
+
 $(window).on('resize', function(){
     initSolutions();
     initServices();
@@ -181,8 +199,9 @@ $( document ).ready(function() {
     initTabsProducts();
     initHeader();
     initLists();
-    initCardImages();
+    //initCardImages();
     openMobileMenu();
     initSolutions();
     initServices();
+    initGalleryProductImg();
 });

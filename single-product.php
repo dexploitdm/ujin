@@ -3,21 +3,10 @@ get_header(); ?>
     <main>
         <div class="empty-block"></div>
 
-
-
         <?php while ( have_posts() ) : the_post(); ?><?php endwhile; // end of the loop. ?>
         <div class="product-item box">
             <h2 class="title-h2"><?php the_title(); ?></h2>
-            <?php
-            $gallery_products = $product->get_gallery_image_ids();
 
-
-            ?>
-            <pre>
-                <?php
-                echo
-                var_dump($gallery_products)?>
-            </pre>
             <div class="product-item-layout grid-three">
 
                 <div class="product-item-box">
@@ -27,21 +16,12 @@ get_header(); ?>
                         </div>
                         <div class="product-item-images-boxes">
                             <div class="product-item-img">
-                                <div class="img-cover js-img-cover active">
-                                    <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/brain_r.png">
+                                <div class="gallery-product">
+                                    <?php do_action( 'woocommerce_product_thumbnails' ); ?>
                                 </div>
-                                <div class="img-cover js-img-cover">
-                                    <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/r1.png">
-                                </div>
-                                <div class="img-cover js-img-cover">
-                                    <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/r2.png">
-                                </div>
-                                <div class="img-cover js-img-cover">
-                                    <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/r1.png">
-                                </div>
-                                <div class="img-cover js-img-cover">
-                                    <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/r2.png">
-                                </div>
+<!--                                <div class="img-cover js-img-cover active">-->
+<!--                                    <img src="--><?php // echo get_template_directory_uri() ?><!--/assets/build/images/demo/r2.png">-->
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>
