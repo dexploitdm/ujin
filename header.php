@@ -18,13 +18,12 @@
             <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/logo.svg" title="ujin">
         </div>
         <div class="u-menu">
-            <ul class="u-menu-list">
-                <!--                    active-->
-                <li class="u-menu-list-item"><a href="http://localhost:3000/#">Застройщикам</a></li>
-                <li class="u-menu-list-item"><a href="http://localhost:3000/#">Управляющим компаниям</a></li>
-                <li class="u-menu-list-item"><a href="http://localhost:3000/#">Гостиницам</a></li>
-                <li class="u-menu-list-item"><a href="http://localhost:3000/#">Каталог</a></li>
-            </ul>
+            <?php wp_nav_menu(array(
+                'theme_location'  => 'nav_header',
+                'container' => '',
+                'menu_class' => 'u-menu-list',
+                'add_li_class'  => 'u-menu-list-item'
+            )); ?>
         </div>
         <div class="call">
             <div class="call-set">
@@ -44,13 +43,12 @@
         <div class="logo">
             <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/logo.svg" title="ujin">
         </div>
-        <ul class="u-menu-list">
-            <!--                    active-->
-            <li class="u-menu-list-item active"><a href="http://localhost:3000/#">Застройщикам</a></li>
-            <li class="u-menu-list-item"><a href="http://localhost:3000/#">Управляющим компаниям</a></li>
-            <li class="u-menu-list-item"><a href="http://localhost:3000/#">Гостиницам</a></li>
-            <li class="u-menu-list-item"><a href="http://localhost:3000/#">Каталог</a></li>
-        </ul>
+        <?php wp_nav_menu(array(
+            'theme_location'  => 'nav_header',
+            'container' => '',
+            'menu_class' => 'u-menu-list',
+            'add_li_class'  => 'u-menu-list-item'
+        )); ?>
     </div>
 </header>
 <main>
