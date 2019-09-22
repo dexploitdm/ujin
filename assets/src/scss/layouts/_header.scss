@@ -42,6 +42,7 @@ header.header-bg {
   background-color: rgba(45, 60, 62, 0.9);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   pointer-events: auto;
+  z-index: 10;
 }
 header.header-bg .header-layout {
   -ms-flex-align: center;
