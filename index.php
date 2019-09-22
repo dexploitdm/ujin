@@ -206,14 +206,28 @@
                                 <a href="<?php the_permalink(); ?>" class="product-box-header__icon"></a>
                             </div>
                             <div class="product-box-cover" style="background-image: url(<?php the_post_thumbnail_url(); ?>); "></div>
+<!--                            <div class="product-box-desc">-->
+<!--                                <div class="product-box-desc_price">-->
+<!--                                    <span>--><?php //echo $product->get_price();  ?><!-- руб.</span>-->
+<!--                                </div>-->
+<!--                                <div class="product-box-desc_content">-->
+<!--                                    <div class="product-box-desc_content_box">-->
+<!--                                        <p>--><?php // the_excerpt(); ?><!--</p>-->
+<!--                                    </div>-->
+<!---->
+<!--                                </div>-->
+<!--                            </div>-->
                             <div class="product-box-desc">
-                                <div class="product-box-desc_price">
-                                    <span><?php echo $product->get_price();  ?> руб.</span>
-                                </div>
+                                <div class="product-box-desc_price"><?php echo $product->get_price();  ?> руб.</div>
                                 <div class="product-box-desc_content">
-                                    <div class="product-box-desc_content_box">
-                                        <p><?php  the_excerpt(); ?></p>
-                                    </div>
+                                    <?php if( get_field("pr_cools_title") ): ?>
+                                        <strong><?php the_field( "pr_cools_title" ); ?></strong>
+                                        <?php the_field( "pr_cools_desc" ); ?>
+                                    <?php else :?>
+                                        <div class="product-box-desc_content_box">
+                                            <p><?php  the_excerpt(); ?></p>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
