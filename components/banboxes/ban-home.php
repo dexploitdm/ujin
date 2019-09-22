@@ -1,7 +1,7 @@
 <div class="head-box">
     <div class="head-box-layout double-box box">
         <div class="head-box-desc">
-            <h1 class="title-h1">Ujin - платформа для создания умных домов и зданий</h1>
+            <h1 class="title-h1"><?php echo  get_bloginfo ('description'); ?></h1>
             <div class="head-box-desc-boxes flex-wrap">
 
                 <div class="head-box-desc-boxes-item icon-fix">
