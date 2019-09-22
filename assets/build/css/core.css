@@ -1650,18 +1650,20 @@ ul.tabs li:last-child {
   background-color: #2D3C3E;
   position: relative;
   min-height: 1010px;
-  overflow: hidden; }
+  transition: .3s; }
   .functional .title-h2 {
     color: #fff; }
   .functional-layout {
-    padding-top: 80px;
+    padding-top: 60px;
     display: -ms-flexbox;
     display: flex;
     position: relative;
-    height: 859px; }
+    height: 859px;
+    transition: .3s; }
   .functional-desc {
     max-width: 800px;
-    z-index: 9; }
+    z-index: 9;
+    transition: .3s; }
     .functional-desc.block-big {
       max-width: 723px; }
     .functional-desc.block-full {
@@ -1673,16 +1675,19 @@ ul.tabs li:last-child {
       font-size: 24px;
       line-height: 120%;
       color: #fff;
-      max-width: 600px; }
+      max-width: 600px;
+      transition: .3s; }
   .functional-cover {
     position: absolute;
     right: 0;
-    bottom: -75px; }
+    bottom: -94px;
+    transition: .3s; }
     .functional-cover.position-two {
       position: initial; }
   .functional-lists {
     padding-top: 60px;
-    margin-left: -30px; }
+    margin-left: -30px;
+    transition: .3s; }
     .functional-lists_item {
       margin-bottom: 24px; }
     .functional-lists-head {
@@ -1698,7 +1703,8 @@ ul.tabs li:last-child {
         margin-left: -18px; }
     .functional-lists ul {
       padding-top: 20px;
-      margin-left: 58px; }
+      margin-left: 58px;
+      transition: .3s; }
       .functional-lists ul li {
         font-weight: 300;
         font-size: 18px;
@@ -1717,9 +1723,11 @@ ul.tabs li:last-child {
           top: 2px;
           background-image: url(../images/icons/ic_check_orange.svg); }
   .functional-box {
-    padding-top: 50px; }
+    padding-top: 50px;
+    transition: .3s; }
     .functional-box-item {
-      margin-bottom: 42px; }
+      margin-bottom: 42px;
+      transition: .3s; }
       .functional-box-item img {
         margin-left: -30px; }
       .functional-box-item .text-neon {
@@ -1727,13 +1735,14 @@ ul.tabs li:last-child {
         display: block;
         margin-top: -10px; }
   .functional-tabs {
-    padding-top: 40px; }
+    padding-top: 40px;
+    transition: .3s; }
     .functional-tabs .tabs li {
       font-weight: 500;
       font-size: 24px;
       line-height: 120%;
       color: #fff;
-      padding-bottom: 18px; }
+      padding-bottom: 50px; }
     .functional-tabs .tab_container {
       background: transparent; }
       .functional-tabs .tab_container .functional-lists {
@@ -1745,7 +1754,8 @@ ul.tabs li:last-child {
           max-width: 306px;
           margin-left: 20px; }
     .functional-tabs.full-tabs .tab_content {
-      padding-top: 132px; }
+      padding-top: 132px;
+      transition: .3s; }
     .functional-tabs.full-tabs .grid-two {
       display: block;
       margin-left: -30px; }
@@ -1757,7 +1767,8 @@ ul.tabs li:last-child {
     margin-right: 13px; }
 
 .u-list {
-  max-width: 750px; }
+  max-width: 750px;
+  transition: .3s; }
   .u-list-head {
     margin-top: 20px;
     margin-left: -32px;
@@ -1792,7 +1803,8 @@ ul.tabs li:last-child {
     display: none;
     margin: 0 0 20px -20px;
     background-color: #2c3b3d;
-    padding-left: 20px; }
+    padding-left: 20px;
+    transition: .3s; }
     .u-list-content ul {
       -webkit-column-count: 2;
               column-count: 2; }
@@ -1813,13 +1825,92 @@ ul.tabs li:last-child {
           background-size: cover;
           top: 2px;
           background-image: url(../images/icons/ic_check_orange.svg); }
-  .u-list-item.list-open {
-    border: 1px solid #B8C2C4; }
-    .u-list-item.list-open .u-list-content {
-      display: block; }
-    .u-list-item.list-open .u-list-head-block p:after {
-      -webkit-transform: rotate(177deg);
-              transform: rotate(177deg); }
+  .u-list-item {
+    margin-bottom: -20px; }
+    .u-list-item.list-open {
+      border: 1px solid #B8C2C4; }
+      .u-list-item.list-open .u-list-content {
+        display: block; }
+      .u-list-item.list-open .u-list-head-block p:after {
+        -webkit-transform: rotate(177deg);
+                transform: rotate(177deg); }
+
+@media (max-width: 1260px) {
+  .functional {
+    min-height: auto;
+    overflow: hidden; }
+    .functional-cover {
+      position: inherit; }
+    .functional-desc {
+      max-width: initial; }
+    .functional-layout {
+      height: auto; } }
+
+@media (max-width: 1100px) {
+  .functional-cover {
+    width: 50%; }
+  .functional-desc {
+    width: 50%; }
+    .functional-desc .title-h2 {
+      position: absolute; }
+    .functional-desc-content {
+      position: absolute;
+      top: 75px; }
+    .functional-desc .u-list {
+      margin-top: 170px; }
+  .functional .u-list-item {
+    margin-bottom: 22px; } }
+
+@media (max-width: 968px) {
+  .functional-cover {
+    position: absolute;
+    top: 187px;
+    right: 0; }
+  .functional .u-list-content ul {
+    -webkit-column-count: inherit;
+            column-count: inherit; } }
+
+@media (max-width: 768px) {
+  .functional-layout {
+    padding-top: 30px;
+    display: -ms-flexbox;
+    display: flex; }
+  .functional .u-list {
+    margin-top: 64px; }
+    .functional .u-list-head-block span {
+      font-size: 12px; }
+    .functional .u-list-head-block p {
+      font-size: 12px;
+      line-height: normal; }
+      .functional .u-list-head-block p:after {
+        top: 5px; }
+    .functional .u-list-item {
+      margin-bottom: -44px; }
+      .functional .u-list-item:last-child {
+        margin-bottom: 0; }
+      .functional .u-list-item.list-open {
+        border: 0; }
+    .functional .u-list-content ul {
+      -webkit-column-count: inherit;
+              column-count: inherit; }
+      .functional .u-list-content ul li {
+        font-size: 12px;
+        line-height: normal; }
+        .functional .u-list-content ul li:before {
+          top: -3px; }
+  .functional-desc {
+    width: 61%; }
+    .functional-desc-content {
+      top: 30px;
+      font-size: 12px;
+      line-height: normal; }
+  .functional-cover {
+    width: 39%;
+    top: auto;
+    right: auto;
+    position: inherit; }
+    .functional-cover img {
+      position: inherit; } }
 
 .partners {
   padding: 100px 0;
