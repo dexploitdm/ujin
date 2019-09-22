@@ -31,7 +31,39 @@ function initTabs(){
 
 
 function initTabsProducts(){
+    function hideTabsContent(a) {
+        for (var i=a; i<tabContent.length; i++) {
+            tabContent[i].classList.remove('show');
+            tabContent[i].classList.add("hide");
+            tab[i].classList.remove('active');
+        }
+    }
+    function showTabsContent(b){
+        if (tabContent[b].classList.contains('hide')) {
+            hideTabsContent(0);
+            tab[b].classList.add('active');
+            tabContent[b].classList.remove('hide');
+            tabContent[b].classList.add('show');
+        }
+    }
 
+    const  tabContent = $('.tabContent'),
+            tab = $('.tab'),
+        tabAll = $('.tabs-all');
+
+    hideTabsContent(1);
+
+    tabAll.click(function(event) {
+        var target=event.target;
+        if (target.className=='tab') {
+            for (var i = 0; i < tab.length; i++) {
+                if (target == tab[i]) {
+                    showTabsContent(i);
+                    break;
+                }
+            }
+        }
+    });
 }
 
 

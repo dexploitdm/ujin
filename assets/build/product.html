@@ -110,61 +110,69 @@ document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.7
             </div>
 
             <div class="product-item-box">
-<!--                <ul class="tabs">-->
-<!--                    <li class="active" rel="tab-product1">Характеристики</li>-->
-<!--                    <li rel="tab-product2" class="tab_last">Описание</li>-->
-<!--                </ul>-->
-<!--                <div class="tab_container">-->
-<!--                    <h3 class="tab_drawer_heading d_active" rel="tab-product1">Tab 1</h3>-->
-<!--                    <div id="tab-product1" class="tab_content" style="display: block;">-->
-<!--                        <div class="product-item-box-content">-->
-<!--                            <div class="product-info">-->
-<!--                                <div class="product-info_item">Тип</div>-->
-<!--                                <div class="product-info_item">Умная розетка</div>-->
-<!--                            </div>-->
-<!--                            <div class="product-info">-->
-<!--                                <div class="product-info_item">Вид питания</div>-->
-<!--                                <div class="product-info_item">От сети, 220В</div>-->
-<!--                            </div>-->
-<!--                            <div class="product-info">-->
-<!--                                <div class="product-info_item">Тип</div>-->
-<!--                                <div class="product-info_item">Внешняя</div>-->
-<!--                            </div>-->
-<!--                            <div class="product-info">-->
-<!--                                <div class="product-info_item">Беспроводные интерфейсы</div>-->
-<!--                                <div class="product-info_item">Wi-Fi</div>-->
-<!--                            </div>-->
-<!--                            <div class="product-info">-->
-<!--                                <div class="product-info_item">Рабочая температура</div>-->
-<!--                                <div class="product-info_item">от 0 до +400С</div>-->
-<!--                            </div>-->
-<!--                            <div class="product-info">-->
-<!--                                <div class="product-info_item">Размер</div>-->
-<!--                                <div class="product-info_item">66 х 100 х 77 мм</div>-->
-<!--                            </div>-->
-<!--                            <div class="product-info">-->
-<!--                                <div class="product-info_item">Вес товара</div>-->
-<!--                                <div class="product-info_item">100г</div>-->
-<!--                            </div>-->
-<!--                            <div class="product-info">-->
-<!--                                <div class="product-info_item">Страна-изготовитель</div>-->
-<!--                                <div class="product-info_item">Россия</div>-->
-<!--                            </div>-->
-<!--                            <div class="product-info">-->
-<!--                                <div class="product-info_item">Гарантия</div>-->
-<!--                                <div class="product-info_item">12 месяцев</div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <h3 class="tab_drawer_heading" rel="tab2">Tab 2</h3>-->
-<!--                    <div id="tab-product2" class="tab_content" style="display: none;">-->
-<!--                        <div class="product-item-box-content">-->
-<!--                            <div class="product-info not-border">-->
-<!--                                <p>Описание</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div class="tabs-all">
+                    <div class="tabs-all_lists">
+                        <div class="tab active">
+                            Характеристики
+                        </div>
+                        <div class="tab">
+                            Описание
+                        </div>
+                    </div>
+
+                    <div class="tabContent">
+                        <div class="product-item-box-content">
+                            <div class="product-info">
+                                <div class="product-info_item">Тип</div>
+                                <div class="product-info_item">Умная розетка</div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info_item">Вид питания</div>
+                                <div class="product-info_item">От сети, 220В</div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info_item">Тип</div>
+                                <div class="product-info_item">Внешняя</div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info_item">Беспроводные интерфейсы</div>
+                                <div class="product-info_item">Wi-Fi</div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info_item">Рабочая температура</div>
+                                <div class="product-info_item">от 0 до +400С</div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info_item">Размер</div>
+                                <div class="product-info_item">66 х 100 х 77 мм</div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info_item">Вес товара</div>
+                                <div class="product-info_item">100г</div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info_item">Страна-изготовитель</div>
+                                <div class="product-info_item">Россия</div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info_item">Гарантия</div>
+                                <div class="product-info_item">12 месяцев</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabContent">
+                        <div class="product-item-box-content">
+                            <div class="product-info not-border">
+                                <p>Описание</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
                 <div class="product-item-download">
                     <div class="product-item-download-block">
                         <a href="#" class="download">Скачать инструкцию
@@ -218,7 +226,7 @@ document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.7
                                 </div>
                                 <div class="u-form-btn">
                                     <button class="u-btn u-btn-white" type="submit">
-                                        Получить прайс
+                                        Оформить заказ
                                     </button>
                                 </div>
                             </form>
@@ -233,11 +241,25 @@ document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.7
                 </div>
             </div>
 
+            <div class="block-mobile">
+                <div class="product-head">
+                    <div class="product-head_item">
+                        <div class="pr-title">Доставка</div>
+                        <div class="pr-icon">?</div>
+                    </div>
+                    <div class="product-head_item">
+                        <div class="pr-title">Оплата </div>
+                        <div class="pr-icon">?</div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 
 
-    <div class="product-preview full-list box">
+    <div class="product-preview full-list box mobile-hidden">
         <h2 class="title-h2">С эти товаром покупают</h2>
         <div class="product-preview-layout grid-three">
 
