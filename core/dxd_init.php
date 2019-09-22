@@ -13,8 +13,8 @@ include_once('components/setting.php');
 include_once('components/wp-simple-301-redirects.php');
 //Классы меню
 include_once('components/menu.php');
-
-
+//Вывод аттрибутов
+include_once('components/attr.php');
 
 
 

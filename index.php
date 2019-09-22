@@ -189,129 +189,70 @@
         <div class="product-preview box">
             <h2 class="title-h2">Собственная линейка товаров</h2>
             <div class="product-preview-layout grid-three">
-                <div class="product-box">
-                    <div class="product-box-layout">
-                        <div class="product-box-header">
-                            <div class="product-box-header__title">Мультисенсор</div>
-                            <a href="#" class="product-box-header__icon"></a>
-                        </div>
-                        <div class="product-box-cover">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/multisensor.png">
-                        </div>
-                        <div class="product-box-desc">
-                            <div class="product-box-desc_price">5 000 руб.</div>
-                            <div class="product-box-desc_content">
-                                <strong>Удаленное управление:</strong>
-                                <ul>
-                                    <li>Кондиционерами</li>
-                                    <li>Рекуператорами  Valliant recoVair 60</li>
-                                    <li>Термоголовками Danfoss с Bluetooth</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="product-box">
-                    <div class="product-box-layout">
-                        <div class="product-box-header">
-                            <div class="product-box-header__title">Термостат</div>
-                            <a href="#" class="product-box-header__icon"></a>
-                        </div>
-                        <div class="product-box-cover">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/termostat.png">
-                        </div>
-                        <div class="product-box-desc">
-                            <div class="product-box-desc_price">3 500 руб.</div>
-                            <div class="product-box-desc_content">
-                                <strong>Управление:</strong>
-                                <ul>
-                                    <li>Электрический теплый пол</li>
-                                    <li>Приводы Danfos</li>
-                                </ul>
+                <?php
+                $loop = new WP_Query( array(
+                    'post_type' => 'product',
+                    'posts_per_page' => get_field('products_per_page'),
+                    'orderby' => 'menu_order',
+                    'posts_per_page' => '5',
+                    'order' => 'ASC',
+                )); ?>
+                <?php  while ( $loop->have_posts() ): $loop->the_post(); ?>
+                    <div class="product-box">
+                        <div class="product-box-layout">
+                            <div class="product-box-header">
+                                <div class="product-box-header__title"><?php the_title(); ?></div>
+                                <a href="<?php the_permalink(); ?>" class="product-box-header__icon"></a>
+                            </div>
+                            <div class="product-box-cover" style="background-image: url(<?php the_post_thumbnail_url(); ?>); "></div>
+                            <div class="product-box-desc">
+                                <div class="product-box-desc_price">
+                                    <span><?php echo $product->get_price();  ?> руб.</span>
+                                </div>
+                                <div class="product-box-desc_content">
+                                    <div class="product-box-desc_content_box">
+                                        <p><?php  the_excerpt(); ?></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <?php endwhile; ?>
 
-                <div class="product-box">
-                    <div class="product-box-layout">
-                        <div class="product-box-header">
-                            <div class="product-box-header__title">Реле</div>
-                            <a href="#" class="product-box-header__icon"></a>
-                        </div>
-                        <div class="product-box-cover">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/rele.png">
-                        </div>
-                        <div class="product-box-desc">
-                            <div class="product-box-desc_price">1 500 руб.</div>
-                            <div class="product-box-desc_content">
-                                <strong>Управление:</strong>
-                                <ul class="two">
-                                    <li>Насосное оборудование</li>
-                                    <li>Электрокотлы</li>
-                                    <li>Защита котельной</li>
-                                    <li>Автоматический полив</li>
-                                    <li>2х и 3х-ходовые клапаны</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!--                <div class="product-box">-->
+<!--                    <div class="product-box-layout">-->
+<!--                        <div class="product-box-header">-->
+<!--                            <div class="product-box-header__title">Мультисенсор</div>-->
+<!--                            <a href="#" class="product-box-header__icon"></a>-->
+<!--                        </div>-->
+<!--                        <div class="product-box-cover">-->
+<!--                            <img src="--><?php // echo get_template_directory_uri() ?><!--/assets/build/images/covers/multisensor.png">-->
+<!--                        </div>-->
+<!--                        <div class="product-box-desc">-->
+<!--                            <div class="product-box-desc_price">5 000 руб.</div>-->
+<!--                            <div class="product-box-desc_content">-->
+<!--                                <strong>Удаленное управление:</strong>-->
+<!--                                <ul>-->
+<!--                                    <li>Кондиционерами</li>-->
+<!--                                    <li>Рекуператорами  Valliant recoVair 60</li>-->
+<!--                                    <li>Термоголовками Danfoss с Bluetooth</li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <div class="product-box">
-                    <div class="product-box-layout">
-                        <div class="product-box-header">
-                            <div class="product-box-header__title">Комплект защиты от протечек</div>
-                            <a href="#" class="product-box-header__icon"></a>
-                        </div>
-                        <div class="product-box-cover">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/rele.png">
-                        </div>
-                        <div class="product-box-desc">
-                            <div class="product-box-desc_price">7 500 руб.</div>
-                            <div class="product-box-desc_content">
-                                <strong>Возможности::</strong>
-                                <ul>
-                                    <li>Счетчики воды с импульсным выходом</li>
-                                    <li>Теплосчетчики с импульсным выходом</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-box">
-                    <div class="product-box-layout">
-                        <div class="product-box-header">
-                            <div class="product-box-header__title">Умная розетка</div>
-                            <a href="#" class="product-box-header__icon"></a>
-                        </div>
-                        <div class="product-box-cover">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/rele.png">
-                        </div>
-                        <div class="product-box-desc">
-                            <div class="product-box-desc_price">3 500 руб.</div>
-                            <div class="product-box-desc_content">
-                                <strong>Возможности:</strong>
-                                <ul>
-                                    <li>Удаленное управление любым электроприбором</li>
-                                    <li>Защита от замыкания</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="product-box mobile-hidden">
                     <div class="product-box-bg">
                         <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/products.png">
-                        <a href="#" class="product-box-link">
+                        <a href="<?php echo get_site_url(); ?>/catalogs" class="product-box-link">
                             <span>Перейти в каталог</span>
                         </a>
                     </div>
                 </div>
-                <a href="#" class="btn-link-mobile">Перейти в каталог<span></span></a>
+                <a href="<?php echo get_site_url(); ?>/catalogs" class="btn-link-mobile">Перейти в каталог<span></span></a>
             </div>
         </div>
 
