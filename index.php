@@ -101,9 +101,12 @@
                         Оставьте заявку
                     </div>
                     <div class="solutions-boxes-order">
-                        <button class="u-btn">
-                            Оставить заявку
-                        </button>
+
+                        <a href="#form-contact">
+                            <button class="u-btn">
+                                Оставить заявку
+                            </button>
+                        </a>
                     </div>
                     <div class="solutions-boxes-desc">
                         Наш менеджер свяжется с Вами в течении 5 минут
