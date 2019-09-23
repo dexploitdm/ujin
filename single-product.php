@@ -106,7 +106,13 @@ get_header(); ?>
                                 <div class="product-form-info-price">
                                     <div class="product-form-info_item">Количество</div>
                                     <div class="product-form-info_item">
-                                        xxx
+                                        <div class="product-count">
+                                            <div class="product-count-btn" data-count="min"></div>
+                                            <div class="product-count-view">
+                                                <input type="text" name="count-product" value="1" class="js-count-product">
+                                            </div>
+                                            <div class="product-count-btn" data-count="max"></div>
+                                        </div>
 
                                     </div>
                                 </div>

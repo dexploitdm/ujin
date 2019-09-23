@@ -175,7 +175,6 @@
           transition: .3s;
         }
         &_item {
-          margin-bottom: -5px;
           position: relative;
           &:after {
             content: '';
@@ -190,10 +189,6 @@
             font-size: 18px;
             line-height: 130%;
             color: $color-dark;
-            margin-bottom: -7px;
-            &:after {
-              left: 0;
-            }
           }
           &:last-child {
             font-weight: bold;

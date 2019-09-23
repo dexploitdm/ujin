@@ -232,6 +232,25 @@ function scrollFunny() {
     }
 }
 
+function counterProduct() {
+    const countInput = $('.js-count-product'),
+        countBtn = $('.product-count-btn');
+
+    let counter = countInput.val();
+
+    countBtn.bind("click", function() {
+        let currentBtn = $(this).attr('data-count');
+        if(currentBtn === 'min'){
+            if(counter > 1) {
+                counter -= 1;
+            }
+        } else {
+            counter++;
+        }
+        countInput.val(counter);
+    });
+}
+
 $(window).on('resize', function(){
     initSolutions();
     initServices();
@@ -250,4 +269,5 @@ $( document ).ready(function() {
     initGalleryProductImg();
     initShowContentTabsHome();
     scrollFunny();
+    counterProduct();
 });
