@@ -188,6 +188,24 @@ function initGalleryProductImg() {
     });
 }
 
+function initShowContentTabsHome() {
+    const tabList = $('.js-show-content'),
+        contentBoxOne = $('.js-content-tab1'),
+        contentBoxTwo = $('.js-content-tab2');
+
+    tabList.bind("click", function() {
+        let currentBox = $(this).attr('data-open');
+        if(currentBox === 'person'){
+            contentBoxOne.removeClass('active');
+            contentBoxTwo.addClass('active')
+        } else {
+            contentBoxTwo.removeClass('active');
+            contentBoxOne.addClass('active')
+        }
+
+    });
+}
+
 $(window).on('resize', function(){
     initSolutions();
     initServices();
@@ -204,4 +222,5 @@ $( document ).ready(function() {
     initSolutions();
     initServices();
     initGalleryProductImg();
+    initShowContentTabsHome();
 });
