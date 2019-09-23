@@ -16,6 +16,8 @@ function register_mysettings() {
     register_setting( 'omr-settings-group', 'phone_v' );
     register_setting( 'omr-settings-group', 'email_v' );
     register_setting( 'omr-settings-group', 'number_soc_v' );
+    register_setting( 'omr-settings-group', 'apple_app' );
+    register_setting( 'omr-settings-group', 'google_app' );
 }
 function omr_settings_page() {
     ?>
@@ -36,6 +38,14 @@ function omr_settings_page() {
                 <tr>
                     <th scope="row"><label for="number_soc_v">Viber, Whatsapp, Telegram:</label></th>
                     <td><input name="number_soc_v" type="text" id="number_soc_v" value="<?php echo get_option('number_soc_v'); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="apple_app">Ссылка на Apple App:</label></th>
+                    <td><input name="apple_app" type="text" id="apple_app" value="<?php echo get_option('apple_app'); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="google_app">Ссылка на Google App:</label></th>
+                    <td><input name="google_app" type="text" id="google_app" value="<?php echo get_option('google_app'); ?>" class="regular-text"></td>
                 </tr>
                 </tbody>
             </table>
