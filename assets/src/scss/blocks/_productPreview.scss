@@ -40,6 +40,19 @@
         font-size: 24px;
         line-height: 120%;
         color: $color-dark;
+        a {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 120%;
+          color: $color-dark;
+          text-decoration: none;
+          transition: .3s;
+        }
+        &:hover {
+          a {
+            color: $color-default;
+          }
+        }
       }
       &__icon {
         position: relative;

@@ -202,7 +202,9 @@
                     <div class="product-box">
                         <div class="product-box-layout">
                             <div class="product-box-header">
-                                <div class="product-box-header__title"><?php the_title(); ?></div>
+                                <div class="product-box-header__title">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </div>
                                 <a href="<?php the_permalink(); ?>" class="product-box-header__icon"></a>
                             </div>
                             <div class="product-box-cover" style="background-image: url(<?php the_post_thumbnail_url(); ?>); "></div>

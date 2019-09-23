@@ -35,7 +35,8 @@ html {
   padding: 0 15px; }
 
 ul {
-  list-style: none; }
+  list-style: none;
+  text-align: left; }
 
 .title-h1 {
   font-weight: 500;
@@ -1319,6 +1320,15 @@ ul.tabs li:last-child {
         font-size: 24px;
         line-height: 120%;
         color: #2D3C3E; }
+        .product-preview .product-box-header__title a {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 120%;
+          color: #2D3C3E;
+          text-decoration: none;
+          transition: .3s; }
+        .product-preview .product-box-header__title:hover a {
+          color: #0EF5FF; }
       .product-preview .product-box-header__icon {
         position: relative;
         width: 32px;
