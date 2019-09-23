@@ -7,9 +7,9 @@ remove_action('wp_head','wp_generator');
 add_theme_support( 'wc-product-gallery-zoom' );
 add_theme_support( 'wc-product-gallery-lightbox' );
 add_theme_support( 'wc-product-gallery-slider' );
-//if (!current_user_can('administrator')):
-//    show_admin_bar(false);
-//endif;
+if (!current_user_can('administrator')):
+    show_admin_bar(false);
+endif;
 add_theme_support('post-thumbnails');
 
 register_nav_menus(array(

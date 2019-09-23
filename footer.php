@@ -97,7 +97,7 @@
         </div>
     </div>
 </footer>
-
+<?php wp_footer(); ?>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/swiper.js"></script>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/app.js"></script>
