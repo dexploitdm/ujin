@@ -17,6 +17,11 @@ include_once('components/menu.php');
 //Вывод аттрибутов
 include_once('components/attr.php');
 
+//Баннеры
+include_once('components/banners/banHome.php');
+
+
+
 
 
 
