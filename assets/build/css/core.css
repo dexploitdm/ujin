@@ -882,7 +882,6 @@ ul.tabs {
   padding: 0;
   float: left;
   list-style: none;
-  height: 26px;
   width: 100%;
   display: -ms-flexbox;
   display: flex; }
@@ -893,9 +892,8 @@ ul.tabs li {
   margin: 0;
   cursor: pointer;
   margin-right: 30px;
-  padding-bottom: 24px;
+  padding-bottom: 16px;
   color: #2D3C3E;
-  overflow: hidden;
   position: relative; }
 
 ul.tabs li:hover {
