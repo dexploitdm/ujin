@@ -9,6 +9,7 @@ include_once('components/rus-to-lat.php');
 include_once('components/unlock_emoji.php');
 //Настройки
 include_once('components/setting.php');
+include_once('components/settingsTwo.php');
 //Редиректы
 include_once('components/wp-simple-301-redirects.php');
 //Классы меню

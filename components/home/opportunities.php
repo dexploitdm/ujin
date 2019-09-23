@@ -102,13 +102,14 @@
         <div class="mobile-app">
             <p>Доступно на платформах</p>
             <div class="mobile-app-layout">
-                <a href="<?php echo get_option('apple_app'); ?>" class="mobile-app-layout_item" target="_blank">
+                <a href="<?php echo get_theme_mod('appApple'); ?>" class="mobile-app-layout_item" target="_blank">
                     <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/apple.png">
                     <span>Apps Store</span>
                 </a>
-                <a href="<?php echo get_option('google_app'); ?>" class="mobile-app-layout_item" target="_blank">
+                <a href="<?php echo get_theme_mod('appGoogle'); ?>" class="mobile-app-layout_item" target="_blank">
                     <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/google.png">
                     <span>Google Play</span>
+
                 </a>
             </div>
         </div>
