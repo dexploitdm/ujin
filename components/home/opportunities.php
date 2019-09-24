@@ -21,83 +21,53 @@
             </div>
         </div>
     </div>
+
+    <?php $pportunities = new WP_Query(array(
+        'post_type' => 'opportunities',
+        'order' => 'ASC',
+        'meta_query' => array(
+            array(
+                'key' => 'checkOpp',
+                'value' => 'homeA',
+                'compare' => 'LIKE'
+            )
+        )
+    )) ?>
+    <?php if ($pportunities->have_posts() ): ?>
     <div class="opportunities-icons grid-three js-content-tab1 active" data-show="commerce">
+        <?php while ($pportunities->have_posts()) : $pportunities->the_post(); ?>
         <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_video.svg">
-            <span>Управление видеонаблюдением</span>
+            <img src="<?php the_post_thumbnail_url(); ?>">
+            <span><?php the_title(); ?></span>
         </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_notkey.svg">
-            <span>Управление бесключевым доступом, СКУД, домофоном.</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_alarm.svg">
-            <span>Автоматическая система оповещений об аварийных ситуациях</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_electrum.svg">
-            <span>Автоматический учёт расхода ресурсов на объекте (тепло, электроэнергия, вода)</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_tasks.svg">
-            <span>Автоматизация сценариев работы оборудования  по заданому расписанию</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_box.svg">
-            <span>Собственная линейка оборудования Ujin</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_po.svg">
-            <span>Интеграцию ПО с предустановленным аппаратным решением</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_mobile.png">
-            <span>Функциональное приложение для управления зданиями</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_hand.svg">
-            <span>Программа лояльности для клиентов</span>
-        </div>
+        <?php endwhile; ?>
     </div>
+    <?php endif; ?>
+    <?php wp_reset_query(); ?>
+
 <!--    Вторая вкладка-->
+    <?php $pportunities = new WP_Query(array(
+        'post_type' => 'opportunities',
+        'order' => 'ASC',
+        'meta_query' => array(
+            array(
+                'key' => 'checkOpp',
+                'value' => 'homeB',
+                'compare' => 'LIKE'
+            )
+        )
+    )) ?>
+    <?php if ($pportunities->have_posts() ): ?>
     <div class="opportunities-icons grid-three js-content-tab2">
-        		 <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_mobile.png">
-            <span>Централизованое управление. Мобильное приложение.</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_video.svg">
-            <span>Управление видеонаблюдением</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_notkey.svg">
-            <span>Управление домофонами и видео-домофонами.</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_alarm.svg">
-            <span>Управление осещением</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_electrum.svg">
-            <span>Управление климат-контролем</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_tasks.svg">
-            <span>Управление тёплыми полами</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_box.svg">
-            <span>Защита от протечек воды</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/ic_po.svg">
-            <span>Управление и контроль работы электроприборов</span>
-        </div>
-        <div class="opportunities-icons_item">
-            <img src="https://dexploitdm.ru/projects/ujin.io/wp-content/uploads/2019/09/Karniz.png">
-            <span>Управление автоматическими шторами</span>
-        </div>
+        <?php while ($pportunities->have_posts()) : $pportunities->the_post(); ?>
+            <div class="opportunities-icons_item">
+                <img src="<?php the_post_thumbnail_url(); ?>">
+                <span><?php the_title(); ?></span>
+            </div>
+        <?php endwhile; ?>
     </div>
+    <?php endif; ?>
+    <?php wp_reset_query(); ?>
     <div class="opportunities-app">
         <div class="mobile-app">
             <p>Доступно на платформах</p>
