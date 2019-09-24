@@ -1,9 +1,11 @@
 .head-box {
   //background: linear-gradient(153deg, #342B48 33.79%, #0F4F57 69.42%, $color-default 100%);
-  background-image: url(../images/covers/bg_ban.svg);
   background-size: cover;
   min-height: 800px;
   transition: .3s;
+  @media (max-width: $mobile-media) {
+    background-image: url(../images/covers/bg_ban.svg) !important;
+  }
 }
 
 .head-box-web {
@@ -128,11 +130,14 @@
 }
 //Banner two
 .head-box-two {
-  background-image: url(../images/covers/home-bg2.png);
+  //background-image: url(../images/covers/home-bg2.png);
   min-height: 616px;
   background-size: cover;
   background-position: bottom;
   transition: .3s;
+  @media (max-width: $mobile-media) {
+    background-image: url(../images/covers/home-bg2.png) !important;
+  }
   &-layout {
     &-content {
       padding-top: 250px;

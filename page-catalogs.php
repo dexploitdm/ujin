@@ -5,7 +5,7 @@ Template Post Type: page
 */
 get_header(); ?>
     <main>
-        <div class="head-box-two">
+        <div class="head-box-two" style="background-image: url(<?php the_post_thumbnail_url(); ?>">
             <div class="head-box-two-layout box">
                 <div class="head-box-two-layout-content">
                     <h1 class="title-h1"><?php echo get_field( "title_bannner" ); ?></h1>

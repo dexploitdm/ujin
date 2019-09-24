@@ -1,4 +1,4 @@
-<div class="head-box">
+<div class="head-box" style="background-image: url(<?php echo get_theme_mod('linkImage'); ?>">
     <div class="head-box-layout double-box box">
       
         <div class="head-box-desc">
@@ -19,7 +19,7 @@
         </div>
     
         <div class="head-box-cover">
-            <img src="https://dexploitdm.ru/projects/ujin.io/wp-content/uploads/2019/09/home-ban-2.png">
+<!--            <img src="https://dexploitdm.ru/projects/ujin.io/wp-content/uploads/2019/09/home-ban-2.png">-->
         </div>
     </div>
 </div>

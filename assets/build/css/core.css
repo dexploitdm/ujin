@@ -593,10 +593,12 @@ footer {
   color: #0EF5FF; }
 
 .head-box {
-  background-image: url(../images/covers/bg_ban.svg);
   background-size: cover;
   min-height: 800px;
   transition: .3s; }
+  @media (max-width: 768px) {
+    .head-box {
+      background-image: url(../images/covers/bg_ban.svg) !important; } }
 
 .head-box-layout {
   padding-top: 92px;
@@ -707,11 +709,13 @@ footer {
       top: -7em; }
 
 .head-box-two {
-  background-image: url(../images/covers/home-bg2.png);
   min-height: 616px;
   background-size: cover;
   background-position: bottom;
   transition: .3s; }
+  @media (max-width: 768px) {
+    .head-box-two {
+      background-image: url(../images/covers/home-bg2.png) !important; } }
   .head-box-two-layout-content {
     padding-top: 250px;
     max-width: 820px;

@@ -1,4 +1,4 @@
-<div class="head-box">
+<div class="head-box" style="background-image: url(<?php the_post_thumbnail_url(); ?>">
     <div class="head-box-web">
 
     </div>
