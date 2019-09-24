@@ -39,78 +39,34 @@ get_header(); ?>
                     <div class="swiper-button-prev"></div>
                 </div>
             </div>
-            <div class="swiper-container3">
-                <div class="lists-services-layout swiper-wrapper">
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_peoples.svg">
-                            <p>Управление <br> сотрудниками</p>
-                        </div>
-                        <ul>
-                            <li>Добавление новых сотрудников</li>
-                            <li>Редактирование информации о сотрудниках</li>
-                            <li>Контроль работы сотрудников</li>
-                            <li>Ведение БД, отчетность</li>
-                        </ul>
+            <?php $pportunities = new WP_Query(array(
+                'post_type' => 'opportunities',
+                'order' => 'ASC',
+                'meta_query' => array(
+                    array(
+                        'key' => 'checkOpp',
+                        'value' => 'servicesCheck',
+                        'compare' => 'LIKE'
+                    )
+                )
+            )) ?>
+            <?php if ($pportunities->have_posts() ): ?>
+                <div class="swiper-container3">
+                    <div class="lists-services-layout swiper-wrapper">
+                        <?php while ($pportunities->have_posts()) : $pportunities->the_post(); ?>
+                            <div class="lists-services-box swiper-slide">
+                                <div class="services-head">
+                                    <img src="<?php the_post_thumbnail_url(); ?>">
+                                    <p><?php the_title(); ?></p>
+                                </div>
+                                <?php the_content();  ?>
+                            </div>
+                        <?php endwhile; ?>
                     </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_setting.svg">
-                            <p>Управление <br> объектами</p>
-                        </div>
-                        <ul>
-                            <li>Добавление новых объектов</li>
-                            <li>Редактирование информациии об объектах</li>
-                            <li>Ведение БД, отчетность</li>
-                        </ul>
-                    </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_sec_blue.svg">
-                            <p>Управление <br> безопасностью</p>
-                        </div>
-                        <ul>
-                            <li>Добавление камер видеонаблюдения</li>
-                            <li>Просмотр камер общедомовых камер</li>
-                            <li>Управление системой контроля доступа в помещения</li>
-                        </ul>
-                    </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_clients.svg">
-                            <p>Работа <br> с клиентами</p>
-                        </div>
-                        <ul>
-                            <li>Загрузка квитанций ЖКХ, просмотр сведений и напоминания об оплате</li>
-                            <li>Прием и обработка заявокк от жильцов</li>
-                            <li>Коммуникации с жильцами с помощью чатов и онлайн-голосований</li>
-                            <li>Информирование жильцов: новости, мер оприятия, проводимые работы</li>
-                        </ul>
-                    </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_procces.svg">
-                            <p>Автоматизация <br> процессов</p>
-                        </div>
-                        <ul>
-                            <li>Просмотр информации по приборам учета</li>
-                            <li>Контроль и оповещениу об авариях, при подключении и интеграции с инженерными системами здания</li>
-                            <li>Удаленное управление системой контроля доступа, воротами, шлагбаумом</li>
-                        </ul>
-                    </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_money.svg">
-                            <p>Монетизация <br> работы</p>
-                        </div>
-                        <ul>
-                            <li>Возможность принимать заказы на дополнительные платные услуги</li>
-                            <li>Добавление партеров в MarketPlace</li>
-                            <li>Экономия на бумажных квитанциях и промо-материалах</li>
-                        </ul>
-                    </div>
+
                 </div>
-            </div>
+            <?php endif; ?>
+            <?php wp_reset_query(); ?>
 
             <div class="lists-services-text">Мы помогаем строить жилье будущего</div>
 
