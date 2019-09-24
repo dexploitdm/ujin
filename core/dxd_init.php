@@ -19,8 +19,7 @@ include_once('components/attr.php');
 
 //Баннеры
 include_once('components/banners/banHome.php');
-
-
+include_once('components/banners/banDevelopers.php');
 
 
 
