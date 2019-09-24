@@ -39,89 +39,34 @@ get_header(); ?>
                     <div class="swiper-button-prev"></div>
                 </div>
             </div>
+            <?php $pportunities = new WP_Query(array(
+                'post_type' => 'opportunities',
+                'order' => 'ASC',
+                'meta_query' => array(
+                    array(
+                        'key' => 'checkOpp',
+                        'value' => 'devCheck',
+                        'compare' => 'LIKE'
+                    )
+                )
+            )) ?>
+            <?php if ($pportunities->have_posts() ): ?>
             <div class="swiper-container3">
                 <div class="lists-services-layout swiper-wrapper">
+                <?php while ($pportunities->have_posts()) : $pportunities->the_post(); ?>
                     <div class="lists-services-box swiper-slide">
                         <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_brain_home.svg">
-                            <p>Умная <br> квартира</p>
+                            <img src="<?php the_post_thumbnail_url(); ?>">
+                            <p><?php the_title(); ?></p>
                         </div>
-                        <ul>
-                            <li>Управление освещением, питанием розеток, климатом в
-                                автомати-ческом и
-                                ручном (через web и мобильное приложение) режимах</li>
-                            <li>Контроль и предотвращение протечек</li>
-                            <li>Управление охранной сигнализацией</li>
-                            <li>Возможноть интеграции любых IoT устройств и "умной" бытовой техники</li>
-                        </ul>
+                       <?php the_content();  ?>
                     </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_electrum.svg">
-                            <p>Коммунальные <br> услуги</p>
-                        </div>
-                        <ul>
-                            <li>Автоматический учёт расхода ресурсов (тепло, электроэнергия, вода)</li>
-                            <li> Мониторинг потребления  ресурсов в реальном времени</li>
-                            <li>Удобная оплата и учет состояния л/с</li>
-                        </ul>
-                    </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_electrum.svg">
-                            <p>Услуги локальных <br> бизнесов</p>
-                        </div>
-                        <ul>
-                            <li>Доставка еды, воды, продуктов</li>
-                            <li>Вызов клининговой компании</li>
-                            <li>Услуги няни</li>
-                            <li>Выгул собак</li>
-                            <li>Химчистка</li>
-                            <li>Заказ такси</li>
-                        </ul>
-                    </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_chates.png">
-                            <p>Чаты и <br> уведомления</p>
-                        </div>
-                        <ul>
-                            <li>Общий чат для жителей ЖК</li>
-                            <li>Личные беседы</li>
-                            <li>Оповещения от застройщика и УК</li>
-                            <li>Общение с представителем застройщика и бизнесом, предоставленном на территории ЖК</li>
-                        </ul>
-                    </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_insurance.svg">
-                            <p>Страхование <br> Online</p>
-                        </div>
-                        <ul>
-                            <li>Заключение договоров</li>
-                            <li>Проверенные страховые компании</li>
-                            <li>Выбор оптимальных вариантов страхования от различных компаний</li>
-                            <li>Оперативное получение выгодных предложений</li>
-                        </ul>
-                    </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_videocam.svg">
-                            <p>Видеонаблюдениее <br> и домофония</p>
-                        </div>
-                        <ul>
-                            <li>Удаленное управление домофоном или видео-домофоном</li>
-                            <li>Обзор камер видеонаблюдения,
-                                расположенных на территории
-                                комплекса на всех этапах строительства</li>
-                            <li>Обзор и управление  видеонаблюдением
-                                внутри квартиры</li>
-                        </ul>
-                    </div>
+                <?php endwhile; ?>
                 </div>
 
             </div>
-
+            <?php endif; ?>
+            <?php wp_reset_query(); ?>
             <div class="lists-services-text">Мы помогаем строить жилье будущего</div>
 
             <div class="lists-services-load block-mobile ">
