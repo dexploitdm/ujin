@@ -16,9 +16,9 @@
                 <?php endwhile; ?>
             </div>
 			<?php endif; ?>
+            <?php wp_reset_query(); ?>
             <div class="other-desc-content">
-                <p>Умные квартиры и  жилые комплексы - последний тренд, на который обращают
-                    внимание покупатели при выборе недвижимости от застройщика.
+                <p><?php echo get_field( "ban_content" ); ?>
                 </p>
             </div>
         </div>
