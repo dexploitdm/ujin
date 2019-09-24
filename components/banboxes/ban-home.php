@@ -1,10 +1,11 @@
 <div class="head-box">
     <div class="head-box-layout double-box box">
-        <?php $functions = new WP_Query(array('post_type' => 'functions', 'order' => 'ASC')) ?>
-<?php if ($functions->have_posts() ): ?>
+      
         <div class="head-box-desc">
             <h1 class="title-h1"><?php echo  get_bloginfo ('description'); ?></h1>
-            <div class="head-box-desc-boxes flex-wrap">
+              <?php $functions = new WP_Query(array('post_type' => 'functions', 'order' => 'ASC')) ?>
+<?php if ($functions->have_posts() ): ?>
+			<div class="head-box-desc-boxes flex-wrap">
 <?php while ($functions->have_posts()) : $functions->the_post(); ?>
                 <div class="head-box-desc-boxes-item icon-fix">
                     <img src="<?php the_post_thumbnail_url(); ?>">
@@ -13,10 +14,12 @@
                
 <?php endwhile; ?>
             </div>
+			    <?php endif; ?>
+			
         </div>
-        <?php endif; ?>
+    
         <div class="head-box-cover">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/home-ban.png">
+            <img src="https://dexploitdm.ru/projects/ujin.io/wp-content/uploads/2019/09/home-ban-2.png">
         </div>
     </div>
 </div>

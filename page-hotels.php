@@ -5,7 +5,7 @@ Template Post Type: page
 */
 get_header(); ?>
     <main>
-        <?php get_template_part( 'components/banboxes/ban-developers'); ?>
+        <?php get_template_part( 'components/banboxes/ban-hotels'); ?>
         <div class="boxes-desc">
             <h2 class="title-h2 box">Возможности умного отеля</h2>
             <div class="boxes-desc-layout">

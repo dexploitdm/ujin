@@ -8,7 +8,7 @@ get_header(); ?>
         <div class="head-box-two">
             <div class="head-box-two-layout box">
                 <div class="head-box-two-layout-content">
-                    <h1 class="title-h1">Линейка товаров “Ujin”</h1>
+                    <h1 class="title-h1"><?php echo get_field( "title_bannner" ); ?></h1>
                     <div class="head-box-two-desc">
                         <p>
                             Общий текст о серии товаров, собственном производстве, надежности,
@@ -53,33 +53,6 @@ get_header(); ?>
                     </div>
                 </div>
                 <?php endwhile; ?>
-
-
-
-
-
-
-
-                <div class="product-box">
-                    <div class="product-box-layout">
-                        <div class="product-box-header">
-                            <div class="product-box-header__title">Комплект защиты от протечек</div>
-                            <a href="#" class="product-box-header__icon"></a>
-                        </div>
-                        <div class="product-box-cover">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/rele.png">
-                        </div>
-                        <div class="product-box-desc">
-                            <div class="product-box-desc_price">7 500 руб.</div>
-                            <div class="product-box-desc_content">
-                                <div class="product-box-desc_content_box">
-                                    <p>Обнаруживает протечку или затоп, перекрывает воду
-                                        и отправляет вам уведомление на смартфон.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>

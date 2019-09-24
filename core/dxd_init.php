@@ -20,7 +20,8 @@ include_once('components/attr.php');
 //Баннеры
 include_once('components/banners/banHome.php');
 include_once('components/banners/banDevelopers.php');
+include_once('components/banners/banJkh.php');
+include_once('components/banners/banHotels.php');
 
-
-
-
+//Возможности
+include_once('components/opportunities/opportunities.php');
