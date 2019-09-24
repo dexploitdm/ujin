@@ -6,32 +6,32 @@ Template Post Type: page
 get_header(); ?>
     <main>
         <?php get_template_part( 'components/banboxes/ban-developers'); ?>
+
+        <?php while( have_posts() ) : the_post(); ?>
         <div class="boxes-desc">
-            <h2 class="title-h2 box">Возможности умного ЖК</h2>
-            <div class="boxes-desc-layout">
-                <div class="boxes-desc-content box">
-                    <p class="boxes-title">Каждый жилой комплекс для нас - это уникальная комбинация новых технологических
-                        свойств и сервисов,
-                        созданная на базе платформы Ujin.</p>
-                    <div class="boxes-mini">Умные системы отопления, вентиляции, кондиционирования и управления приборами уже экономят
-                        владельцам недвижимости значительные суммы.</div>
-                </div>
-                <div class="boxes-desc-download">
-                    <div class="boxes-desc-download-layout">
-                        <div class="download-title">
-                            Узнайте подробнее о наших решениях из презентации
-                        </div>
-                        <div class="download-link">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/download.png">
-                            <div class="download-link-box">
-                                <a href="#" class="download-pull">Скачать презентацию</a>
-                                <span class="download-info">15 Mb, pptx</span>
+                <h2 class="title-h2 box"><?php echo get_field( "title_opp" ); ?></h2>
+                <div class="boxes-desc-layout">
+                    <div class="boxes-desc-content box">
+                        <div class="boxes-title"><?php echo get_field( "content_opp" ); ?></div>
+                        <div class="boxes-mini"><?php echo get_field( "minitext_opp" ); ?></div>
+                    </div>
+                    <div class="boxes-desc-download">
+                        <div class="boxes-desc-download-layout">
+                            <div class="download-title">
+                                Узнайте подробнее о наших решениях из презентации
+                            </div>
+                            <div class="download-link">
+                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/download.png">
+                                <div class="download-link-box">
+                                    <a href="<?php echo get_field( "link_present" ); ?>" class="download-pull">Скачать презентацию</a>
+                                    <span class="download-info">15 Mb, pptx</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php  endwhile; ?>
         <div class="lists-services box">
             <div class="action-btn">
                 <div class="action-btn-tr">
