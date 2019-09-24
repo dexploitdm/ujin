@@ -38,67 +38,34 @@ get_header(); ?>
                     <div class="swiper-button-prev"></div>
                 </div>
             </div>
-            <div class="swiper-container3">
-                <div class="lists-services-layout swiper-wrapper">
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_tasks.svg">
-                            <p>Автоматизация <br> сценариев</p>
-                        </div>
-                        <ul>
-                            <li>Построение индивидуальных сценариев</li>
-                            <li>Автоматическое управление задаными сценариями и работой оборудования</li>
-                            <li>Возможность оперативно вносить корректировки в сценарии</li>
-                        </ul>
+            <?php $pportunities = new WP_Query(array(
+                'post_type' => 'opportunities',
+                'order' => 'ASC',
+                'meta_query' => array(
+                    array(
+                        'key' => 'checkOpp',
+                        'value' => 'hostelCheck',
+                        'compare' => 'LIKE'
+                    )
+                )
+            )) ?>
+            <?php if ($pportunities->have_posts() ): ?>
+                <div class="swiper-container3">
+                    <div class="lists-services-layout swiper-wrapper">
+                        <?php while ($pportunities->have_posts()) : $pportunities->the_post(); ?>
+                            <div class="lists-services-box swiper-slide">
+                                <div class="services-head">
+                                    <img src="<?php the_post_thumbnail_url(); ?>">
+                                    <p><?php the_title(); ?></p>
+                                </div>
+                                <?php the_content();  ?>
+                            </div>
+                        <?php endwhile; ?>
                     </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_monitor.svg">
-                            <p>Мониторинг и учет <br> потребляемых ресурсов</p>
-                        </div>
-                        <ul>
-                            <li>Мониторинг и статистика потребления ресурсов</li>
-                            <li>Автоматический учет потребляемых ресурсов</li>
-                            <li>Рекомендованные настройки для экономии ресурсов</li>
-                        </ul>
-                    </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_electrum.svg">
-                            <p>Комунальные <br> услуги</p>
-                        </div>
-                        <ul>
-                            <li>Автоматический учёт расхода ресурсов (тепло, электроэнергия, вода)</li>
-                            <li>Мониторинг потребления  ресурсов в реальном времени</li>
-                            <li>Удобная оплата и учет состояния л\с</li>
-                        </ul>
-                    </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_sec_blue.svg">
-                            <p>Безопасность</p>
-                        </div>
-                        <ul>
-                            <li>Обзор камер видеонаблюдения,
-                                расположенных на территории
-                                объекта</li>
-                            <li>Автоматическое оповещени аварийных ситуациях</li>
-                            <li>Управление бесключевым доступом, СКУД, домофоном</li>
-                        </ul>
-                    </div>
-                    <div class="lists-services-box swiper-slide">
-                        <div class="services-head">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_hands.svg">
-                            <p>Программа <br> лояльности</p>
-                        </div>
-                        <ul>
-                            <li>Возможность быстрого оповещения своих клиентов о проводимых акциях, возврат постоянных клиентов</li>
-                            <li>Готовая программа лояльности “Приведи друга”</li>
-                            <li>Высокий уровень сервиса, который позволит отстроиться от конкурентов</li>
-                        </ul>
-                    </div>
+
                 </div>
-            </div>
+            <?php endif; ?>
+            <?php wp_reset_query(); ?>
 
             <div class="lists-services-text">Мы помогаем строить жилье будущего</div>
 
