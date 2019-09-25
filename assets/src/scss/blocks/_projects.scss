@@ -27,6 +27,62 @@
     }
   }
 }
+@media (max-width: $large-media) {
+  .projects {
+    .grid-three {
+      grid-column-gap: 20px;
+    }
+    &-block {
+      &-title {
+        padding-bottom: 20px;
+      }
+      &-cover {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: $tablet-media) {
+  .projects {
+    padding-top: 40px;
+    .grid-three {
+      grid-template-columns: 1fr 1fr;
+    }
+    &-block {
+      &-title {
+        min-height: auto;
+      }
+    }
+  }
+}
+@media (max-width: $mobile-media) {
+  .projects {
+    .grid-three {
+      grid-template-columns: 1fr;
+    }
+    &-block {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid $color-gray;
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+      &-title {
+        font-size: 18px;
+        line-height: normal;
+        min-height: auto;
+      }
+      &-desc {
+        font-size: 12px;
+        line-height: 120%;
+      }
+    }
+  }
+}
 //Слайдер реализованых проектов
 .projects-slider {
   padding: 100px 0;

@@ -12,26 +12,6 @@ get_header(); ?>
         <div class="head-box-layout box">
             <div class="head-box-desc other-desc">
                 <h1 class="title-h1">Реализованные <br> проекты</h1>
-                <div class="head-box-count">
-                    <div class="head-box-count-item">
-                        <div class="head-box-count-layout">
-                            <div class="head-box-number">15</div>
-                            <div class="head-box-title">Жилых <br> комплексов</div>
-                        </div>
-                    </div>
-                    <div class="head-box-count-item">
-                        <div class="head-box-count-layout">
-                            <div class="head-box-number">25</div>
-                            <div class="head-box-title">Гостиниц <br> и ЖКХ</div>
-                        </div>
-                    </div>
-                    <div class="head-box-count-item">
-                        <div class="head-box-count-layout">
-                            <div class="head-box-number">25</div>
-                            <div class="head-box-title">Умных <br> квартир</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         </div>
