@@ -2,11 +2,19 @@
 get_header(); ?>
     <main>
         <div class="empty-block"></div>
-
+		
         <?php while ( have_posts() ) : the_post(); ?><?php endwhile; // end of the loop. ?>
         <div class="product-item box">
             <h2 class="title-h2"><?php the_title(); ?></h2>
 
+			<?php	
+			
+			$cat = get_the_category($post->ID);
+
+			// ID категории
+			echo $cat->cat_ID
+			?>
+			
             <div class="product-item-layout grid-three">
 
                 <div class="product-item-box">
@@ -169,68 +177,38 @@ get_header(); ?>
         <div class="product-preview full-list box mobile-hidden">
             <h2 class="title-h2">С эти товаром покупают</h2>
             <div class="product-preview-layout grid-three">
+			<?php 
+			global $post;
+			$terms = get_the_terms( $post->ID, 'product_cat' );
+			$loop = new WP_Query( array( 
+				'product_cat' => $terms[0]->name,
+			  'post_type' => 'product', 
+			  'posts_per_page' => 5,
+			  'post__not_in' => array($post->ID),
+			  'order' => 'ASC',
+			  )); 
 
-                <div class="product-box">
+			  while ( $loop->have_posts() ): $loop->the_post(); ?>
+				<div class="product-box">
                     <div class="product-box-layout">
                         <div class="product-box-header">
-                            <div class="product-box-header__title">Комплект защиты от протечек</div>
-                            <a href="#" class="product-box-header__icon"></a>
+                            <div class="product-box-header__title"><?php the_title(); ?></div>
+                            <a href="<?php the_permalink(); ?>" class="product-box-header__icon"></a>
                         </div>
                         <div class="product-box-cover">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/complect_sec.png">
+                            <img src="<?php the_post_thumbnail_url(); ?>">
                         </div>
                         <div class="product-box-desc">
-                            <div class="product-box-desc_price">7 500 руб.</div>
+                            <div class="product-box-desc_price"><?php echo $product->get_price();  ?> руб.</div>
                             <div class="product-box-desc_content">
                                 <div class="product-box-desc_content_box">
-                                    <p>Обнаруживает протечку или затоп, перекрывает воду
-                                        и отправляет вам уведомление на смартфон.</p>
+                                    <p><?php  the_excerpt(); ?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="product-box">
-                    <div class="product-box-layout">
-                        <div class="product-box-header">
-                            <div class="product-box-header__title">Умная розетка</div>
-                            <a href="#" class="product-box-header__icon"></a>
-                        </div>
-                        <div class="product-box-cover">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/brain_r.png">
-                        </div>
-                        <div class="product-box-desc">
-                            <div class="product-box-desc_price">3 500 руб.</div>
-                            <div class="product-box-desc_content">
-                                <div class="product-box-desc_content_box">
-                                    <p>Управляет электрической розеткой</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-box">
-                    <div class="product-box-layout">
-                        <div class="product-box-header">
-                            <div class="product-box-header__title">Комплект защиты от протечек</div>
-                            <a href="#" class="product-box-header__icon"></a>
-                        </div>
-                        <div class="product-box-cover">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/complect_sec.png">
-                        </div>
-                        <div class="product-box-desc">
-                            <div class="product-box-desc_price">7 500 руб.</div>
-                            <div class="product-box-desc_content">
-                                <div class="product-box-desc_content_box">
-                                    <p>Обнаруживает протечку или затоп, перекрывает воду
-                                        и отправляет вам уведомление на смартфон.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+			  <?php endwhile; ?>
 
             </div>
         </div>

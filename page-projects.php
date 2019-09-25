@@ -36,136 +36,45 @@ get_header(); ?>
         </div>
         </div>
 
+		
+		
+		      
+		
+		
+		
         <div class="projects box">
-            <div class="grid-three">
+           
+			<div class="grid-three">
 
+				
+				<?php
+                $idObj = get_category_by_slug('s_lenta');
+                $id = $idObj->term_id;
+                $args = array(
+                    'orderby'  => 'date',
+                    'order'    => 'DESC'
+                );?>
+                <?php if ( have_posts() ) : query_posts($args);
+                    while (have_posts()) : the_post(); ?>
                 <div class="projects-block">
-                    <div class="projects-block-title">ЖК “Гулливер”</div>
+                    <div class="projects-block-title"><?php the_title(); ?></div>
                     <div class="projects-block-cover">
-                        <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/1.png">
+                        <img src="<?php the_post_thumbnail_url(); ?>">
                     </div>
                     <div class="projects-block-desc">
                         <p>
-                            6 сдвоенных домов комфорт-класса и 2 дома
-                            бизнес-класса объединяет собственная зеленая зона,
-                            детские и спортивные площадки, муниципальный детский сад.
+                           <?php the_excerpt(); ?>
                         </p>
                     </div>
                 </div>
-
-                <div class="projects-block">
-                    <div class="projects-block-title">ЖК “Академический  –Электродом”</div>
-                    <div class="projects-block-cover">
-                        <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/2.png">
-                    </div>
-                    <div class="projects-block-desc">
-                        <p>
-                            6 сдвоенных домов комфорт-класса и 2 дома
-                            бизнес-класса объединяет собственная зеленая зона,
-                            детские и спортивные площадки, муниципальный детский сад.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="projects-block">
-                    <div class="projects-block-title">Дом “СЕРЕБРЯНЫЙ БОР”</div>
-                    <div class="projects-block-cover">
-                        <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/3.png">
-                    </div>
-                    <div class="projects-block-desc">
-                        <p>
-                            6 сдвоенных домов комфорт-класса и 2 дома бизнес-класса
-                            объединяет собственная зеленая зона,
-                            детские и спортивные площадки, муниципальный детский сад.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="projects-block">
-                    <div class="projects-block-title">ЖК “Headliner”</div>
-                    <div class="projects-block-cover">
-                        <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/4.png">
-                    </div>
-                    <div class="projects-block-desc">
-                        <p>
-                            6 сдвоенных домов комфорт-класса и 2 дома бизнес-класса
-                            объединяет собственная зеленая зона,
-                            детские и спортивные площадки, муниципальный детский сад.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="projects-block">
-                    <div class="projects-block-title">ЖК “Академический  –Электродом”</div>
-                    <div class="projects-block-cover">
-                        <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/2.png">
-                    </div>
-                    <div class="projects-block-desc">
-                        <p>
-                            6 сдвоенных домов комфорт-класса и 2 дома бизнес-класса
-                            объединяет собственная зеленая зона,
-                            детские и спортивные площадки, муниципальный детский сад.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="projects-block">
-                    <div class="projects-block-title">Дом “СЕРЕБРЯНЫЙ БОР”</div>
-                    <div class="projects-block-cover">
-                        <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/3.png">
-                    </div>
-                    <div class="projects-block-desc">
-                        <p>
-                            6 сдвоенных домов комфорт-класса и 2 дома бизнес-класса
-                            объединяет собственная зеленая зона,
-                            детские и спортивные площадки, муниципальный детский сад.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="projects-block">
-                    <div class="projects-block-title">ЖК “Headliner”</div>
-                    <div class="projects-block-cover">
-                        <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/4.png">
-                    </div>
-                    <div class="projects-block-desc">
-                        <p>
-                            6 сдвоенных домов комфорт-класса и 2 дома бизнес-класса
-                            объединяет собственная зеленая зона,
-                            детские и спортивные площадки, муниципальный детский сад.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="projects-block">
-                    <div class="projects-block-title">ЖК “Академический  –Электродом”</div>
-                    <div class="projects-block-cover">
-                        <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/2.png">
-                    </div>
-                    <div class="projects-block-desc">
-                        <p>
-                            6 сдвоенных домов комфорт-класса и 2 дома бизнес-класса
-                            объединяет собственная зеленая зона,
-                            детские и спортивные площадки, муниципальный детский сад.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="projects-block">
-                    <div class="projects-block-title">Дом “СЕРЕБРЯНЫЙ БОР”</div>
-                    <div class="projects-block-cover">
-                        <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/3.png">
-                    </div>
-                    <div class="projects-block-desc">
-                        <p>
-                            6 сдвоенных домов комфорт-класса и 2 дома бизнес-класса
-                            объединяет собственная зеленая зона,
-                            детские и спортивные площадки, муниципальный детский сад.
-                        </p>
-                    </div>
-                </div>
+<? endwhile; endif; wp_reset_query(); ?>
+                
 
             </div>
+			
+			
+			
+			
         </div>
     </main>
 <?php get_footer(); ?>
