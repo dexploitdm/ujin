@@ -84,7 +84,7 @@ get_header(); ?>
 
                     <div class="product-item-download">
                         <div class="product-item-download-block">
-                            <a href="#" class="download">Скачать инструкцию
+                            <a href="<?php the_field( "instruction_link" ); ?>" class="download">Скачать инструкцию
                                 <span>1,5 Mb, PDF</span></a>
                         </div>
                     </div>

@@ -1,0 +1,16 @@
+.content {
+  padding: 70px 0;
+  p {
+    padding-bottom: 10px;
+    color: $color-dark;
+  }
+  a {
+    text-decoration: none;
+    color: $color-blue;
+  }
+}
+@media (max-width: $large-media) {
+  .content {
+    margin: 0 30px;
+  }
+}

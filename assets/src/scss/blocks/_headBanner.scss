@@ -137,6 +137,7 @@
   transition: .3s;
   @media (max-width: $mobile-media) {
     background-image: url(../images/covers/home-bg2.png) !important;
+    background-position: right center;
   }
   &-layout {
     &-content {
