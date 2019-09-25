@@ -28,8 +28,6 @@ get_header(); ?>
 
 				
 				<?php
-                $idObj = get_category_by_slug('s_lenta');
-                $id = $idObj->term_id;
                 $args = array(
                     'orderby'  => 'date',
                     'order'    => 'DESC'
@@ -37,7 +35,11 @@ get_header(); ?>
                 <?php if ( have_posts() ) : query_posts($args);
                     while (have_posts()) : the_post(); ?>
                 <div class="projects-block">
-                    <div class="projects-block-title"><?php the_title(); ?></div>
+                    <div class="projects-block-title">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_title(); ?>
+                        </a>
+                    </div>
                     <div class="projects-block-cover">
                         <img src="<?php the_post_thumbnail_url(); ?>">
                     </div>

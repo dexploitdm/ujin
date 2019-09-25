@@ -167,8 +167,8 @@ get_header(); ?>
         <div class="projects-slider">
             <div class="projects-slider-head box">
                 <h2 class="title-h2">Реализованные проекты</h2>
-                <div class="projects-all">
-                    <a href="projects.html">
+                <div class="projects-all  mobile-hidden">
+                    <a href="<?php echo get_site_url(); ?>/projects">
                         Все проекты
                     </a>
                 </div>
@@ -180,13 +180,22 @@ get_header(); ?>
                 <div class="swiper-container">
 
                     <div class="swiper-wrapper">
+
+                        <?php
+                        $args = array(
+                            'orderby'  => 'date',
+                            'order'    => 'DESC'
+                        );?>
+                        <?php if ( have_posts() ) : query_posts($args);
+                            while (have_posts()) : the_post(); ?>
                         <div class="swiper-slide p-slider-box">
-                            <div class="p-slider-box-cover" style="background-image: url(<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/projects/pro1.png); ">
+                            <div class="p-slider-box-cover"
+                                 style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
 
                             </div>
                             <div class="p-slider-box-desc">
                                 <div class="p-slider-head">
-                                    <div class="p-slider-head-arrow">
+                                    <div class="p-slider-head-arrow mobile-hidden ">
                                         <div class="box-btn">
                                             <div class="swiper-button-next"></div>
                                             <div class="swiper-button-prev"></div>
@@ -194,50 +203,32 @@ get_header(); ?>
                                         </div>
                                     </div>
                                     <div class="p-slider-head-title">
-                                        <a href="#">ЖК “Гулливер”
+                                        <a href="<?php the_permalink(); ?>">
+                                            <?php the_title(); ?>
                                             <span>г. Пермь — 2017</span>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="p-slider-body">
                                     <p>
-                                        Гулливер - не просто жилой комплекс, это маленький город в самом центре Перми.
-
-                                        6 сдвоенных домов комфорт-класса и 2 дома бизнес-класса
-                                        объединяет собственная зеленая зона, детские и спортивные площадки, муниципальный детский сад.
+                                        <?php the_excerpt(); ?>
                                     </p>
                                 </div>
+                                <div class="box-btn block-mobile">
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="projects-all block-mobile">
+                                <a href="<?php echo get_site_url(); ?>/projects">
+                                    Все проекты
+                                </a>
                             </div>
                         </div>
-                        <div class="swiper-slide p-slider-box">
-                            <div class="p-slider-box-cover" style="background-image: url(<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/projects/pro2.jpg); ">
-                                <!--                            <img src="images/demo/projects/pro2.jpg">-->
-                            </div>
-                            <div class="p-slider-box-desc">
-                                <div class="p-slider-head">
-                                    <div class="p-slider-head-arrow">
-                                        <div class="box-btn">
-                                            <div class="swiper-button-next"></div>
-                                            <div class="swiper-button-prev"></div>
-                                            <div class="swiper-pagination"></div>
-                                        </div>
-                                    </div>
-                                    <div class="p-slider-head-title">
-                                        <a href="#">ЖК “Гулливер”
-                                            <span>г. Пермь — 2017</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="p-slider-body">
-                                    <p>
-                                        Гулливер - не просто жилой комплекс, это маленький город в самом центре Перми.
+                        <? endwhile; endif; wp_reset_query(); ?>
 
-                                        6 сдвоенных домов комфорт-класса и 2 дома бизнес-класса
-                                        объединяет собственная зеленая зона, детские и спортивные площадки, муниципальный детский сад.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
