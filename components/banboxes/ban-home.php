@@ -2,7 +2,7 @@
     <div class="head-box-layout double-box box">
       
         <div class="head-box-desc">
-            <h1 class="title-h1"><?php echo  get_bloginfo ('description'); ?></h1>
+            <h1 class="title-h1 title-box"><?php echo  get_bloginfo ('description'); ?></h1>
               <?php $functions = new WP_Query(array('post_type' => 'functions', 'order' => 'ASC')) ?>
 <?php if ($functions->have_posts() ): ?>
 			<div class="head-box-desc-boxes flex-wrap">

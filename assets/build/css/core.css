@@ -667,6 +667,9 @@ footer {
   color: #fff;
   max-width: 536px; }
 
+.head-box-layout .head-box-desc .title-h1.title-box {
+  max-width: 546px; }
+
 .head-box-count {
   display: -ms-flexbox;
   display: flex;
