@@ -7,6 +7,28 @@
     justify-content: space-between;
   }
 }
+@media (max-width: $large-media) {
+  .partners {
+    margin: 0 30px;
+    &-layout {
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+}
+@media (max-width: $tablet-media) {
+  .partners {
+    padding: 50px 0;
+    &-layout {
+      a {
+        flex-basis: 25%;
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
 .partner-form {
   background-image: url(../images/covers/partner-bg.png);
   min-height: 616px;

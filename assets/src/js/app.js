@@ -234,20 +234,29 @@ function scrollFunny() {
 
 function counterProduct() {
     const countInput = $('.js-count-product'),
-        countBtn = $('.product-count-btn');
+        countBtn = $('.product-count-btn'),
+        currentPrice =  Number($('.js-current-price').text()),
+        total = $('.js-total-sum');
 
     let counter = countInput.val();
+    let totalSum = currentPrice;
 
     countBtn.bind("click", function() {
+
+
         let currentBtn = $(this).attr('data-count');
         if(currentBtn === 'min'){
             if(counter > 1) {
                 counter -= 1;
+                totalSum = totalSum - currentPrice
             }
         } else {
             counter++;
+            totalSum = totalSum + currentPrice
         }
         countInput.val(counter);
+        total.text(totalSum);
+        console.log(totalSum);
     });
 }
 

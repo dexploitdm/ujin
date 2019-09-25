@@ -126,6 +126,7 @@
 }
 @media (max-width: $mobile-media) {
   .lists-services {
+    padding-bottom: 46px;
     &-box {
       .services-head {
         img {
@@ -148,6 +149,12 @@
     &-text {
       font-size: 12px;
       line-height: normal;
+      padding-bottom: 20px;
+    }
+    &-load {
+      .download-title {
+        padding-bottom: 14px;
+      }
     }
   }
 }

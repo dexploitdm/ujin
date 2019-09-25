@@ -104,12 +104,14 @@ get_header(); ?>
                                 </div>
                             </div>
                             <div class="product-form-price-old">
-                                4 500 руб.
+                                <?php echo $product->regular_price; ?> руб.
                             </div>
                             <div class="product-form-info">
                                 <div class="product-form-info-price">
                                     <div class="product-form-info_item">Стоимость</div>
-                                    <div class="product-form-info_item">3 500 руб.</div>
+                                    <div class="product-form-info_item">
+                                        <span class="js-current-price"><?php echo $product->get_price();  ?></span>
+                                        руб.</div>
                                 </div>
                                 <div class="product-form-info-price">
                                     <div class="product-form-info_item">Количество</div>
@@ -126,7 +128,9 @@ get_header(); ?>
                                 </div>
                                 <div class="product-form-info-price">
                                     <div class="product-form-info_item">Сумма заказа</div>
-                                    <div class="product-form-info_item">17 500 руб.</div>
+                                    <div class="product-form-info_item">
+                                        <span class="js-total-sum"><?php echo $product->get_price();  ?></span>
+                                        руб.</div>
                                 </div>
                                 <div class="info-text">Дорого?</div>
                                 <form method="post" class="u-form">

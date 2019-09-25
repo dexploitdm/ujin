@@ -16,7 +16,7 @@
             </div>
 				<?php endif; ?>
             <?php wp_reset_query(); ?>
-            <div class="other-desc-content mobile-hidden">
+            <div class="other-desc-content">
                 <p><?php echo get_field( "ban_content" ); ?>
                 </p>
             </div>
