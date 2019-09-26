@@ -41,6 +41,11 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+.head-box-layout .head-box-desc-boxes.flex-wrap {
+  .head-box-desc-boxes-item {
+    margin-bottom: -20px;
+  }
+}
 .head-box-layout .head-box-desc-boxes.flex-wrap .head-box-desc-boxes-item {
   flex-basis: 100%; }
 .head-box-layout .head-box-desc-boxes-item {
