@@ -204,7 +204,7 @@
       grid-template-columns: 1fr;
     }
     .product-box {
-      border-bottom: 1px solid $color-gray;
+      border-bottom: 1px solid rgba(184, 194, 196, 0.6);
       min-height: auto;
       &:before {
         content: none;

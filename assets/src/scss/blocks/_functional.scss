@@ -3,6 +3,12 @@
   position: relative;
   min-height: 1010px;
   transition: .3s;
+  &.functional-jkh {
+    padding-bottom: 60px;
+    .functional-desc-content {
+      padding-bottom: 20px;
+    }
+  }
   .title-h2 {
     color: $color-white;
   }
@@ -415,6 +421,12 @@
 
 @media (max-width: $mobile-media) {
   .functional {
+    &.functional-jkh {
+      padding-bottom: 0;
+      .functional-desc-content {
+        padding-bottom: 0;
+      }
+    }
     &-layout {
       padding-top: 30px;
       display: flex;

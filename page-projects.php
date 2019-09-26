@@ -40,8 +40,8 @@ get_header(); ?>
                             <?php the_title(); ?>
                         </a>
                     </div>
-                    <div class="projects-block-cover">
-                        <img src="<?php the_post_thumbnail_url(); ?>">
+                    <div class="projects-block-cover" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
+
                     </div>
                     <div class="projects-block-desc">
                         <p>

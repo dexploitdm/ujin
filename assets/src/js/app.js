@@ -2,12 +2,28 @@ function initTabs(){
 //tabs
     const tabDrawer = $(".tab_drawer_heading"),
         tabListItem = $("ul.tabs li"),
-        tabContent = $(".tab_content");
+        tabContent = $(".tab_content"),
+        cover = $(".js-cover"),
+        coverTwo = $(".js-cover-two");
 
     tabContent.hide();
     $(".tab_content:first").show();
 
+    function changeBlock(val) {
+
+        if(val.attr("rel") === 'tab1') {
+            coverTwo.addClass('fade');
+            cover.removeClass('fade');
+        } else {
+            cover.addClass('fade');
+            coverTwo.removeClass('fade');
+
+        }
+    }
+
     tabListItem.click(function() {
+        changeBlock($(this));
+
         tabContent.hide();
         var activeTab = $(this).attr("rel");
         $("#"+activeTab).fadeIn();
@@ -48,7 +64,7 @@ function initTabsProducts(){
     }
 
     const  tabContent = $('.tabContent'),
-            tab = $('.tab'),
+        tab = $('.tab'),
         tabAll = $('.tabs-all');
 
     hideTabsContent(1);
@@ -155,7 +171,7 @@ function initServices() {
     if(screenWidth < 992 && mySwiperServices == undefined) {
         mySwiperServices = new Swiper('.swiper-container3', {
             pagination: {
-               // el: '.swiper-pagination',
+                // el: '.swiper-pagination',
                 type: 'fraction',
             },
             navigation: {

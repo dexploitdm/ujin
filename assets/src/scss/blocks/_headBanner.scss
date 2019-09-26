@@ -141,6 +141,7 @@
   @media (max-width: $mobile-media) {
     background-image: url(../images/covers/home-bg2.png) !important;
     background-position: right center;
+    min-height: 480px;
   }
   &-layout {
     &-content {
