@@ -1715,6 +1715,10 @@ ul.tabs li:last-child {
     padding-bottom: 60px; }
     .functional.functional-jkh .functional-desc-content {
       padding-bottom: 20px; }
+  .functional.functional-small .functional-tabs.full-tabs .tab_content {
+    padding-top: 40px; }
+  .functional.functional-small .functional-app {
+    padding-top: 20px; }
   .functional .title-h2 {
     color: #fff; }
   .functional-layout {
@@ -1919,6 +1923,10 @@ ul.tabs li:last-child {
       width: 40%; } }
 
 @media (max-width: 1100px) {
+  .functional.functional-small .functional-tabs.full-tabs .tab_content {
+    padding-top: 60px; }
+  .functional .block-big .functional-app {
+    padding-top: 30px; }
   .functional .title-h2 {
     font-size: 26px; }
   .functional-cover {
@@ -2002,6 +2010,14 @@ ul.tabs li:last-child {
     padding-bottom: 0; }
     .functional.functional-jkh .functional-desc-content {
       padding-bottom: 0; }
+  .functional.functional-small .functional-tabs.full-tabs .tab_content {
+    padding-top: 10px; }
+  .functional.functional-small .functional-app a img {
+    max-width: 200px; }
+  .functional .block-big .functional-app {
+    padding-top: 20px; }
+    .functional .block-big .functional-app a img {
+      max-width: 200px; }
   .functional-layout {
     padding-top: 30px;
     display: -ms-flexbox;

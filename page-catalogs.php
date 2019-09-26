@@ -35,7 +35,9 @@ get_header(); ?>
                 <div class="product-box">
                     <div class="product-box-layout">
                         <div class="product-box-header">
-                            <div class="product-box-header__title"><?php the_title(); ?></div>
+                            <div class="product-box-header__title">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </div>
                             <a href="<?php the_permalink(); ?>" class="product-box-header__icon"></a>
                         </div>
                         <div class="product-box-cover" style="background-image: url(<?php the_post_thumbnail_url(); ?>); "></div>
@@ -121,6 +123,16 @@ get_header(); ?>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="functional-app">
+                                    <div class="functional-app-layout">
+                                        <a href="<?php echo get_theme_mod('appApple'); ?>" target="_blank">
+                                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/apple-market.png">
+                                        </a>
+                                        <a href="<?php echo get_theme_mod('appGoogle'); ?>" target="_blank">
+                                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/google_market.png">
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                             <div id="tab2" class="tab_content" style="display: none;">
                                 <div class="functional-lists grid-two">
@@ -128,7 +140,7 @@ get_header(); ?>
                                         <div class="functional-lists-layout">
                                             <div class="functional-lists-head">
                                                 <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_home_phone.svg">
-                                                <span>Автоматизация <br> процессов</span>
+                                                <span>Автоматизация <br> процессов 2</span>
                                             </div>
                                             <ul>
                                                 <li>Автоматический учёт расхода ресурсов (тепло, электроэнергия, вода)</li>
@@ -141,7 +153,7 @@ get_header(); ?>
                                         <div class="functional-lists-layout">
                                             <div class="functional-lists-head">
                                                 <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_controls.svg">
-                                                <span>Удаленное управление <br> и контроль</span>
+                                                <span>Удаленное управление <br> и контроль 2</span>
                                             </div>
                                             <ul>
                                                 <li>Температурой воздуха</li>
@@ -156,7 +168,7 @@ get_header(); ?>
                                         <div class="functional-lists-layout">
                                             <div class="functional-lists-head">
                                                 <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_dash.svg">
-                                                <span>Мониторинг <br> показателей</span>
+                                                <span>Мониторинг <br> показателей 2</span>
                                             </div>
                                             <ul>
                                                 <li>Мониторинг потребления  ресурсов в режиме реального времени</li>
@@ -167,7 +179,7 @@ get_header(); ?>
                                         <div class="functional-lists-layout">
                                             <div class="functional-lists-head">
                                                 <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_alarm.svg">
-                                                <span>Система <br> оповещений</span>
+                                                <span>Система <br> оповещений 2</span>
                                             </div>
                                             <ul>
                                                 <li>Оповещения о наличии протечек в квартире</li>
@@ -179,16 +191,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <div class="functional-app">
-                        <div class="functional-app-layout">
-                            <a href="#">
-                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/apple-market.png">
-                            </a>
-                            <a href="#">
-                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/google_market.png">
-                            </a>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="functional-cover js-cover">
                     <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/iPhone2.png">

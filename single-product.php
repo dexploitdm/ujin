@@ -212,7 +212,9 @@ get_header(); ?>
 				<div class="product-box">
                     <div class="product-box-layout">
                         <div class="product-box-header">
-                            <div class="product-box-header__title"><?php the_title(); ?></div>
+                            <div class="product-box-header__title">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </div>
                             <a href="<?php the_permalink(); ?>" class="product-box-header__icon"></a>
                         </div>
                         <div class="product-box-cover">
@@ -261,6 +263,16 @@ get_header(); ?>
                                             </div>
                                             <?php the_field( "content_mob" ); ?>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="functional-app">
+                                    <div class="functional-app-layout">
+                                        <a href="<?php echo get_theme_mod('appApple'); ?>" target="_blank">
+                                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/apple-market.png">
+                                        </a>
+                                        <a href="<?php echo get_theme_mod('appGoogle'); ?>" target="_blank">
+                                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/google_market.png">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
