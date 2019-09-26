@@ -58,13 +58,13 @@ get_header(); ?>
         </div>
 
         <div class="functional">
-            <div class="functional-layout box">
+            <div class="functional-layout box js-bg-block">
                 <div class="functional-desc block-big">
-                    <h2 class="title-h2">Функциональное приложение для клиентов ЖКХ</h2>
+                    <h2 class="title-h2">Функциональное управление</h2>
                     <div class="functional-tabs">
                         <ul class="tabs">
-                            <li class="active" rel="tab1">Мобильное приложение</li>
-                            <li rel="tab2" class="tab_last">Яндекс.Станция</li>
+                            <li class="active js-change-bg" rel="tab1">Мобильное приложение</li>
+                            <li rel="tab2" class="tab_last  js-change-bg">Яндекс.Станция</li>
                         </ul>
                         <div class="tab_container">
                             <div id="tab1" class="tab_content" style="display: block;">
@@ -190,9 +190,20 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>
-                <div class="functional-cover">
+                <div class="functional-cover js-cover">
                     <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/iPhone2.png">
                 </div>
+				<div class="functional-cover cover-2 fade js-cover-two">
+                    <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/ban_cover_bg.svg">
+                </div>
+				<style>
+					.cover-2 {
+						width: 40%;
+					}
+					.functional-cover.fade {
+						display: none;
+					}
+				</style>
             </div>
         </div>
 

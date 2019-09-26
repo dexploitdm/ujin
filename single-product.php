@@ -34,21 +34,38 @@ get_header(); ?>
                         </div>
                     </div>
                     <div class="product-item-cools">
+                        <?php
+                        $icon_product1 = get_field('icon_product1');
+                        $icon_product2 = get_field('icon_product2');
+                        $icon_product3 = get_field('icon_product3');
+                        $icon_product4 = get_field('icon_product4');
+                        $icon_product5 = get_field('icon_product5');
+
+                        if( !empty($icon_product1) ): ?>
                         <div class="product-item-cools-icon">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/device.png">
+                            <img src="<?php echo $icon_product1 ?>">
                         </div>
+                        <?php endif; ?>
+                        <?php if( !empty($icon_product2) ): ?>
                         <div class="product-item-cools-icon">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/box.png">
+                            <img src="<?php echo $icon_product2 ?>">
                         </div>
+                        <?php endif; ?>
+                        <?php if( !empty($icon_product3) ): ?>
                         <div class="product-item-cools-icon">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/lam.png">
+                            <img src="<?php echo $icon_product3 ?>">
                         </div>
+                        <?php endif; ?>
+                         <?php if( !empty($icon_product4) ): ?>
                         <div class="product-item-cools-icon">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/box2.png">
+                            <img src="<?php echo $icon_product4 ?>">
                         </div>
+                        <?php endif; ?>
+                        <?php if( !empty($icon_product5) ): ?>
                         <div class="product-item-cools-icon">
-                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/tv.png">
+                            <img src="<?php echo $icon_product5 ?>">
                         </div>
+                        <?php endif; ?>
                     </div>
                 </div>
 
@@ -84,7 +101,7 @@ get_header(); ?>
 
                     <div class="product-item-download">
                         <div class="product-item-download-block">
-                            <a href="<?php the_field( "instruction_link" ); ?>" class="download">Скачать инструкцию
+                            <a href="<?php the_field( "instruction_link" ); ?>" class="download" target="_blank">Скачать инструкцию
                                 <span>1,5 Mb, PDF</span></a>
                         </div>
                     </div>
@@ -177,7 +194,6 @@ get_header(); ?>
             </div>
         </div>
 
-
         <div class="product-preview full-list box mobile-hidden">
             <h2 class="title-h2">С эти товаром покупают</h2>
             <div class="product-preview-layout grid-three">
@@ -213,7 +229,7 @@ get_header(); ?>
                     </div>
                 </div>
 			  <?php endwhile; ?>
-
+<?php wp_reset_query(); ?>
             </div>
         </div>
 
@@ -221,11 +237,11 @@ get_header(); ?>
         <div class="functional functional-small">
             <div class="functional-layout box">
                 <div class="functional-desc block-big">
-                    <h2 class="title-h2">Функциональное приложение для ваших жильцов</h2>
+                    <h2 class="title-h2">Функциональное управление</h2>
                     <div class="functional-tabs full-tabs">
                         <ul class="tabs">
-                            <li class="active" rel="tab1">Мобильное приложение</li>
-                            <li rel="tab2" class="tab_last">Яндекс.Станция</li>
+                            <li class="active js-change-bg" rel="tab1">Мобильное приложение</li>
+                            <li rel="tab2" class="tab_last js-change-bg">Яндекс.Станция</li>
                         </ul>
                         <div class="tab_container">
                             <div id="tab1" class="tab_content" style="display: block;">
@@ -233,13 +249,17 @@ get_header(); ?>
                                     <div class="functional-lists_item">
                                         <div class="functional-lists-layout">
                                             <div class="functional-lists-head">
-                                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_microphone.svg">
-                                                <span>Управление всеми <br> устройствами с помощью <br> голосовых команд:</span>
+											<?php	$icons_mob = get_field('icons_mob');
+
+                       							 if( !empty($icons_mob) ): ?>
+                      
+												<img src="<?php echo $icons_mob ?>">
+                        						<?php endif; ?>
+                                                
+												
+                                                <span><?php the_field( "title_mom" ); ?></span>
                                             </div>
-                                            <ul>
-                                                <li>Автоматический учёт расхода ресурсов (тепло, электроэнергия, вода)</li>
-                                                <li>Создание сценариев работы оборудования по заданному расписанию</li>
-                                            </ul>
+                                            <?php the_field( "content_mob" ); ?>
                                         </div>
                                     </div>
                                 </div>
@@ -249,13 +269,15 @@ get_header(); ?>
                                     <div class="functional-lists_item">
                                         <div class="functional-lists-layout">
                                             <div class="functional-lists-head">
-                                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_microphone.svg">
-                                                <span>Управление всеми <br> устройствами с помощью <br> голосовых команд:</span>
+                                                <?php	$icons_yandex = get_field('icons_yandex');
+
+                       							 if( !empty($icons_yandex) ): ?>
+                      
+												<img src="<?php echo $icons_yandex; ?>">
+                        						<?php endif; ?>
+                                                 <span><?php the_field( "title_yandex" ); ?></span>
                                             </div>
-                                            <ul>
-                                                <li>Автоматический учёт расхода ресурсов (тепло, электроэнергия, вода)</li>
-                                                <li>Создание сценариев работы оборудования по заданному расписанию</li>
-                                            </ul>
+                                            <?php the_field( "content_yandex" ); ?>
                                         </div>
                                     </div>
                                 </div>
@@ -264,10 +286,17 @@ get_header(); ?>
                     </div>
 
                 </div>
-
-                <div class="functional-cover position-two">
+				<div class="functional-cover js-cover">
+                    <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/iPhone2.png">
+                </div>
+                <div class="functional-cover position-two js-cover-two fade">
                     <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/ban_cover_bg.svg">
                 </div>
+				<style>
+					.functional-cover.fade {
+						display: none;
+					}
+				</style>
             </div>
         </div>
 

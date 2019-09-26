@@ -2,12 +2,28 @@ function initTabs(){
 //tabs
     const tabDrawer = $(".tab_drawer_heading"),
         tabListItem = $("ul.tabs li"),
-        tabContent = $(".tab_content");
+        tabContent = $(".tab_content"),
+	cover = $(".js-cover"),
+	coverTwo = $(".js-cover-two");
 
     tabContent.hide();
     $(".tab_content:first").show();
 
+	function changeBlock(val) {
+
+		if(val.attr("rel") === 'tab1') {
+			coverTwo.addClass('fade');
+			cover.removeClass('fade');
+		} else {
+			cover.addClass('fade');
+			coverTwo.removeClass('fade');
+
+		}
+	}
+	
     tabListItem.click(function() {
+		changeBlock($(this));
+		
         tabContent.hide();
         var activeTab = $(this).attr("rel");
         $("#"+activeTab).fadeIn();
