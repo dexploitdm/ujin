@@ -8,6 +8,9 @@
       color: $color-white;
       padding-bottom: 40px;
     }
+    .swiper-container2 {
+      margin-bottom: 30px;
+    }
   }
   &-flex {
     display: flex;
@@ -106,7 +109,6 @@
     }
   }
   &-boxes {
-    padding-top: 30px;
     text-align: center;
     &-title {
       font-style: normal;
@@ -235,6 +237,7 @@
       list-style: none;
       padding: 0;
       z-index: 1;
+      margin-bottom: 0;
     }
   }
 }
@@ -281,7 +284,6 @@
     margin-bottom: 0;
   }
   .solutions-boxes {
-    padding-top: 0;
     &-title {
       font-size: 14px;
     }
