@@ -790,7 +790,12 @@ footer {
     margin-left: -12px; }
   .head-box-layout .head-box-desc-boxes-item span {
     font-size: 13px;
-    line-height: normal; } }
+    line-height: normal; }
+  .box-developers {
+    min-height: auto; }
+    .box-developers .head-box-layout .other-desc .other-desc-content {
+      padding-top: 10px;
+      padding-bottom: 30px; } }
 
 @media (max-width: 481px) {
   .head-box-layout .head-box-desc-boxes-item span {

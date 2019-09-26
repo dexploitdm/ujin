@@ -241,9 +241,16 @@
     font-size: 13px;
     line-height: normal;
   }
+  .box-developers {
+    min-height: auto;
+    .head-box-layout .other-desc .other-desc-content {
+      padding-top: 10px;
+      padding-bottom: 30px;
+
+    }
+  }
 }
 @media (max-width: $mobile-media-small) {
-
   .head-box-layout .head-box-desc-boxes-item span {
     font-size: 13px;
     line-height: normal;
