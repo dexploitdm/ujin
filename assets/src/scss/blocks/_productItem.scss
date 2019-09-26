@@ -134,6 +134,7 @@
         &_item {
           display: flex;
           align-items: center;
+          text-decoration: none;
           .pr-title {
             font-weight: 300;
             font-size: 18px;
@@ -237,6 +238,7 @@
   &_item {
     display: flex;
     align-items: center;
+    text-decoration: none;
     &:first-child {
       margin-right: 22px;
     }

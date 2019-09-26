@@ -276,6 +276,17 @@ function counterProduct() {
     });
 }
 
+function modalRun(){
+    $('.open-popup-run').magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
+    $('.open-popup-pay').magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
+}
+
 $(window).on('resize', function(){
     initSolutions();
     initServices();
@@ -295,4 +306,5 @@ $( document ).ready(function() {
     initShowContentTabsHome();
     scrollFunny();
     counterProduct();
+    modalRun();
 });

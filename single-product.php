@@ -111,14 +111,14 @@ get_header(); ?>
                     <div class="product-item-form">
                         <div class="product-form">
                             <div class="product-form-head">
-                                <div class="product-form-head_item">
+                                <a href="#runmodal" class="product-form-head_item open-popup-run">
                                     <div class="pr-title">Доставка</div>
                                     <div class="pr-icon">?</div>
-                                </div>
-                                <div class="product-form-head_item">
+                                </a>
+                                <a href="#paymodal" class="product-form-head_item open-popup-pay">
                                     <div class="pr-title">Оплата </div>
                                     <div class="pr-icon">?</div>
-                                </div>
+                                </a>
                             </div>
                             <div class="product-form-price-old">
                                 <?php echo $product->regular_price; ?> руб.
@@ -179,14 +179,14 @@ get_header(); ?>
 
                 <div class="block-mobile">
                     <div class="product-head">
-                        <div class="product-head_item">
+                        <a href="#runmodal" class="product-head_item open-popup-run">
                             <div class="pr-title">Доставка</div>
                             <div class="pr-icon">?</div>
-                        </div>
-                        <div class="product-head_item">
+                        </a>
+                        <a href="#paymodal" class="product-head_item open-popup-pay">
                             <div class="pr-title">Оплата </div>
                             <div class="pr-icon">?</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -313,6 +313,56 @@ get_header(); ?>
         </div>
 
         <?php get_template_part( 'components/partnerForm'); ?>
+        <div id="runmodal" class="white-popup mfp-hide">
+            <div class="modal-layout">
+                <div class="modal-head">
+                    <div class="modal-icon">
+                        <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_run.png">
+                    </div>
+                    <div class="modal-title">
+                        Доставка
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body-desc">
+                        <div class="text-bold">
+                            Доставка осуществляется по всей России транспортной компанией СДЭК.
+                        </div>
+                        Доставка до пункта выдачи - 190 руб. <br>
+                        Доставка до двери — 390 руб. <br>
+                        Срок доставки 2-3 дня.
 
+                        <div class="modal-list">
+                            Список <a href="#" class="modal-link">пунктов выдачи.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="paymodal" class="white-popup mfp-hide">
+            <div class="modal-layout">
+                <div class="modal-head">
+                    <div class="modal-icon">
+                        <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_pay.png">
+                    </div>
+                    <div class="modal-title">
+                        Оплата заказа
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body-desc">
+                        <span class="text-bold">
+                            Оплата заказа
+                        </span>
+                         осуществляется при
+                        получении в пункте выдачи или напрямую курьеру.
+                        <div class="modal-list">
+                            Также, мы можем выставить для вас счет для безналичной оплаты.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 <?php get_footer(); ?>

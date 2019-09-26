@@ -7,7 +7,7 @@
   z-index: 1042;
   overflow: hidden;
   position: fixed;
-  background: rgba(77, 193, 255, 0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .mfp-wrap {
@@ -58,7 +58,8 @@
 .mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
   cursor: -moz-zoom-out;
   cursor: -webkit-zoom-out;
-  cursor: zoom-out; }
+  cursor: zoom-out;
+}
 
 .mfp-zoom {
   cursor: pointer;
