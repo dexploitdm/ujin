@@ -31,7 +31,7 @@
                         <div class="footer-form-desc">
                             Свяжитесь с нами и мы подберем для вам наиболее подходящее предложение
                         </div>
-                        <form id="contact" method="post" action="/projects/ujin.io/wp-content/themes/ujin/mail.php">
+                        <form id="contact" method="post" action="<?php echo get_template_directory_uri() ?>/mail.php">
                             <div class="u-controls">
                                 <input class="u-input" type="text" placeholder="Ваш E-mail" name="email">
                             </div>
@@ -48,7 +48,7 @@
                             </div>
 
                         </form>
-<!-- 						<?php echo do_shortcode( '[contact-form-7 id="331" title="Контактная форма 1"]' ); ?> -->
+<!--            --><?php //echo do_shortcode( '[contact-form-7 id="184" title="Контактная форма 1"]' ); ?>
                     </div>
                 </div>
             </div>
@@ -114,24 +114,24 @@
             prevEl: '.swiper-button-prev',
         },
     });
-    jQuery(document).ready(function($) {
-	$("#contact").submit(function() {
-		var str = $(this).serialize();
-		$.ajax({
-			type: "POST",
-			url: "https://dexploitdm.ru/projects/ujin.io/wp-content/themes/ujin/mail.php",
-			data: str,
-			success: function(msg) {
-				if(msg == 'OK') {
-					result = '<div class="ok">Сообщение отправлено</div>';
-					$("#fields").hide();
-				}
-				else {result = msg;}
-				$('#note').html(result);
-			}
-		});
-		return false;
-	});
+    // jQuery(document).ready(function($) {
+	// $("#contact").submit(function() {
+	// 	var str = $(this).serialize();
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: "https://dexploitdm.ru/projects/ujin.io/wp-content/themes/ujin/mail.php",
+	// 		data: str,
+	// 		success: function(msg) {
+	// 			if(msg == 'OK') {
+	// 				result = '<div class="ok">Сообщение отправлено</div>';
+	// 				$("#fields").hide();
+	// 			}
+	// 			else {result = msg;}
+	// 			$('#note').html(result);
+	// 		}
+	// 	});
+	// 	return false;
+	// });
 });
 </script>
 </body>
