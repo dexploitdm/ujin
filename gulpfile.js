@@ -36,7 +36,7 @@ var path = {
     },
     clean: './assets/build/*'
 };
-var sourceFiles = ['node_modules/jquery/dist/jquery.js','node_modules/swiper/js/swiper.js'];
+var sourceFiles = ['node_modules/jquery/dist/jquery.js','node_modules/swiper/js/swiper.js','node_modules/magnific-popup/dist/jquery.magnific-popup.js'];
 /* настройки сервера */
 var config = {
     server: {

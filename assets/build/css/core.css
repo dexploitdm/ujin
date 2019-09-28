@@ -452,6 +452,14 @@ footer {
       line-height: 130%;
       color: #B8C2C4; }
 
+.msg-note {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  background-color: #0EF5FF;
+  border-radius: 5px;
+  padding: 20px 0; }
+
 @media (max-width: 1260px) {
   footer .footer-layout-box_item:nth-child(2) {
     max-width: 100%; }

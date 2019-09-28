@@ -168,6 +168,14 @@ footer {
     }
   }
 }
+.msg-note {
+  color: $color-white;
+  font-size: 20px;
+  text-align: center;
+  background-color: $color-default;
+  border-radius: 5px;
+  padding: 20px 0;
+}
 @media (max-width: $large-media) {
   footer {
     .footer-layout-box_item {

@@ -286,6 +286,26 @@ function modalRun(){
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
 }
+//
+// function validateContact () {
+//     $("#contact").submit(function() {
+//     	var str = $(this).serialize();
+//     	$.ajax({
+//     		type: "POST",
+//     		url: "https://dexploitdm.ru/projects/ujin.io/wp-content/themes/ujin/mail.php",
+//     		data: str,
+//     		success: function(msg) {
+//     			if(msg == 'OK') {
+//     				result = '<div class="ok">Сообщение отправлено</div>';
+//     				$("#fields").hide();
+//     			}
+//     			else {result = msg;}
+//     			$('#note').html(result);
+//     		}
+//     	});
+//     	return false;
+//     });
+// }
 
 $(window).on('resize', function(){
     initSolutions();

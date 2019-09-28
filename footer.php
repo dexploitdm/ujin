@@ -46,6 +46,7 @@
                                     Отправить
                                 </button>
                             </div>
+                            <div class="msg-note">Сообщение отправленно</div>
 
                         </form>
 
@@ -101,7 +102,7 @@
 <?php wp_footer(); ?>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/swiper.js"></script>
-<script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.magnific-popup.min.js"></script>
+<script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.magnific-popup.js"></script>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/app.js"></script>
 <script>
     var swiper = new Swiper('.swiper-container', {
@@ -114,24 +115,23 @@
             prevEl: '.swiper-button-prev',
         },
     });
-    // jQuery(document).ready(function($) {
-	// $("#contact").submit(function() {
-	// 	var str = $(this).serialize();
-	// 	$.ajax({
-	// 		type: "POST",
-	// 		url: "https://dexploitdm.ru/projects/ujin.io/wp-content/themes/ujin/mail.php",
-	// 		data: str,
-	// 		success: function(msg) {
-	// 			if(msg == 'OK') {
-	// 				result = '<div class="ok">Сообщение отправлено</div>';
-	// 				$("#fields").hide();
-	// 			}
-	// 			else {result = msg;}
-	// 			$('#note').html(result);
-	// 		}
-	// 	});
-	// 	return false;
-	// });
+    jQuery(document).ready(function($) {
+	$("#contact").submit(function() {
+		var str = $(this).serialize();
+		$.ajax({
+			type: "POST",
+			url: "<?php echo get_template_directory_uri() ?>/mail.php",
+			data: str,
+			success: function(msg) {
+				if(msg == 'OK') {
+					result = '<div class="ok">Сообщение отправлено</div>';
+				}
+				else {result = msg;}
+				$('#note').html(result);
+			}
+		});
+		return false;
+	});
 });
 </script>
 </body>
