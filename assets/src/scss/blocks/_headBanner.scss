@@ -90,6 +90,13 @@
 .head-box-layout .head-box-desc .title-h1.title-box {
   max-width: 546px;
 }
+.head-box-layout .head-box-desc-boxes.flex-wrap {
+  .head-box-desc-boxes-item {
+    span {
+      margin-left: -11px;
+    }
+  }
+}
 //Счетчик
 .head-box-count {
   display: flex;
@@ -194,6 +201,13 @@
 @media (max-width: $tablet-media) {
   .head-box-layout .head-box-cover {
     display: none;
+  }
+  .head-box-layout .head-box-desc-boxes.flex-wrap {
+    .head-box-desc-boxes-item {
+      span {
+        margin-left: 0;
+      }
+    }
   }
 }
 @media (max-width: $mobile-media) {

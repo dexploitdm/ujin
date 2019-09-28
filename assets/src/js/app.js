@@ -286,26 +286,45 @@ function modalRun(){
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
 }
-//
-// function validateContact () {
-//     $("#contact").submit(function() {
-//     	var str = $(this).serialize();
-//     	$.ajax({
-//     		type: "POST",
-//     		url: "https://dexploitdm.ru/projects/ujin.io/wp-content/themes/ujin/mail.php",
-//     		data: str,
-//     		success: function(msg) {
-//     			if(msg == 'OK') {
-//     				result = '<div class="ok">Сообщение отправлено</div>';
-//     				$("#fields").hide();
-//     			}
-//     			else {result = msg;}
-//     			$('#note').html(result);
-//     		}
-//     	});
-//     	return false;
-//     });
-// }
+
+function validateContact () {
+    const messageSend = $(".msg-note"),
+     emailInput = $('.js-email'),
+     nameInput = $('.js-name'),
+     msgInput = $('.js-msg'),
+     bntSubmit = $('.js-submit');
+
+    function valid(){
+        if(emailInput.val().length > 0 && nameInput.val().length > 0){
+            bntSubmit.removeAttr('disabled');
+        }
+    }
+
+    emailInput.focusout(function() {
+        valid();
+        if(emailInput.val().length > 0) {
+            emailInput.css('box-shadow','none');
+        }
+    });
+    nameInput.focusout(function() {
+        valid();
+        if(nameInput.val().length > 0) {
+            nameInput.css('box-shadow','none');
+        }
+        if(emailInput.val().length === 0) {
+            emailInput.css('box-shadow','0 0 17px 0px #e55151');
+        }
+    });
+    msgInput.focusout(function() {
+        valid();
+        if(emailInput.val().length === 0) {
+            emailInput.css('box-shadow','0 0 17px 0px #e55151');
+        }
+        if(nameInput.val().length === 0) {
+            nameInput.css('box-shadow','0 0 17px 0px #e55151');
+        }
+    });
+}
 
 $(window).on('resize', function(){
     initSolutions();
@@ -327,4 +346,5 @@ $( document ).ready(function() {
     scrollFunny();
     counterProduct();
     modalRun();
+    validateContact();
 });

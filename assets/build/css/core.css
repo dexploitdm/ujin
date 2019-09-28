@@ -458,7 +458,8 @@ footer {
   text-align: center;
   background-color: #0EF5FF;
   border-radius: 5px;
-  padding: 20px 0; }
+  padding: 20px 0;
+  display: none; }
 
 @media (max-width: 1260px) {
   footer .footer-layout-box_item:nth-child(2) {
@@ -681,6 +682,9 @@ footer {
 .head-box-layout .head-box-desc .title-h1.title-box {
   max-width: 546px; }
 
+.head-box-layout .head-box-desc-boxes.flex-wrap .head-box-desc-boxes-item span {
+  margin-left: -11px; }
+
 .head-box-count {
   display: -ms-flexbox;
   display: flex;
@@ -764,7 +768,9 @@ footer {
 
 @media (max-width: 968px) {
   .head-box-layout .head-box-cover {
-    display: none; } }
+    display: none; }
+  .head-box-layout .head-box-desc-boxes.flex-wrap .head-box-desc-boxes-item span {
+    margin-left: 0; } }
 
 @media (max-width: 768px) {
   .head-box {

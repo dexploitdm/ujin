@@ -31,18 +31,18 @@
                         <div class="footer-form-desc">
                             Свяжитесь с нами и мы подберем для вам наиболее подходящее предложение
                         </div>
-                        <form id="contact" method="post" action="<?php echo get_template_directory_uri() ?>/mail.php">
+                        <form id="contact" method="post">
                             <div class="u-controls">
-                                <input class="u-input" type="text" placeholder="Ваш E-mail" name="email">
+                                <input class="u-input js-email" type="text" placeholder="Ваш E-mail" name="email">
                             </div>
                             <div class="u-controls">
-                                <input class="u-input" type="text" placeholder="Как вас зовут" name="name">
+                                <input class="u-input js-name" type="text" placeholder="Как вас зовут" name="name">
                             </div>
                             <div class="u-controls">
-                                <input class="u-input" type="text" placeholder="Вопрос или комментарий" name="msg">
+                                <input class="u-input js-msg" type="text" placeholder="Вопрос или комментарий" name="msg">
                             </div>
                             <div class="u-controls center">
-                                <button class="u-btn" type="submit">
+                                <button class="u-btn js-submit" type="submit" disabled>
                                     Отправить
                                 </button>
                             </div>
@@ -116,22 +116,22 @@
         },
     });
     jQuery(document).ready(function($) {
-	$("#contact").submit(function() {
-		var str = $(this).serialize();
-		$.ajax({
-			type: "POST",
-			url: "<?php echo get_template_directory_uri() ?>/mail.php",
-			data: str,
-			success: function(msg) {
-				if(msg == 'OK') {
-					result = '<div class="ok">Сообщение отправлено</div>';
-				}
-				else {result = msg;}
-				$('#note').html(result);
-			}
-		});
-		return false;
-	});
+    const formSend = $("#contact");
+    const messageSend = $(".msg-note");
+
+        formSend.submit(function(e) {
+            var str = $(this).serialize();
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "<?php echo get_template_directory_uri() ?>/mail.php",
+                data: str,
+                success: function(msg) {
+                    if(!msg == 'OK') {messageSend.fadeIn();} else {messageSend.fadeIn();}
+                }
+            });
+            return false;
+        });
 });
 </script>
 </body>

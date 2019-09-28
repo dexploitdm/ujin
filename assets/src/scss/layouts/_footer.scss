@@ -175,6 +175,7 @@ footer {
   background-color: $color-default;
   border-radius: 5px;
   padding: 20px 0;
+  display: none;
 }
 @media (max-width: $large-media) {
   footer {
