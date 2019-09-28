@@ -6,7 +6,8 @@ $mail->CharSet = 'utf-8';
 
 if ($_POST) { // если передан массив POST
     $name = $_POST['name'];
-    $phone = $_POST['email'];
+    $email = $_POST['email'];
+    $msg = $_POST['msg'];
     $json = array(); // подготовим массив ответа
 
     function mime_header_encode($str, $data_charset, $send_charset) { // функция преобразования заголовков в верную кодировку
@@ -16,25 +17,31 @@ if ($_POST) { // если передан массив POST
     }
 
     $mail->isSMTP();
+    //$mail->SMTPDebug = true;
     $mail->Host = 'smtp.yandex.ru';  																							// Specify main and backup SMTP servers
     $mail->SMTPAuth = true;
-    $mail->Username = 'mihalzvezdov@yandex.ru';
-    $mail->Password = '4815162342007katesdev';
+    $mail->Username = 'ujin.tech@yandex.ru';
+    $mail->Password = 'Qq1234567';
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
-    $mail->setFrom('dexploitdm@yandex.ru');
+    $mail->setFrom('ujin.tech@yandex.ru');
     $mail->addAddress('dexploitdm@yandex.ru');
     $mail->isHTML(true);                                  // Set email format to HTML
 
-    $mail->Subject = 'ЦПК';
+    $mail->Subject = 'Ujin';
     $mail->Body    = '
-    Клиент оставил заявку для уточнения стоимости заказа:<br>
+    Клиент оставил заявку:<br>
     <b>Имя:</b> ' .$name . '<br> 
-    <b>Телефон:</b>' .$phone. '';
+    <b>Почта:</b> ' .$email. '<br>
+    <b>Вопрос или комментарий клиента:</b> ' .$msg. '';
     $mail->AltBody = '';
     $mail->send();
     $json['error'] = 0; // ошибок не было
-    echo json_encode($json); // выводим массив ответа
+   // header("/");
+    if ($mail->Send()) {
+        header('Location: /');
+    }
+   // echo json_encode($json); // выводим массив ответа
 } else { // если массив POST не был передан
     echo 'GET LOST!'; // высылаем
 }

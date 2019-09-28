@@ -48,7 +48,7 @@
                             </div>
 
                         </form>
-<!--            --><?php //echo do_shortcode( '[contact-form-7 id="184" title="Контактная форма 1"]' ); ?>
+
                     </div>
                 </div>
             </div>
