@@ -292,13 +292,17 @@ function validateContact () {
      emailInput = $('.js-email'),
      nameInput = $('.js-name'),
      msgInput = $('.js-msg'),
-     bntSubmit = $('.js-submit');
+     bntSubmit = $('.js-submit'),
+     btnYndex = $('.js-yandex-form');
 
     function valid(){
         if(emailInput.val().length > 0 && nameInput.val().length > 0){
             bntSubmit.removeAttr('disabled');
         }
     }
+    bntSubmit.click( function( e ) {
+        btnYndex.click();
+    });
 
     emailInput.focusout(function() {
         valid();
@@ -339,6 +343,7 @@ function orderSubmitClick() {
     const inputCount = formHidden.find('input[name="idtovar"]');
     const btnFormSubmit = $('.buyButtonOkForm ');
     const msgSuccess = $('.form-order-msg');
+    const btnYndexOrder = $('.js-yandex-order');
 
     $('.js-order').click( function( e ) {
         e.preventDefault();
@@ -370,6 +375,7 @@ function orderSubmitClick() {
             orderMsg.val('');
             msgSuccess.fadeIn();
             btnFormSubmit.click();
+            btnYndexOrder.click();
         }
 
     });

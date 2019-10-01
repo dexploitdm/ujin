@@ -22,6 +22,7 @@
                     Получить прайс
                 </button>
                 <div class="msg-note" style="margin-top: 20px;">Сообщение отправленно</div>
+                <button class="js-yandex-form" onclick="yaCounter55570948.reachGoal('myForm'); return true;" style="display: none"></button>
             </form>
         </div>
     </div>

@@ -2,7 +2,7 @@
 <html lang="ru-RU">
 <head>
     <meta charset="UTF-8">
-    <title><?php wp_title('', true, 'left'); ?> | Ujin</title>
+    <title><?php the_title() ?> | Ujin</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="author" content="Dexploitdm | Дмитрий Паршаков">
@@ -13,6 +13,7 @@
 </head>
 <body>
 <header class="">
+    <?php the_title() ?>
     <div class="header-layout box">
         <div class="logo">
            <a href="<?php echo get_site_url(); ?>/">

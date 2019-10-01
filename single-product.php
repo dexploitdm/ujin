@@ -177,7 +177,7 @@ get_header(); ?>
                             Наш менеджер свяжется с вами в течении 15 минут для оформления заказа
                         </div>
                         <div class="form-order-msg">Заявка отправлена</div>
-
+                        <button class="js-yandex-order" onclick="yaCounter55570948.reachGoal('ujOrder'); return true;" style="display: none"></button>
 
                     </div>
                 </div>
