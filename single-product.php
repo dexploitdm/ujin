@@ -195,7 +195,15 @@ get_header(); ?>
 
             </div>
         </div>
+	<?php
 
+		echo get_the_title( $post->ID ) ?>
+		<?php woocommerce_template_loop_add_to_cart(); ?>
+	
+		<?php echo do_shortcode( '[woocommerce_checkout]' ); ?>
+			<?php echo do_shortcode( '[viewBuyButtonCustom id=' . $post->ID . ' name=' . $product->get_name() . ' count="3" price="3423"]' ); ?>
+	
+		
         <div class="product-preview full-list box mobile-hidden">
             <h2 class="title-h2">С эти товаром покупают</h2>
             <div class="product-preview-layout grid-three">
