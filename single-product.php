@@ -121,7 +121,9 @@ get_header(); ?>
                                 </a>
                             </div>
                             <div class="product-form-price-old">
-                                <?php echo $product->regular_price; ?> руб.
+								<?php if($product->is_on_sale()):  ?>
+							  	<?php echo $product->regular_price; ?> руб.
+								<?php endif; ?>
                             </div>
                             <div class="product-form-info">
                                 <div class="product-form-info-price">

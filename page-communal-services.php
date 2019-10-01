@@ -87,8 +87,8 @@ get_header(); ?>
                 <div class="functional-desc block-big">
                     <h2 class="title-h2">Функциональное приложение для ваших жильцов</h2>
                     <div class="functional-desc-content">
-                        Текст о том, что мы предлагаем застройщикам функциональное приложение,
-                        которое можем  забрендировать под них.
+Ваши жильцы получают доступ к управлению коммунальными услугами через приложение, что делает ваше взаимодействие еще более удобным.
+
                     </div>
                     <div class="functional-lists grid-two">
                         <div class="functional-lists_item">

@@ -85,10 +85,11 @@ get_header(); ?>
             <div class="functional-layout box">
                 <div class="functional-desc block-full">
                     <h2 class="title-h2">Функциональное приложение для ваших гостей</h2>
-                    <div class="functional-desc-content">
-                        Текст о том, что мы предлагаем застройщикам функциональное приложение,
-                        которое можем  забрендировать под них.
-                    </div>
+               	   <div class="functional-desc-content">
+Ваши гости получают доступ к управлению номером, светом, температурой, кондиционером с помощью мобильного приложения, что делает их проживание более комфортным .
+
+                    </div> 
+					
                     <div class="functional-box grid-two">
                         <div class="functional-box-item">
                             <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_acces.svg">

@@ -11,9 +11,8 @@ get_header(); ?>
                     <h1 class="title-h1"><?php echo get_field( "title_bannner" ); ?></h1>
                     <div class="head-box-two-desc">
                         <p>
-                            Общий текст о серии товаров, собственном производстве, надежности,
-                            отличии от конкурентов,  масштабировании системы и возможности
-                            построения единной системы с другими аппаратными решениями.
+Умные устройства на базе концепции интернета вещей с искусственным интеллектом. Дистанционное управление светом и отоплением, контроль движений, тепла, влажности, предотвращение протечек. Все это в комплекте с удобным и понятным приложением для вашего смартфона.
+
                         </p>
                     </div>
                 </div>
@@ -44,7 +43,9 @@ get_header(); ?>
                         <div class="product-box-desc">
                             <div class="product-box-desc_price">
                                 <span><?php echo $product->get_price();  ?> руб.</span>
-                                <span class="old"><?php echo $product->regular_price; ?> руб. </span>
+                                <?php if($product->is_on_sale()):  ?>
+							  	<span class="old"><?php echo $product->regular_price; ?> руб. </span>
+								<?php endif; ?>
                             </div>
                             <div class="product-box-desc_content">
                                 <div class="product-box-desc_content_box">
@@ -139,54 +140,20 @@ get_header(); ?>
                                     <div class="functional-lists_item">
                                         <div class="functional-lists-layout">
                                             <div class="functional-lists-head">
-                                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_home_phone.svg">
-                                                <span>Автоматизация <br> процессов 2</span>
+                                                <img src="https://dexploitdm.ru/projects/ujin.io/wp-content/uploads/2019/09/microphone-1-e1569823072606.png">
+                                                <span>Управление устройствами с помощью голосовых команд:</span>
                                             </div>
                                             <ul>
-                                                <li>Автоматический учёт расхода ресурсов (тепло, электроэнергия, вода)</li>
-                                                <li>Создание сценариев работы оборудования по заданному расписанию</li>
+												<li>Управлять электроприборами</li>
+												<li>Поставить таймер на нужное время</li>
+                                                <li>Включить\выключить свет</li>
+                                                <li>Включить\выключить заданый сценарий работы</li>
+												<li>Перекрыть воду </li>
+												<li>Управление сотнями других устройств от партнеров Яндекса</li>
                                             </ul>
                                         </div>
                                     </div>
 
-                                    <div class="functional-lists_item">
-                                        <div class="functional-lists-layout">
-                                            <div class="functional-lists-head">
-                                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_controls.svg">
-                                                <span>Удаленное управление <br> и контроль 2</span>
-                                            </div>
-                                            <ul>
-                                                <li>Температурой воздуха</li>
-                                                <li>Освещением</li>
-                                                <li>Бытовыми приборами</li>
-                                                <li>Видеонаблюдением</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="functional-lists_item">
-                                        <div class="functional-lists-layout">
-                                            <div class="functional-lists-head">
-                                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_dash.svg">
-                                                <span>Мониторинг <br> показателей 2</span>
-                                            </div>
-                                            <ul>
-                                                <li>Мониторинг потребления  ресурсов в режиме реального времени</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="functional-lists_item">
-                                        <div class="functional-lists-layout">
-                                            <div class="functional-lists-head">
-                                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_alarm.svg">
-                                                <span>Система <br> оповещений 2</span>
-                                            </div>
-                                            <ul>
-                                                <li>Оповещения о наличии протечек в квартире</li>
-                                                <li>Оповещения о несанкционированном доступе в помещение при соответствующих настройках сценариев</li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

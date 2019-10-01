@@ -10,15 +10,15 @@
                     </div>
                     <div class="footer-contact-item">
                         <span>E-mail</span>
-                        <a class="footer-contact-item_link" href="mailto:info@mysmartflat.ru">info@mysmartflat.ru</a>
+                        <a class="footer-contact-item_link" href="mailto:info@mysmartflat.ru">info@ujin.tech</a>
                     </div>
                     <div class="footer-contact-item">
                         <span>Пишите</span>
                         <div class="links-soc">
-                            <a href="#" class="links-soc-w">
+                            <a href="https://wa.me/79824897387" class="links-soc-w">
                                 <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/whatsapp.png"> <p>Whatsapp</p>
                             </a>
-                            <a href="#" class="links-soc-t">
+                            <a href="tg://resolve?domain=panychelena" class="links-soc-t">
                                 <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/telegram.png"> <p>Telegram</p>
                             </a>
                         </div>
@@ -29,7 +29,7 @@
                 <div class="footer-form">
                     <div class="footer-form-layout">
                         <div class="footer-form-desc">
-                            Свяжитесь с нами и мы подберем для вам наиболее подходящее предложение
+                            Свяжитесь с нами, и мы подберем для вам наиболее подходящее предложение
                         </div>
                         <form id="contact" method="post">
                             <div class="u-controls">
@@ -58,7 +58,7 @@
             <div class="footer-layout-menu-item">
                 <a href="#" class="menu-title">О компании</a>
                 <ul>
-                    <li><a href="<?php echo get_site_url(); ?>/">О нас</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/o-kompanii/">О нас</a> </li>
                     <li><a href="<?php echo get_site_url(); ?>/">Партнерам</a> </li>
                     <li><a href="<?php echo get_site_url(); ?>/">СМИ о нас</a> </li>
                     <li><a href="<?php echo get_site_url(); ?>/">База знаний</a> </li>
