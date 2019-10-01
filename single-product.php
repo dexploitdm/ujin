@@ -5,7 +5,7 @@ get_header(); ?>
 		
         <?php while ( have_posts() ) : the_post(); ?><?php endwhile; // end of the loop. ?>
         <div class="product-item box">
-            <h2 class="title-h2"><?php the_title(); ?></h2>
+            <h2 class="title-h2 js-product-title"><?php the_title(); ?></h2>
 
 			<?php	
 			
@@ -154,16 +154,18 @@ get_header(); ?>
                                 <div class="info-text">Дорого?</div>
                                 <form method="post" class="u-form">
                                     <div class="u-controls">
-                                        <input type="text" class="u-input" name="fio" placeholder="Ф.И.О. контактного лица">
+                                        <input type="text" class="u-input js-order-fio" name="fio" placeholder="Ф.И.О. контактного лица">
+                                        <div class="is-error">Введите ф.и.о</div>
                                     </div>
                                     <div class="u-controls">
-                                        <input type="text" class="u-input" name="email" placeholder="E-mail">
+                                        <input type="text" class="u-input js-order-email" name="email" placeholder="E-mail">
+                                        <div class="is-error">Введите Email</div>
                                     </div>
                                     <div class="u-controls">
-                                        <input type="text" class="u-input" name="сщььуте" placeholder="Комментарий">
+                                        <input type="text" class="u-input js-order-msg" name="сщььуте" placeholder="Комментарий">
                                     </div>
                                     <div class="u-form-btn">
-                                        <button class="u-btn u-btn-white" type="submit">
+                                        <button class="u-btn u-btn-white js-order" type="submit">
                                             Оформить заказ
                                         </button>
                                     </div>
@@ -174,6 +176,7 @@ get_header(); ?>
                         <div class="product-item-msg">
                             Наш менеджер свяжется с вами в течении 15 минут для оформления заказа
                         </div>
+                        <div class="form-order-msg">Заявка отправлена</div>
 
 
                     </div>
@@ -195,15 +198,12 @@ get_header(); ?>
 
             </div>
         </div>
-	<?php
+<!--		--><?php //woocommerce_template_loop_add_to_cart(); ?>
+<!--	-->
+<!--		--><?php //echo do_shortcode( '[woocommerce_checkout]' ); ?>
+			<?php echo do_shortcode( '[viewBuyButtonCustom  id=' . $post->ID . ' name=' . $product->get_name() . ' count="3" price="3423"]' ); ?>
+	
 
-		echo get_the_title( $post->ID ) ?>
-		<?php woocommerce_template_loop_add_to_cart(); ?>
-	
-		<?php echo do_shortcode( '[woocommerce_checkout]' ); ?>
-			<?php echo do_shortcode( '[viewBuyButtonCustom id=' . $post->ID . ' name=' . $product->get_name() . ' count="3" price="3423"]' ); ?>
-	
-		
         <div class="product-preview full-list box mobile-hidden">
             <h2 class="title-h2">С эти товаром покупают</h2>
             <div class="product-preview-layout grid-three">
@@ -375,4 +375,6 @@ get_header(); ?>
             </div>
         </div>
     </main>
+
 <?php get_footer(); ?>
+

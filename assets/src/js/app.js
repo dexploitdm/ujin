@@ -326,6 +326,55 @@ function validateContact () {
     });
 }
 
+function orderSubmitClick() {
+    $('.clickBuyButtonCustom').click();
+    const formHidden =  $('.b1c-form');
+
+    //form hidden
+    const inputName = formHidden.find('input[name="txtname"]');
+    const inputPrice = formHidden.find('input[name="pricetovar"]');
+    const inputNameProduct = formHidden.find('input[name="nametovar"]');
+    const inputMessage = formHidden.find('.buymessage');
+    const inputEmail = formHidden.find('input[name="txtemail"]');
+    const inputCount = formHidden.find('input[name="idtovar"]');
+    const btnFormSubmit = $('.buyButtonOkForm ');
+    const msgSuccess = $('.form-order-msg');
+
+    $('.js-order').click( function( e ) {
+        e.preventDefault();
+        //order
+        let count = $('.js-count-product').val();
+        let price = $('.js-total-sum').text();
+        let productTitle = $('.js-product-title').text();
+        let orderFio = $('.js-order-fio');
+        let orderEmail = $('.js-order-email');
+        let orderMsg = $('.js-order-msg');
+
+        inputCount.val(count);
+        inputPrice.val(price);
+        inputNameProduct.val(productTitle);
+        inputName.val(orderFio.val());
+        inputEmail.val(orderEmail.val());
+        inputMessage.text(orderMsg.val());
+
+        if(orderFio.val().length === 0){
+            orderFio.parent().find('.is-error').fadeIn();} else {
+            orderFio.parent().find('.is-error').fadeOut();}
+        if(orderEmail.val().length === 0){ orderEmail.parent().find('.is-error').fadeIn();} else {
+            orderEmail.parent().find('.is-error').fadeOut();}
+
+        if(orderFio.val().length > 0
+            && orderEmail.val().length > 0){
+            orderFio.val('');
+            orderEmail.val('');
+            orderMsg.val('');
+            msgSuccess.fadeIn();
+            btnFormSubmit.click();
+        }
+
+    });
+}
+
 $(window).on('resize', function(){
     initSolutions();
     initServices();
@@ -347,4 +396,5 @@ $( document ).ready(function() {
     counterProduct();
     modalRun();
     validateContact();
+    orderSubmitClick();
 });
