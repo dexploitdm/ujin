@@ -293,14 +293,26 @@ function validateContact () {
      nameInput = $('.js-name'),
      msgInput = $('.js-msg'),
      bntSubmit = $('.js-submit'),
-     btnYndex = $('.js-yandex-form');
+     btnYndex = $('.js-yandex-form'),
+		  
+	nameInputPart = $('.js-name-part'),
+	emailInputPart = $('.js-email-part'),
+	 bntSubmitPart = $('.js-submit-part');
 
     function valid(){
         if(emailInput.val().length > 0 && nameInput.val().length > 0){
             bntSubmit.removeAttr('disabled');
         }
     }
+	function validPart(){
+        if(nameInputPart.val().length > 0 && emailInputPart.val().length > 0){
+            bntSubmitPart.removeAttr('disabled');
+        }
+    }
     bntSubmit.click( function( e ) {
+        btnYndex.click();
+    });
+	bntSubmitPart.click( function( e ) {
         btnYndex.click();
     });
 
@@ -328,6 +340,23 @@ function validateContact () {
             nameInput.css('box-shadow','0 0 17px 0px #e55151');
         }
     });
+	nameInputPart.focusout(function() {
+       validPart();
+        if(nameInputPart.val().length > 0) {
+            nameInputPart.css('box-shadow','none');
+        }
+    });
+	emailInputPart.focusout(function() {
+		validPart();
+        if(nameInputPart.val().length === 0) {
+             nameInputPart.css('box-shadow','0 0 17px 0px #e55151');
+        }
+		if(emailInputPart.val().length === 0) {
+           		emailInputPart.css('box-shadow','0 0 17px 0px #e55151');
+        } else {
+			  emailInputPart.css('box-shadow','none');
+		}
+    });
 }
 
 function orderSubmitClick() {
@@ -339,39 +368,66 @@ function orderSubmitClick() {
     const inputPrice = formHidden.find('input[name="pricetovar"]');
     const inputNameProduct = formHidden.find('input[name="nametovar"]');
     const inputMessage = formHidden.find('.buymessage');
-    const inputEmail = formHidden.find('input[name="txtemail"]');
+    //const inputEmail = formHidden.find('input[name="txtemail"]');
+    const inputPhone = formHidden.find('input[name="txtphone"]');
     const inputCount = formHidden.find('input[name="idtovar"]');
     const btnFormSubmit = $('.buyButtonOkForm ');
     const msgSuccess = $('.form-order-msg');
     const btnYndexOrder = $('.js-yandex-order');
 
-    $('.js-order').click( function( e ) {
+	const btnSubmitOrder = $('.js-order');
+	
+
+	
+	const orderFioValid = $('.js-order-fio');
+	const orderPhoneValid = $('.js-order-tel');
+	
+	orderFioValid.focusout(function() {
+        if(orderFioValid.val().length > 0 && orderPhoneValid.val().length > 0) {
+           	btnSubmitOrder.removeAttr('disabled').addClass('success');
+        } else {
+				btnSubmitOrder.removeClass('success').attr('disabled');
+		}
+    });
+	orderPhoneValid.focusout(function() {
+        if(orderFioValid.val().length > 0 && orderPhoneValid.val().length > 0) {
+           	btnSubmitOrder.removeAttr('disabled').addClass('success');
+        } else {
+				btnSubmitOrder.removeClass('success').attr('disabled');
+		}
+    });
+	
+	
+	
+    btnSubmitOrder.click( function( e ) {
         e.preventDefault();
         //order
         let count = $('.js-count-product').val();
         let price = $('.js-total-sum').text();
         let productTitle = $('.js-product-title').text();
         let orderFio = $('.js-order-fio');
-        let orderEmail = $('.js-order-email');
+        //let orderEmail = $('.js-order-email');//js-order-tel
+		let orderPhone = $('.js-order-tel');
         let orderMsg = $('.js-order-msg');
 
         inputCount.val(count);
         inputPrice.val(price);
         inputNameProduct.val(productTitle);
         inputName.val(orderFio.val());
-        inputEmail.val(orderEmail.val());
+        //inputEmail.val(orderEmail.val());
+        inputPhone.val(orderPhone.val());
         inputMessage.text(orderMsg.val());
 
-        if(orderFio.val().length === 0){
-            orderFio.parent().find('.is-error').fadeIn();} else {
-            orderFio.parent().find('.is-error').fadeOut();}
-        if(orderEmail.val().length === 0){ orderEmail.parent().find('.is-error').fadeIn();} else {
-            orderEmail.parent().find('.is-error').fadeOut();}
+//         if(orderFio.val().length === 0){
+//             orderFio.parent().find('.is-error').fadeIn();} else {
+//             orderFio.parent().find('.is-error').fadeOut();}
+//         if(orderPhone.val().length === 0){ orderPhone.parent().find('.is-error').fadeIn();} else {
+//             orderPhone.parent().find('.is-error').fadeOut();}
 
         if(orderFio.val().length > 0
-            && orderEmail.val().length > 0){
+            && orderPhone.val().length > 0){
             orderFio.val('');
-            orderEmail.val('');
+            orderPhone.val('');
             orderMsg.val('');
             msgSuccess.fadeIn();
             btnFormSubmit.click();

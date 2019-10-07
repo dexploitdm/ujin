@@ -117,6 +117,7 @@
     });
     jQuery(document).ready(function($) {
     const formSend = $("#contact");
+	const formSendPartner = $("#formPartner");
     const messageSend = $(".msg-note");
 
         formSend.submit(function(e) {
@@ -132,6 +133,10 @@
             });
             return false;
         });
+		 formSendPartner.submit(function(e) {
+            var str = $(this).serialize();  e.preventDefault();  $.ajax({ type: "POST",  url: "<?php echo get_template_directory_uri() ?>/mail.php",    data: str,  success: function(msg) {if(!msg == 'OK') {messageSend.fadeIn();} else {messageSend.fadeIn();}   } }); return false; });
+		
+		
 });
 </script>
 </body>

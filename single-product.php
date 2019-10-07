@@ -158,14 +158,14 @@ get_header(); ?>
                                         <div class="is-error">Введите ф.и.о</div>
                                     </div>
                                     <div class="u-controls">
-                                        <input type="text" class="u-input js-order-email" name="email" placeholder="E-mail">
-                                        <div class="is-error">Введите Email</div>
+                                        <input type="text" class="u-input js-order-tel" name="phone" placeholder="Телефон">
+                                        <div class="is-error">Введите телефон</div>
                                     </div>
                                     <div class="u-controls">
                                         <input type="text" class="u-input js-order-msg" name="сщььуте" placeholder="Комментарий">
                                     </div>
                                     <div class="u-form-btn">
-                                        <button class="u-btn u-btn-white js-order" type="submit">
+                                        <button class="u-btn u-btn-white js-order" type="submit" disabled>
                                             Оформить заказ
                                         </button>
                                     </div>

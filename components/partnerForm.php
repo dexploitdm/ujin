@@ -11,14 +11,14 @@
                 <a href="tel:8 800 775 05 19">8 800 775 05 19</a>
                 и мы отправим вам прайс!
             </div>
-            <form id="contact" method="post">
+            <form id="formPartner" method="post">
                 <div class="u-controls">
-                    <input type="text" class="u-input js-name" name="name" placeholder="Ф.И.О. контактного лица">
+                    <input type="text" class="u-input js-name-part" name="name" placeholder="Ф.И.О. контактного лица">
                 </div>
                 <div class="u-controls">
-                    <input type="text" class="u-input js-email" name="email" placeholder="E-mail">
+                    <input type="text" class="u-input js-email-part" name="email" placeholder="E-mail">
                 </div>
-                <button class="u-btn u-btn-white js-submit" type="submit" disabled>
+                <button class="u-btn u-btn-white js-submit-part" type="submit" disabled>
                     Получить прайс
                 </button>
                 <div class="msg-note" style="margin-top: 20px;">Сообщение отправленно</div>

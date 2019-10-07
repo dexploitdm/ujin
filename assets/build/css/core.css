@@ -3905,3 +3905,10 @@ img.mfp-img {
 
 .clickBuyButtonCustom {
   display: none; }
+.js-order {
+	cursor: default;
+}
+.js-order.success {
+	cursor: pointer;
+	opacity: 1 !important;
+}
