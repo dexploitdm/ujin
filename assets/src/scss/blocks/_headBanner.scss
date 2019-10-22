@@ -3,7 +3,6 @@
   background-size: cover;
   min-height: 800px;
   transition: .3s;
-  background-position: center;
   @media (max-width: $mobile-media) {
     background-image: url(../images/covers/bg_ban.svg) !important;
   }

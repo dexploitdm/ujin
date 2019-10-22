@@ -3,6 +3,10 @@
 
     </div>
     <div class="head-box-layout box">
+		<div class="cover-ban" style="
+					background-image: url(<?php echo get_field( "illustrat_ban" ); ?>);">
+			
+		</div>
         <div class="head-box-desc other-desc">
             <h1 class="title-h1"><?php echo get_field( "title_bannner" ); ?></h1>
 			<?php $banjkh = new WP_Query(array('post_type' => 'banjkh', 'order' => 'ASC')) ?>

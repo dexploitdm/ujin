@@ -6,7 +6,7 @@ $mail->CharSet = 'utf-8';
 
 if ($_POST) { // если передан массив POST
     $name = $_POST['name'];
-    $email = $_POST['email'];
+    $phone = $_POST['phone'];
     $msg = $_POST['msg'];
     $json = array(); // подготовим массив ответа
 
@@ -25,14 +25,14 @@ if ($_POST) { // если передан массив POST
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
     $mail->setFrom('ujin.tech@yandex.ru');
-    $mail->addAddress('dexploitdm@yandex.ru');
+    $mail->addAddress('panychelena@gmail.com');
     $mail->isHTML(true);                                  // Set email format to HTML
 
     $mail->Subject = 'Ujin';
     $mail->Body    = '
     Клиент оставил заявку:<br>
     <b>Имя:</b> ' .$name . '<br> 
-    <b>Почта:</b> ' .$email. '<br>
+    <b>Телефон:</b> ' .$phone. '<br>
     <b>Вопрос или комментарий клиента:</b> ' .$msg. '';
     $mail->AltBody = '';
     $mail->send();
