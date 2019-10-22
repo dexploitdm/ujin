@@ -1,4 +1,4 @@
-<div class="head-box" style="background-image: url(<?php the_post_thumbnail_url(); ?>">
+<div class="head-box" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
     <div class="head-box-layout double-box box">
       <div class="cover-ban cover-ban-home" style="
 					background-image: url(<?php echo get_field( "illustrat_ban" ); ?>);">
