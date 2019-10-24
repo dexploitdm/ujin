@@ -285,9 +285,6 @@ function modalRun(){
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
-    $('.js-close-modal').click(function() {
-        $('.mfp-close').click();
-    });
 }
 
 function validateContact () {

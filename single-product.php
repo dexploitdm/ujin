@@ -178,7 +178,7 @@ get_header(); ?>
                         </div>
                         <div class="form-order-msg">Заявка отправлена</div>
                         <button class="js-yandex-order" onclick="yaCounter55570948.reachGoal('ujOrder'); return true;" style="display: none"></button>
-
+                        <?php wc_print_notices();?>
                     </div>
                 </div>
 
