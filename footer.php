@@ -29,11 +29,11 @@
                 <div class="footer-form">
                     <div class="footer-form-layout">
                         <div class="footer-form-desc">
-                            Свяжитесь с нами, и мы подберем для вам наиболее подходящее предложение
+                            Свяжитесь с нами, и мы подберем для вас наиболее подходящее предложение
                         </div>
                         <form id="contact" method="post">
                             <div class="u-controls">
-                                <input class="u-input js-email" type="text" placeholder="Ваш E-mail" name="email">
+                                <input class="u-input js-phone" type="text" placeholder="Ваш телефон" name="phone">
                             </div>
                             <div class="u-controls">
                                 <input class="u-input js-name" type="text" placeholder="Как вас зовут" name="name">
@@ -48,6 +48,7 @@
                             </div>
                             <div class="msg-note">Сообщение отправленно</div>
                             <button class="js-yandex-form" onclick="yaCounter55570948.reachGoal('myForm'); return true;" style="display: none"></button>
+
                         </form>
 
                     </div>
@@ -57,11 +58,11 @@
         <div class="footer-layout-menu">
             <div class="footer-layout-menu-item">
                 <a href="#" class="menu-title">О компании</a>
-                <ul>
-                    <li><a href="<?php echo get_site_url(); ?>/o-kompanii/">О нас</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/">Партнерам</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/">СМИ о нас</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/">База знаний</a> </li>
+				    <ul>
+                    <li><a href="<?php echo get_site_url(); ?>/o-kompanii">О нас</a> </li>
+					<li><a href="<?php echo get_site_url(); ?>/kontakty">Контакты</a> </li>
+					<li><a href="<?php echo get_site_url(); ?>/dostavka-i-oplata">Доставка и оплата</a> </li>
+
                 </ul>
             </div>
             <div class="footer-layout-menu-item">
@@ -69,16 +70,22 @@
                 <ul>
                     <li><a href="<?php echo get_site_url(); ?>/property-developers">Для застройщиков</a> </li>
                     <li><a href="<?php echo get_site_url(); ?>/hotels">Для гостиниц</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/communal-services/">Для УК и ТСЖс</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/communal-services/">Для УК и ТСЖ</a> </li>
                     <li><a href="<?php echo get_site_url(); ?>/catalogs">Каталог</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/">Маркетплейс</a> </li>
                 </ul>
             </div>
             <div class="footer-layout-menu-item">
-                <a href="#" class="menu-title">Приложения</a>
+                <a href="#" class="menu-title">App Store</a>
                 <ul>
-                    <li><a href="<?php echo get_site_url(); ?>/">Ujin SmartHome</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/">Ujin Bussines</a> </li>
+                    <li><a href="https://itunes.apple.com/us/app/mysmartflat/id1347821135?l=ru&ls=1&mt=8">Mysmartflat</a> </li>
+                    <li><a href="https://apps.apple.com/ru/app/sapfir/id1442949662">Sapfir</a> </li>
+                </ul>
+            </div>
+			     <div class="footer-layout-menu-item">
+                <a href="#" class="menu-title">Google Play</a>
+                <ul>
+                    <li><a href="https://play.google.com/store/apps/details?id=kortros.mysmartflat.ru.gulliver">Mysmartflat</a> </li>
+                    <li><a href="https://play.google.com/store/apps/details?id=ru.mysmartflat.sapfir">Sapfir</a> </li>
                 </ul>
             </div>
         </div>
@@ -93,18 +100,74 @@
             </div>
             <div class="footer-layout-bottom_item">
                 <div class="footer-el">
-                    <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/skolkovo.png">
+					<a href="http://fasie.ru/" target="_blank">
+						<img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/logo_fond2.png">
+					</a>
+					<a href="http://sk.ru/news/" target="_blank">
+						<img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/skolkovo.png">
+					</a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+<style>
+	@media (max-width: 768px) {
+		.head-box {
+    background-image: url(<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/bg_ban.svg) !important;
+}
+	}
+</style>
+<div id="infoModal" class="white-popup info-popup mfp-hide">
+            <div class="modal-layout">
+                <div class="close-modal js-close-modal"></div>
+                <div class="modal-body">
+                    <div class="modal-body-desc">
+                        <div class="m-info-block">
+                            Компания Юникорн провела комплексный ребрендинг торговой марки Mysmartflat и Sapfir. 
+                        </div>
+                        <div class="m-info-desc">
+                            Теперь мы представлены на Российском рынке торговой маркой Ujin, которая объединяет в себе платформу для создания умных домов, зданий и линейку устройств умного дома Ujin.
+                        </div>
+                        <div class="m-info-img">
+                             <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/m1.jpg">
+                             <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/m2.jpg">
+                        </div>
+                        <div class="m-info-block">
+                            С сентября 2019 года
+                        </div>
+                        <div class="m-info-footer">
+                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/m3.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 <?php wp_footer(); ?>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/swiper.js"></script>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.magnific-popup.js"></script>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/app.js"></script>
 <script>
+var oldURL = document.referrer;
+
+if(oldURL.length > 0){
+    var link = new URL(oldURL);
+   if(link.hostname === 'mysapfir.ru' || link.hostname === 'sapfir-project.ru'){
+        runModalInfo();
+    }
+} else if(window.location.hash === '#msf'){
+    runModalInfo();
+}
+
+    function runModalInfo(){
+         $.magnificPopup.open({
+        items: {
+            src: '#infoModal' 
+        },
+        type: 'inline'
+          });
+    }
     var swiper = new Swiper('.swiper-container', {
         pagination: {
             el: '.swiper-pagination',
@@ -115,19 +178,21 @@
             prevEl: '.swiper-button-prev',
         },
     });
-    jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {
     const formSend = $("#contact");
 	const formSendPartner = $("#formPartner");
     const messageSend = $(".msg-note");
-
+		
         formSend.submit(function(e) {
+			   e.preventDefault();			
             var str = $(this).serialize();
-            e.preventDefault();
+        
             $.ajax({
                 type: "POST",
                 url: "<?php echo get_template_directory_uri() ?>/mail.php",
                 data: str,
                 success: function(msg) {
+					//console.log(msg)
                     if(!msg == 'OK') {messageSend.fadeIn();} else {messageSend.fadeIn();}
                 }
             });
@@ -135,8 +200,6 @@
         });
 		 formSendPartner.submit(function(e) {
             var str = $(this).serialize();  e.preventDefault();  $.ajax({ type: "POST",  url: "<?php echo get_template_directory_uri() ?>/mail.php",    data: str,  success: function(msg) {if(!msg == 'OK') {messageSend.fadeIn();} else {messageSend.fadeIn();}   } }); return false; });
-		
-		
 });
 </script>
 </body>

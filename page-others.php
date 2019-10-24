@@ -14,6 +14,6 @@ get_header(); ?>
 			<?php the_content(); ?>
         </div>
 <?php  endwhile; ?>
-
+		
     </main>
 <?php get_footer(); ?>

@@ -6,7 +6,7 @@ $mail->CharSet = 'utf-8';
 
 if ($_POST) { // если передан массив POST
     $name = $_POST['name'];
-    $email = $_POST['email'];
+    $phone = $_POST['phone'];
     $msg = $_POST['msg'];
     $json = array(); // подготовим массив ответа
 
@@ -17,30 +17,30 @@ if ($_POST) { // если передан массив POST
     }
 
     $mail->isSMTP();
-    //$mail->SMTPDebug = true;
+    $mail->SMTPDebug = true;
     $mail->Host = 'smtp.yandex.ru';  																							// Specify main and backup SMTP servers
     $mail->SMTPAuth = true;
-    $mail->Username = 'ujin.tech@yandex.ru';
-    $mail->Password = 'Qq1234567';
+    $mail->Username = 'info@email.ujin.tech'; //ujin.tech@yandex.ru
+    $mail->Password = 'Tdsyh38sd7hjH'; //Qq1234567
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
-    $mail->setFrom('ujin.tech@yandex.ru');
-    $mail->addAddress('dexploitdm@yandex.ru');
-    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->setFrom('info@email.ujin.tech');
+    $mail->addAddress('panych@mysmartflat.ru');
+    $mail->isHTML(true);                                  // Set email format to HTML panych@mysmartflat.ru
 
     $mail->Subject = 'Ujin';
     $mail->Body    = '
     Клиент оставил заявку:<br>
     <b>Имя:</b> ' .$name . '<br> 
-    <b>Почта:</b> ' .$email. '<br>
+    <b>Телефон:</b> ' .$phone. '<br>
     <b>Вопрос или комментарий клиента:</b> ' .$msg. '';
     $mail->AltBody = '';
     $mail->send();
     $json['error'] = 0; // ошибок не было
    // header("/");
-    if ($mail->Send()) {
-        header('Location: /');
-    }
+    // if ($mail->Send()) {
+    //     header('Location: /');
+    // }
    // echo json_encode($json); // выводим массив ответа
 } else { // если массив POST не был передан
     echo 'GET LOST!'; // высылаем

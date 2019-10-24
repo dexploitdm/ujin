@@ -24,7 +24,7 @@ get_header(); ?>
                                 <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/download.png">
                                 <div class="download-link-box">
                                     <a href="<?php echo get_field( "link_present" ); ?>" class="download-pull">Скачать презентацию</a>
-                                    <span class="download-info">15 Mb, pptx</span>
+                                    <span class="download-info"><span id="fileSize">10 Mb</span>, pptx</span>
                                 </div>
                             </div>
                         </div>
@@ -143,13 +143,14 @@ get_header(); ?>
                             <div class="u-list-content">
                                 <ul>
 								<li>Управление “Умным домом”</li>
-								<li>Управление домофоном, СКУД и видеокамерами</li>
-								<li>Автоматизация передачи показаний с счетчиков</li>
+								<li>Управление домофоном и видео-домофоном</li>
+								<li>Управление видеокамерами</li>
+								<li>Система контроля и учета доступа</li>
+								<li>Мониторинг показаний со счетчиков, просмотр архивов</li>
 								<li>Получение квитанций и оплата коммунальных услуг</li>
-								<li>Чаты с техподдержкой, гарантийным отделом и Управляющей Компанией</li>
+								<li>Чаты с техподдержкой, гарантийным отделом и УК</li>
 								<li>Услуги локального бизнеса</li>
-								<li>Маркетплэйс, спец. предложения программы лояльности</li>
-								<li>Онлайн страхование</li>
+								<li>Маркетплейс</li>
 								<li>Тревожная кнопка и др.</li>
                                 </ul>
                             </div>
@@ -204,7 +205,7 @@ get_header(); ?>
                                     <div class="p-slider-head-title">
                                         <a href="<?php the_permalink(); ?>">
                                             <?php the_title(); ?>
-                                            <span>г. Пермь — 2017</span>
+                                            <span>г. <?php echo get_field( "project_sity" ); ?> — <?php echo get_field( "project_year" ); ?></span>
                                         </a>
                                     </div>
                                 </div>

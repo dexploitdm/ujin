@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Макет Разное 2
+Template Name: Макет Тестирование (dev)
 Template Post Type: page
 */
 get_header(); ?>
@@ -12,16 +12,10 @@ get_header(); ?>
 			    <?php the_title(); ?>
 			</h1>
 			<?php the_content(); ?>
+		
+			 <button class="js-yandex-form2" onclick="yaCounter55570948.reachGoal('myForm'); return true;">Событие myForm</button>
         </div>
 <?php  endwhile; ?>
-
-    <?php 
-    if (mail("dexploitdm@yandex.ru", "Test - Проверка", "Текст 123 QWERTY")) {
-	echo 'Отправлено!';
-} else {
-	echo 'Ошибка!';
-}
-    ?>
-
+		
     </main>
 <?php get_footer(); ?>

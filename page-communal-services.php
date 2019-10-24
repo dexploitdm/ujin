@@ -23,7 +23,7 @@ get_header(); ?>
                                 <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/download.png">
                                 <div class="download-link-box">
                                     <a href="<?php echo get_field( "link_present" ); ?>" class="download-pull">Скачать презентацию</a>
-                                    <span class="download-info">15 Mb, pptx</span>
+                                    <span class="download-info"><span id="fileSize">10 Mb</span>, pptx</span>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +127,7 @@ get_header(); ?>
                                 <ul>
                                     <li>Считывание и передача данных со счетчиков</li>
                                     <li>Автоматическая рассылка квитанций</li>
-                                    <li>Общение с жильцами в чате.</li>
+                                    <li>Общение с жильцами в чате</li>
                                 </ul>
                             </div>
                         </div>

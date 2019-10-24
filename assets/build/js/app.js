@@ -285,11 +285,14 @@ function modalRun(){
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
+    $('.js-close-modal').click(function() {
+        $('.mfp-close').click();
+    });
 }
 
 function validateContact () {
     const messageSend = $(".msg-note"),
-     emailInput = $('.js-email'),
+     phoneInput = $('.js-phone'),
      nameInput = $('.js-name'),
      msgInput = $('.js-msg'),
      bntSubmit = $('.js-submit'),
@@ -300,7 +303,7 @@ function validateContact () {
 	 bntSubmitPart = $('.js-submit-part');
 
     function valid(){
-        if(emailInput.val().length > 0 && nameInput.val().length > 0){
+        if(phoneInput.val().length > 0 && nameInput.val().length > 0){
             bntSubmit.removeAttr('disabled');
         }
     }
@@ -316,10 +319,10 @@ function validateContact () {
         btnYndex.click();
     });
 
-    emailInput.focusout(function() {
+    phoneInput.focusout(function() {
         valid();
-        if(emailInput.val().length > 0) {
-            emailInput.css('box-shadow','none');
+        if(phoneInput.val().length > 0) {
+            phoneInput.css('box-shadow','none');
         }
     });
     nameInput.focusout(function() {
@@ -327,14 +330,14 @@ function validateContact () {
         if(nameInput.val().length > 0) {
             nameInput.css('box-shadow','none');
         }
-        if(emailInput.val().length === 0) {
-            emailInput.css('box-shadow','0 0 17px 0px #e55151');
+        if(phoneInput.val().length === 0) {
+            phoneInput.css('box-shadow','0 0 17px 0px #e55151');
         }
     });
     msgInput.focusout(function() {
         valid();
-        if(emailInput.val().length === 0) {
-            emailInput.css('box-shadow','0 0 17px 0px #e55151');
+        if(phoneInput.val().length === 0) {
+            phoneInput.css('box-shadow','0 0 17px 0px #e55151');
         }
         if(nameInput.val().length === 0) {
             nameInput.css('box-shadow','0 0 17px 0px #e55151');
@@ -437,6 +440,10 @@ function orderSubmitClick() {
     });
 }
 
+function maskPhone(){
+	$('.js-phone').inputmask({"mask": "(999) 999-9999"});
+}
+
 $(window).on('resize', function(){
     initSolutions();
     initServices();
@@ -459,4 +466,5 @@ $( document ).ready(function() {
     modalRun();
     validateContact();
     orderSubmitClick();
+	//maskPhone();
 });

@@ -102,7 +102,7 @@ get_header(); ?>
                     <div class="product-item-download">
                         <div class="product-item-download-block">
                             <a href="<?php the_field( "instruction_link" ); ?>" class="download" target="_blank">Скачать инструкцию
-                                <span>1,5 Mb, PDF</span></a>
+                                <span><label id="fileSize">10 Mb</label>, PDF</span></a>
                         </div>
                     </div>
                 </div>
@@ -153,7 +153,7 @@ get_header(); ?>
                                 </div>
                                 <div class="info-text">Дорого?</div>
                                 <form method="post" class="u-form">
-                                    <div class="u-controls">
+                                   <div class="u-controls">
                                         <input type="text" class="u-input js-order-fio" name="fio" placeholder="Ф.И.О. контактного лица">
                                         <div class="is-error">Введите ф.и.о</div>
                                     </div>
@@ -174,7 +174,7 @@ get_header(); ?>
                         </div>
 
                         <div class="product-item-msg">
-                            Наш менеджер свяжется с вами в течении 15 минут для оформления заказа
+                            Наш менеджер свяжется с вами в течение 15 минут для оформления заказа
                         </div>
                         <div class="form-order-msg">Заявка отправлена</div>
                         <button class="js-yandex-order" onclick="yaCounter55570948.reachGoal('ujOrder'); return true;" style="display: none"></button>
@@ -198,14 +198,9 @@ get_header(); ?>
 
             </div>
         </div>
-<!--		--><?php //woocommerce_template_loop_add_to_cart(); ?>
-<!--	-->
-<!--		--><?php //echo do_shortcode( '[woocommerce_checkout]' ); ?>
-			<?php echo do_shortcode( '[viewBuyButtonCustom  id=' . $post->ID . ' name=' . $product->get_name() . ' count="3" price="3423"]' ); ?>
-	
-
+        <?php echo do_shortcode( '[viewBuyButtonCustom  id=' . $post->ID . ' name=' . $product->get_name() . ' count="" price=""]' ); ?>
         <div class="product-preview full-list box mobile-hidden">
-            <h2 class="title-h2">С эти товаром покупают</h2>
+            <h2 class="title-h2">С этим товаром покупают</h2>
             <div class="product-preview-layout grid-three">
 			<?php 
 			global $post;
@@ -277,10 +272,10 @@ get_header(); ?>
                                 </div>
                                 <div class="functional-app">
                                     <div class="functional-app-layout">
-                                        <a href="<?php echo get_theme_mod('appApple'); ?>" target="_blank">
+                                        <a href="https://apps.apple.com/ru/app/sapfir/id1442949662">
                                             <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/apple-market.png">
                                         </a>
-                                        <a href="<?php echo get_theme_mod('appGoogle'); ?>" target="_blank">
+                                        <a href="https://play.google.com/store/apps/details?id=ru.mysmartflat.sapfir">
                                             <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/google_market.png">
                                         </a>
                                     </div>
@@ -336,15 +331,15 @@ get_header(); ?>
                 <div class="modal-body">
                     <div class="modal-body-desc">
                         <div class="text-bold">
-                            Доставка осуществляется по всей России транспортной компанией СДЭК.
+                            Доставка товара осуществляется курьерской службой по всем регионам РФ.
                         </div>
-                        Доставка до пункта выдачи - 190 руб. <br>
-                        Доставка до двери — 390 руб. <br>
-                        Срок доставки 2-3 дня.
+                     <!--   Доставка до пункта выдачи - 190 руб. <br> -->
+                        Стоимость доставки — 390 руб. <br>
+                        Срок доставки 3-5 дней.
 
-                        <div class="modal-list">
+                     <!--   <div class="modal-list">
                             Список <a href="#" class="modal-link">пунктов выдачи.</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -375,6 +370,4 @@ get_header(); ?>
             </div>
         </div>
     </main>
-
 <?php get_footer(); ?>
-
