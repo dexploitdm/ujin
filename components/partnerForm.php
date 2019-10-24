@@ -12,7 +12,7 @@
                 и мы отправим вам прайс!
             </div>
             <form id="formPartner" method="post">
-                 <div class="u-controls">
+                <div class="u-controls">
                     <input type="text" class="u-input js-name-part" name="name" placeholder="Ф.И.О. контактного лица">
                 </div>
                 <div class="u-controls">
@@ -22,7 +22,7 @@
                     Получить прайс
                 </button>
                 <div class="msg-note" style="margin-top: 20px;">Сообщение отправленно</div>
-                 <button class="js-yandex-form" onclick="yaCounter55570948.reachGoal('myForm'); return true;" style="display: none"></button>
+                <button class="js-yandex-form" onclick="yaCounter55570948.reachGoal('myForm'); return true;" style="display: none"></button>
             </form>
         </div>
     </div>

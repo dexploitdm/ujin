@@ -1,9 +1,6 @@
-<div class="head-box" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+<div class="head-box" style="background-image: url(<?php echo get_theme_mod('linkImage'); ?>">
     <div class="head-box-layout double-box box">
-      <div class="cover-ban cover-ban-home" style="
-					background-image: url(<?php echo get_field( "illustrat_ban" ); ?>);">
-			
-		</div>
+      
         <div class="head-box-desc">
             <h1 class="title-h1 title-box"><?php echo  get_bloginfo ('description'); ?></h1>
               <?php $functions = new WP_Query(array('post_type' => 'functions', 'order' => 'ASC')) ?>

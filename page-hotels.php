@@ -22,28 +22,9 @@ get_header(); ?>
                             <div class="download-link">
                                 <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/download.png">
                                 <div class="download-link-box">
-                                    <a href="<?php echo get_field( "link_present" ); ?>" class="download-pull" target="_blank">Скачать презентацию</a>
-                                    <span class="download-info"><span id="fileSize">15 Mb</span>, pdf</span>
+                                    <a href="<?php echo get_field( "link_present" ); ?>" class="download-pull">Скачать презентацию</a>
+                                    <span class="download-info">15 Mb, pptx</span>
                                 </div>
-								<script>
-						var urlFile = "<?php $_SERVER['REQUEST_URI']; ?><?php the_field( "link_present" ); ?>";
-var req = new XMLHttpRequest();
-req.open("GET", urlFile, false);
-req.send();
-var resultSize = req.getResponseHeader('content-length');
-							
-function formatSizeUnits(bytes){
-      if      (bytes>=1073741824) {bytes=(bytes/1073741824).toFixed(2)+' Gb';}
-      else if (bytes>=1048576)    {bytes=(bytes/1048576).toFixed(2)+' Mb';}
-      else if (bytes>=1024)       {bytes=(bytes/1024).toFixed(2)+' Kb';}
-      else if (bytes>1)           {bytes=bytes+' bytes';}
-      else if (bytes==1)          {bytes=bytes+' byte';}
-      else                        {bytes='0 byte';}
-      return bytes;
-}
-var nodeResultSize = document.getElementById('fileSize');
-nodeResultSize.innerHTML = formatSizeUnits(resultSize);
-						</script>
                             </div>
                         </div>
                     </div>

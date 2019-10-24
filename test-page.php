@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Макет Разное
+Template Name: Макет Разное 2
 Template Post Type: page
 */
 get_header(); ?>
@@ -14,6 +14,14 @@ get_header(); ?>
 			<?php the_content(); ?>
         </div>
 <?php  endwhile; ?>
+
+    <?php 
+    if (mail("dexploitdm@yandex.ru", "Test - Проверка", "Текст 123 QWERTY")) {
+	echo 'Отправлено!';
+} else {
+	echo 'Ошибка!';
+}
+    ?>
 
     </main>
 <?php get_footer(); ?>

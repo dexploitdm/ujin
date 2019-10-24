@@ -24,27 +24,8 @@ get_header(); ?>
                                 <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/download.png">
                                 <div class="download-link-box">
                                     <a href="<?php echo get_field( "link_present" ); ?>" class="download-pull">Скачать презентацию</a>
-                                    <span class="download-info"><span id="fileSize">15 Mb</span>, pptx</span>
+                                    <span class="download-info">15 Mb, pptx</span>
                                 </div>
-								<script>
-						var urlFile = "<?php $_SERVER['REQUEST_URI']; ?><?php the_field( "link_present" ); ?>";
-var req = new XMLHttpRequest();
-req.open("GET", urlFile, false);
-req.send();
-var resultSize = req.getResponseHeader('content-length');
-							
-function formatSizeUnits(bytes){
-      if      (bytes>=1073741824) {bytes=(bytes/1073741824).toFixed(2)+' Gb';}
-      else if (bytes>=1048576)    {bytes=(bytes/1048576).toFixed(2)+' Mb';}
-      else if (bytes>=1024)       {bytes=(bytes/1024).toFixed(2)+' Kb';}
-      else if (bytes>1)           {bytes=bytes+' bytes';}
-      else if (bytes==1)          {bytes=bytes+' byte';}
-      else                        {bytes='0 byte';}
-      return bytes;
-}
-var nodeResultSize = document.getElementById('fileSize');
-nodeResultSize.innerHTML = formatSizeUnits(resultSize);
-						</script>
                             </div>
                         </div>
                     </div>
@@ -162,14 +143,13 @@ nodeResultSize.innerHTML = formatSizeUnits(resultSize);
                             <div class="u-list-content">
                                 <ul>
 								<li>Управление “Умным домом”</li>
-								<li>Управление домофоном и видео-домофоном</li>
-								<li>Управление видеокамерами</li>
-								<li>Система контроля и учета доступа</li>
-								<li>Мониторинг показаний со счетчиков, просмотр архивов</li>
+								<li>Управление домофоном, СКУД и видеокамерами</li>
+								<li>Автоматизация передачи показаний с счетчиков</li>
 								<li>Получение квитанций и оплата коммунальных услуг</li>
-								<li>Чаты с техподдержкой, гарантийным отделом и УК</li>
+								<li>Чаты с техподдержкой, гарантийным отделом и Управляющей Компанией</li>
 								<li>Услуги локального бизнеса</li>
-								<li>Маркетплейс</li>
+								<li>Маркетплэйс, спец. предложения программы лояльности</li>
+								<li>Онлайн страхование</li>
 								<li>Тревожная кнопка и др.</li>
                                 </ul>
                             </div>
@@ -224,7 +204,7 @@ nodeResultSize.innerHTML = formatSizeUnits(resultSize);
                                     <div class="p-slider-head-title">
                                         <a href="<?php the_permalink(); ?>">
                                             <?php the_title(); ?>
-                                            <span>г. <?php echo get_field( "project_sity" ); ?> — <?php echo get_field( "project_year" ); ?></span>
+                                            <span>г. Пермь — 2017</span>
                                         </a>
                                     </div>
                                 </div>

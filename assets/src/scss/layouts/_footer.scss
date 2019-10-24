@@ -230,7 +230,23 @@ footer {
       }
     }
     .footer-layout-menu {
-      display: none;
+      flex-wrap: wrap;
+      &-item {
+        flex-basis: 100%;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+        ul {
+          flex-basis: 100%;
+        }
+        &:first-child {
+          ul {
+            flex-basis: 100%;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
     .footer-layout-bottom {
       border: 0;

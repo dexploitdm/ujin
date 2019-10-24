@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
 <head>
-	<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(55570948, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/55570948" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-	<meta name="yandex-verification" content="7f0b39ad81c7cb25" />
     <meta charset="UTF-8">
     <title><?php the_title() ?> | Ujin</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -25,10 +9,11 @@
     <meta name="theme-color" content="#2D3C3E">
     <link href="<?php  echo get_template_directory_uri() ?>/assets/build/css/core.css" rel="stylesheet">
     <?php  wp_head(); ?>
-<meta name="cmsmagazine" content="2fb71f840aeb70e2fdb7bc5b0ed28704" />
+
 </head>
 <body>
 <header class="">
+    <?php the_title() ?>
     <div class="header-layout box">
         <div class="logo">
            <a href="<?php echo get_site_url(); ?>/">
@@ -44,11 +29,11 @@
             )); ?>
         </div>
         <div class="call">
-<!--             <div class="call-set">
+            <div class="call-set">
                 <a href="http://localhost:3000/#" class="call-link">Заказать звонок</a>
-            </div> -->
-            <div class="call-phone" style="margin-bottom: 5px;">
-                <a href="tel:88007750519">8 800 775 05 19</a>
+            </div>
+            <div class="call-phone">
+                <a href="http://localhost:3000/#">8 800 775 05 19</a>
             </div>
         </div>
         <div class="drawer-btn js-open-menu">
@@ -69,3 +54,4 @@
         )); ?>
     </div>
 </header>
+<main>

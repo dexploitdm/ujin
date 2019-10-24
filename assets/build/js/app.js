@@ -289,7 +289,7 @@ function modalRun(){
 
 function validateContact () {
     const messageSend = $(".msg-note"),
-     phoneInput = $('.js-phone'),
+     emailInput = $('.js-email'),
      nameInput = $('.js-name'),
      msgInput = $('.js-msg'),
      bntSubmit = $('.js-submit'),
@@ -300,7 +300,7 @@ function validateContact () {
 	 bntSubmitPart = $('.js-submit-part');
 
     function valid(){
-        if(phoneInput.val().length > 0 && nameInput.val().length > 0){
+        if(emailInput.val().length > 0 && nameInput.val().length > 0){
             bntSubmit.removeAttr('disabled');
         }
     }
@@ -310,16 +310,16 @@ function validateContact () {
         }
     }
     bntSubmit.click( function( e ) {
-        //btnYndex.click();
+        btnYndex.click();
     });
 	bntSubmitPart.click( function( e ) {
         btnYndex.click();
     });
 
-    phoneInput.focusout(function() {
+    emailInput.focusout(function() {
         valid();
-        if(phoneInput.val().length > 0) {
-            phoneInput.css('box-shadow','none');
+        if(emailInput.val().length > 0) {
+            emailInput.css('box-shadow','none');
         }
     });
     nameInput.focusout(function() {
@@ -327,14 +327,14 @@ function validateContact () {
         if(nameInput.val().length > 0) {
             nameInput.css('box-shadow','none');
         }
-        if(phoneInput.val().length === 0) {
-            phoneInput.css('box-shadow','0 0 17px 0px #e55151');
+        if(emailInput.val().length === 0) {
+            emailInput.css('box-shadow','0 0 17px 0px #e55151');
         }
     });
     msgInput.focusout(function() {
         valid();
-        if(phoneInput.val().length === 0) {
-            phoneInput.css('box-shadow','0 0 17px 0px #e55151');
+        if(emailInput.val().length === 0) {
+            emailInput.css('box-shadow','0 0 17px 0px #e55151');
         }
         if(nameInput.val().length === 0) {
             nameInput.css('box-shadow','0 0 17px 0px #e55151');
@@ -437,10 +437,6 @@ function orderSubmitClick() {
     });
 }
 
-function maskPhone(){
-	$('.js-phone').inputmask({"mask": "(999) 999-9999"});
-}
-
 $(window).on('resize', function(){
     initSolutions();
     initServices();
@@ -463,5 +459,4 @@ $( document ).ready(function() {
     modalRun();
     validateContact();
     orderSubmitClick();
-	//maskPhone();
 });
