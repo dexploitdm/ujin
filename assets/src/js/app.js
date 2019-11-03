@@ -223,16 +223,16 @@ function initShowContentTabsHome() {
 }
 
 function scrollFunny() {
-    var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
-        V = 0.2;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
+    var linkNav = document.querySelectorAll('[href^="#"]'), //РІС‹Р±РёСЂР°РµРј РІСЃРµ СЃСЃС‹Р»РєРё Рє СЏРєРѕСЂСЋ РЅР° СЃС‚СЂР°РЅРёС†Рµ
+        V = 0.2;  // СЃРєРѕСЂРѕСЃС‚СЊ, РјРѕР¶РµС‚ РёРјРµС‚СЊ РґСЂРѕР±РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ С‡РµСЂРµР· С‚РѕС‡РєСѓ (С‡РµРј РјРµРЅСЊС€Рµ Р·РЅР°С‡РµРЅРёРµ - С‚РµРј Р±РѕР»СЊС€Рµ СЃРєРѕСЂРѕСЃС‚СЊ)
     for (var i = 0; i < linkNav.length; i++) {
-        linkNav[i].addEventListener('click', function(e) { //по клику на ссылку
-            e.preventDefault(); //отменяем стандартное поведение
-            var w = window.pageYOffset,  // производим прокрутка прокрутка
-                hash = this.href.replace(/[^#]*(.*)/, '$1');  // к id элемента, к которому нужно перейти
-            t = document.querySelector(hash).getBoundingClientRect().top,  // отступ от окна браузера до id
+        linkNav[i].addEventListener('click', function(e) { //РїРѕ РєР»РёРєСѓ РЅР° СЃСЃС‹Р»РєСѓ
+            e.preventDefault(); //РѕС‚РјРµРЅСЏРµРј СЃС‚Р°РЅРґР°СЂС‚РЅРѕРµ РїРѕРІРµРґРµРЅРёРµ
+            var w = window.pageYOffset,  // РїСЂРѕРёР·РІРѕРґРёРј РїСЂРѕРєСЂСѓС‚РєР° РїСЂРѕРєСЂСѓС‚РєР°
+                hash = this.href.replace(/[^#]*(.*)/, '$1');  // Рє id СЌР»РµРјРµРЅС‚Р°, Рє РєРѕС‚РѕСЂРѕРјСѓ РЅСѓР¶РЅРѕ РїРµСЂРµР№С‚Рё
+            t = document.querySelector(hash).getBoundingClientRect().top,  // РѕС‚СЃС‚СѓРї РѕС‚ РѕРєРЅР° Р±СЂР°СѓР·РµСЂР° РґРѕ id
                 start = null;
-            requestAnimationFrame(step);  // подробнее про функцию анимации [developer.mozilla.org]
+            requestAnimationFrame(step);  // РїРѕРґСЂРѕР±РЅРµРµ РїСЂРѕ С„СѓРЅРєС†РёСЋ Р°РЅРёРјР°С†РёРё [developer.mozilla.org]
             function step(time) {
                 if (start === null) start = time;
                 var progress = time - start,
@@ -241,7 +241,7 @@ function scrollFunny() {
                 if (r != w + t) {
                     requestAnimationFrame(step)
                 } else {
-                    location.hash = hash  // URL с хэшем
+                    location.hash = hash  // URL СЃ С…СЌС€РµРј
                 }
             }
         }, false);
@@ -252,6 +252,7 @@ function counterProduct() {
     const countInput = $('.js-count-product'),
         countBtn = $('.product-count-btn'),
         currentPrice =  Number($('.js-current-price').text()),
+        formHiddenCount = $('.product-add-card .input-text'),
         total = $('.js-total-sum');
 
     let counter = countInput.val();
@@ -272,7 +273,7 @@ function counterProduct() {
         }
         countInput.val(counter);
         total.text(totalSum);
-        console.log(totalSum);
+        formHiddenCount.val(counter);
     });
 }
 
@@ -285,77 +286,84 @@ function modalRun(){
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
+    $('.js-close-modal').click(function() {
+        $('.mfp-close').click();
+    });
 }
 
 function validateContact () {
     const messageSend = $(".msg-note"),
-     phoneInput = $('.js-phone'),
-     nameInput = $('.js-name'),
-     msgInput = $('.js-msg'),
-     bntSubmit = $('.js-submit'),
-     btnYndex = $('.js-yandex-form'),
-		  
-	nameInputPart = $('.js-name-part'),
-	emailInputPart = $('.js-email-part'),
-	 bntSubmitPart = $('.js-submit-part');
+        phoneInput = $('.js-phone'),
+        nameInput = $('.js-name'),
+        msgInput = $('.js-msg'),
+        bntSubmit = $('.js-submit'),
+        btnYndex = $('.js-yandex-form'),
+        btnYandexFooter = $('.js-yandex-form-footer'),
+
+        nameInputPart = $('.js-name-part'),
+        emailInputPart = $('.js-email-part'),
+        bntSubmitPart = $('.js-submit-part');
 
     function valid(){
         if(phoneInput.val().length > 0 && nameInput.val().length > 0){
             bntSubmit.removeAttr('disabled');
+        } else {
+            if(phoneInput.val().length === 0) {
+                phoneInput.addClass('error');
+            } else {
+                phoneInput.removeClass('error');
+            }
+            if(nameInput.val().length > 0) {
+                nameInput.removeClass('error');
+            } else {
+                nameInput.addClass('error');
+            }
         }
+
+
     }
-	function validPart(){
+    function validPart(){
         if(nameInputPart.val().length > 0 && emailInputPart.val().length > 0){
             bntSubmitPart.removeAttr('disabled');
         }
     }
     bntSubmit.click( function( e ) {
-        btnYndex.click();
+        btnYandexFooter.click();
     });
-	bntSubmitPart.click( function( e ) {
+    bntSubmitPart.click( function( e ) {
         btnYndex.click();
     });
 
     phoneInput.focusout(function() {
         valid();
-        if(phoneInput.val().length > 0) {
-            phoneInput.css('box-shadow','none');
+        if($('.js-phone').val().length > 0) {
+            console.log($('.js-phone').val().length)
+            phoneInput.removeClass('error');
         }
     });
     nameInput.focusout(function() {
         valid();
         if(nameInput.val().length > 0) {
-            nameInput.css('box-shadow','none');
+            nameInput.removeClass('error');
         }
         if(phoneInput.val().length === 0) {
-            phoneInput.css('box-shadow','0 0 17px 0px #e55151');
+            phoneInput.addClass('error');
         }
     });
-    msgInput.focusout(function() {
+    phoneInput.on('input', function() {
         valid();
-        if(phoneInput.val().length === 0) {
-            phoneInput.css('box-shadow','0 0 17px 0px #e55151');
-        }
-        if(nameInput.val().length === 0) {
-            nameInput.css('box-shadow','0 0 17px 0px #e55151');
-        }
     });
-	nameInputPart.focusout(function() {
-       validPart();
-        if(nameInputPart.val().length > 0) {
-            nameInputPart.css('box-shadow','none');
-        }
+    nameInput.on('input', function() {
+        valid();
     });
-	emailInputPart.focusout(function() {
-		validPart();
-        if(nameInputPart.val().length === 0) {
-             nameInputPart.css('box-shadow','0 0 17px 0px #e55151');
-        }
-		if(emailInputPart.val().length === 0) {
-           		emailInputPart.css('box-shadow','0 0 17px 0px #e55151');
-        } else {
-			  emailInputPart.css('box-shadow','none');
-		}
+    msgInput.on('input', function() {
+        valid();
+    });
+    nameInputPart.on('input', function() {
+        validPart();
+    });
+    emailInputPart.on('input', function() {
+        validPart();
     });
 }
 
@@ -375,30 +383,30 @@ function orderSubmitClick() {
     const msgSuccess = $('.form-order-msg');
     const btnYndexOrder = $('.js-yandex-order');
 
-	const btnSubmitOrder = $('.js-order');
-	
+    const btnSubmitOrder = $('.js-order');
 
-	
-	const orderFioValid = $('.js-order-fio');
-	const orderPhoneValid = $('.js-order-tel');
-	
-	orderFioValid.focusout(function() {
+
+
+    const orderFioValid = $('.js-order-fio');
+    const orderPhoneValid = $('.js-order-tel');
+
+    orderFioValid.focusout(function() {
         if(orderFioValid.val().length > 0 && orderPhoneValid.val().length > 0) {
-           	btnSubmitOrder.removeAttr('disabled').addClass('success');
+            btnSubmitOrder.removeAttr('disabled').addClass('success');
         } else {
-				btnSubmitOrder.removeClass('success').attr('disabled');
-		}
+            btnSubmitOrder.removeClass('success').attr('disabled');
+        }
     });
-	orderPhoneValid.focusout(function() {
+    orderPhoneValid.focusout(function() {
         if(orderFioValid.val().length > 0 && orderPhoneValid.val().length > 0) {
-           	btnSubmitOrder.removeAttr('disabled').addClass('success');
+            btnSubmitOrder.removeAttr('disabled').addClass('success');
         } else {
-				btnSubmitOrder.removeClass('success').attr('disabled');
-		}
+            btnSubmitOrder.removeClass('success').attr('disabled');
+        }
     });
-	
-	
-	
+
+
+
     btnSubmitOrder.click( function( e ) {
         e.preventDefault();
         //order
@@ -407,7 +415,7 @@ function orderSubmitClick() {
         let productTitle = $('.js-product-title').text();
         let orderFio = $('.js-order-fio');
         //let orderEmail = $('.js-order-email');//js-order-tel
-		let orderPhone = $('.js-order-tel');
+        let orderPhone = $('.js-order-tel');
         let orderMsg = $('.js-order-msg');
 
         inputCount.val(count);
@@ -438,7 +446,7 @@ function orderSubmitClick() {
 }
 
 function maskPhone(){
-	$('.js-phone').inputmask({"mask": "(999) 999-9999"});
+    $('.js-phone').inputmask({"mask": "(999) 999-9999"});
 }
 
 $(window).on('resize', function(){
@@ -463,5 +471,5 @@ $( document ).ready(function() {
     modalRun();
     validateContact();
     orderSubmitClick();
-	//maskPhone();
+    //maskPhone();
 });

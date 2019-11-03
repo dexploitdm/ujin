@@ -1,0 +1,108 @@
+.product-icon-box {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 130%;
+  color: $color-blue;
+  &:first-child {
+    margin-right: 20px;
+  }
+  .icon-one {
+    position: relative;
+    padding-left: 23px;
+    &:before {
+      content: '';
+      position: absolute;
+      background-image: url("data:image/svg+xml,%3Csvg width='18' height='16' viewBox='0 0 18 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 0.125V5.75H16.875V15.875H1.125V5.75H0V0.125H18ZM15.75 14.75V5.75H2.25V14.75H15.75ZM16.875 4.625V1.25H1.125V4.625H16.875ZM9 10.25V11.375H3.375V10.25H9ZM7.875 13.625H3.375V12.5H7.875V13.625Z' fill='%230090A1'/%3E%3C/svg%3E%0A");
+      background-size: cover;
+      width: 19px;
+      height: 18px;
+      left: 0;
+    }
+  }
+  .icon-two {
+    position: relative;
+    padding-left: 26px;
+    &:before {
+      content: '';
+      position: absolute;
+      background-image: url("data:image/svg+xml,%3Csvg width='18' height='13' viewBox='0 0 18 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.5938 0.25C16.7871 0.25 16.9688 0.288086 17.1387 0.364258C17.3086 0.43457 17.458 0.53418 17.5869 0.663086C17.7158 0.791992 17.8154 0.941406 17.8857 1.11133C17.9619 1.28125 18 1.46289 18 1.65625V11.2188C18 11.4121 17.9619 11.5938 17.8857 11.7637C17.8154 11.9336 17.7158 12.083 17.5869 12.2119C17.458 12.3408 17.3086 12.4434 17.1387 12.5195C16.9688 12.5898 16.7871 12.625 16.5938 12.625H1.40625C1.21289 12.625 1.03125 12.5898 0.861328 12.5195C0.691406 12.4434 0.541992 12.3408 0.413086 12.2119C0.28418 12.083 0.181641 11.9336 0.105469 11.7637C0.0351562 11.5938 0 11.4121 0 11.2188V1.65625C0 1.46289 0.0351562 1.28125 0.105469 1.11133C0.181641 0.941406 0.28418 0.791992 0.413086 0.663086C0.541992 0.53418 0.691406 0.43457 0.861328 0.364258C1.03125 0.288086 1.21289 0.25 1.40625 0.25H16.5938ZM1.40625 1.375C1.32422 1.375 1.25684 1.40137 1.2041 1.4541C1.15137 1.50684 1.125 1.57422 1.125 1.65625V3.625H16.875V1.65625C16.875 1.57422 16.8486 1.50684 16.7959 1.4541C16.7432 1.40137 16.6758 1.375 16.5938 1.375H1.40625ZM16.5938 11.5C16.6758 11.5 16.7432 11.4736 16.7959 11.4209C16.8486 11.3682 16.875 11.3008 16.875 11.2188V4.75H1.125V11.2188C1.125 11.3008 1.15137 11.3682 1.2041 11.4209C1.25684 11.4736 1.32422 11.5 1.40625 11.5H16.5938ZM12.375 8.125H14.625V9.25H12.375V8.125Z' fill='%230090A1'/%3E%3C/svg%3E%0A");
+      background-size: cover;
+      width: 23px;
+      height: 17px;
+      left: 0;
+    }
+  }
+}
+//Добавление в корзину
+.product-add-card {
+  .quantity {
+    display: none;
+  }
+  .single_add_to_cart_button {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    width: 100%;
+    background-color: $color-dark;
+    color: $color-white;
+    padding: 13px 0;
+    transition: .3s;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      background-color: $color-blue;
+    }
+  }
+  &-info {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    transition: .3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: $tablet-media) {
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
+    .auf-lager {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 130%;
+      color: $color-dark2;
+      .stock {
+        position: relative;
+        padding-left: 23px;
+        &:before {
+          content: '';
+          position: absolute;
+          background-image: url("data:image/svg+xml,%3Csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.3545 0.104492L15.1455 0.895508L5.75 10.2998L0.854492 5.39551L1.64551 4.60449L5.75 8.7002L14.3545 0.104492Z' fill='%232D3C3E'/%3E%3C/svg%3E%0A");
+          background-size: cover;
+          width: 18px;
+          height: 16px;
+          left: 0;
+        }
+      }
+    }
+    .lieferung {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 130%;
+      color: $color-dark;
+      &-text {
+        position: relative;
+        padding-left: 24px;
+        &:before {
+          content: '';
+          position: absolute;
+          background-image: url("data:image/svg+xml,%3Csvg width='18' height='17' viewBox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.25 7.875V6.75H10.125V7.875H11.25ZM7.875 14.625V13.5H6.75V14.625H7.875ZM4.5 7.875V6.75H3.375V7.875H4.5ZM7.875 7.875V6.75H6.75V7.875H7.875ZM11.25 10.125V9H10.125V10.125H11.25ZM14.625 10.125V9H13.5V10.125H14.625ZM4.5 10.125V9H3.375V10.125H4.5ZM7.875 10.125V9H6.75V10.125H7.875ZM11.25 12.375V11.25H10.125V12.375H11.25ZM14.625 12.375V11.25H13.5V12.375H14.625ZM4.5 12.375V11.25H3.375V12.375H4.5ZM7.875 12.375V11.25H6.75V12.375H7.875ZM11.25 14.625V13.5H10.125V14.625H11.25ZM14.625 14.625V13.5H13.5V14.625H14.625ZM3.375 1.125H0V16.875H18V1.125H14.625V0H13.5V1.125H4.5V0H3.375V1.125ZM14.625 2.25H16.875V4.5H1.125V2.25H3.375V3.375H4.5V2.25H13.5V3.375H14.625V2.25ZM16.875 15.75H1.125V5.625H16.875V15.75Z' fill='%232D3C3E'/%3E%3C/svg%3E%0A");
+          background-size: cover;
+          width: 18px;
+          height: 17px;
+          left: 0;
+        }
+      }
+    }
+  }
+}

@@ -111,13 +111,13 @@ get_header(); ?>
                     <div class="product-item-form">
                         <div class="product-form">
                             <div class="product-form-head">
-                                <a href="#runmodal" class="product-form-head_item open-popup-run">
-                                    <div class="pr-title">Доставка</div>
-                                    <div class="pr-icon">?</div>
+                                <a href="#runmodal" class="product-icon-box open-popup-run">
+                                    <div class="icon-one">Доставка</div>
+
                                 </a>
-                                <a href="#paymodal" class="product-form-head_item open-popup-pay">
-                                    <div class="pr-title">Оплата </div>
-                                    <div class="pr-icon">?</div>
+                                <a href="#paymodal" class="product-icon-box open-popup-pay">
+                                    <div class="icon-two">Оплата </div>
+
                                 </a>
                             </div>
                             <div class="product-form-price-old">
@@ -152,31 +152,52 @@ get_header(); ?>
                                         руб.</div>
                                 </div>
                                 <div class="info-text">Дорого?</div>
-                                <form method="post" class="u-form">
-                                   <div class="u-controls">
-                                        <input type="text" class="u-input js-order-fio" name="fio" placeholder="Ф.И.О. контактного лица">
-                                        <div class="is-error">Введите ф.и.о</div>
+
+                                <div class="product-add-card">
+                                    <form class="cart" method="post" enctype='multipart/form-data'>
+                                        <?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
+
+                                        <?php if ( ! $product->is_sold_individually() )
+                                            woocommerce_quantity_input( array(
+                                                'min_value' => apply_filters( 'woocommerce_quantity_input_min', 1, $product ),
+                                                'max_value' => apply_filters( 'woocommerce_quantity_input_max', $product->backorders_allowed() ? '' : $product->get_stock_quantity(), $product )
+                                            ) );
+                                        ?>
+
+                                        <input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
+
+                                        <button type="submit" class="single_add_to_cart_button button alt">Добавить в корзину</button>
+
+                                        <?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
+                                    </form>
+                                    <div class="product-add-card-info">
+                                        <div class="auf-lager">
+                                            <?php
+                                            if ( $product->is_in_stock() ) {
+                                                echo '<div class="stock">' . $product->get_stock_quantity() . ' в наличии</div>';
+                                            } else {
+                                                echo '<div class="out-of-stock" >Нет в наличии</div>';
+                                            }
+                                            ?>
+                                        </div>
+                                        <div class="lieferung">
+                                            <?php if( get_field("date_auf") ): ?>
+                                                <div class="lieferung-text">
+                                                    Доставка: <?php echo  get_field('date_auf'); ?>
+                                                </div>
+                                            <?php else :?>
+                                                Доставка не определена
+                                            <?php endif; ?>
+
+                                        </div>
                                     </div>
-                                    <div class="u-controls">
-                                        <input type="text" class="u-input js-order-tel" name="phone" placeholder="Телефон">
-                                        <div class="is-error">Введите телефон</div>
-                                    </div>
-                                    <div class="u-controls">
-                                        <input type="text" class="u-input js-order-msg" name="сщььуте" placeholder="Комментарий">
-                                    </div>
-                                    <div class="u-form-btn">
-                                        <button class="u-btn u-btn-white js-order" type="submit" disabled>
-                                            Оформить заказ
-                                        </button>
-                                    </div>
-                                </form>
+                                </div>
+
                             </div>
                         </div>
 
-                        <div class="product-item-msg">
-                            Наш менеджер свяжется с вами в течение 15 минут для оформления заказа
-                        </div>
-                        <div class="form-order-msg">Заявка отправлена</div>
+
+
                         <button class="js-yandex-order" onclick="yaCounter55570948.reachGoal('ujOrder'); return true;" style="display: none"></button>
                         <?php wc_print_notices();?>
                     </div>
@@ -196,9 +217,10 @@ get_header(); ?>
                 </div>
 
 
+
             </div>
         </div>
-        <?php echo do_shortcode( '[viewBuyButtonCustom  id=' . $post->ID . ' name=' . $product->get_name() . ' count="" price=""]' ); ?>
+
         <div class="product-preview full-list box mobile-hidden">
             <h2 class="title-h2">С этим товаром покупают</h2>
             <div class="product-preview-layout grid-three">

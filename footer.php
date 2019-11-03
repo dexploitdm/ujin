@@ -46,8 +46,8 @@
                                     Отправить
                                 </button>
                             </div>
-                            <div class="msg-note">Сообщение отправленно</div>
-                            <button class="js-yandex-form" onclick="yaCounter55570948.reachGoal('myForm'); return true;" style="display: none"></button>
+                            <div class="msg-note msg-footer">Сообщение отправленно</div>
+                            <div class="js-yandex-form-footer" onclick="yaCounter55570948.reachGoal('myForm'); return true;" style="display: none"></div>
 
                         </form>
 
@@ -78,14 +78,14 @@
                 <a href="#" class="menu-title">App Store</a>
                 <ul>
                     <li><a href="https://itunes.apple.com/us/app/mysmartflat/id1347821135?l=ru&ls=1&mt=8">Mysmartflat</a> </li>
-                    <li><a href="https://apps.apple.com/ru/app/sapfir/id1442949662">Sapfir</a> </li>
+                    <li><a href="https://apps.apple.com/ru/app/ujin/id1442949662">Ujin</a> </li>
                 </ul>
             </div>
 			     <div class="footer-layout-menu-item">
                 <a href="#" class="menu-title">Google Play</a>
                 <ul>
                     <li><a href="https://play.google.com/store/apps/details?id=kortros.mysmartflat.ru.gulliver">Mysmartflat</a> </li>
-                    <li><a href="https://play.google.com/store/apps/details?id=ru.mysmartflat.sapfir">Sapfir</a> </li>
+                    <li><a href="https://play.google.com/store/apps/details?id=ru.mysmartflat.sapfir">Ujin</a> </li>
                 </ul>
             </div>
         </div>
@@ -181,9 +181,11 @@ if(oldURL.length > 0){
 jQuery(document).ready(function($) {
     const formSend = $("#contact");
 	const formSendPartner = $("#formPartner");
-    const messageSend = $(".msg-note");
-		
+    const messageSend = $(".msg-footer");
+	const messageSendPart = $(".msg-part");	
+	
         formSend.submit(function(e) {
+            console.log('run')
 			   e.preventDefault();			
             var str = $(this).serialize();
         
@@ -198,8 +200,21 @@ jQuery(document).ready(function($) {
             });
             return false;
         });
-		 formSendPartner.submit(function(e) {
-            var str = $(this).serialize();  e.preventDefault();  $.ajax({ type: "POST",  url: "<?php echo get_template_directory_uri() ?>/mail.php",    data: str,  success: function(msg) {if(!msg == 'OK') {messageSend.fadeIn();} else {messageSend.fadeIn();}   } }); return false; });
+        formSendPartner.submit(function(e) {
+			   e.preventDefault();			
+            var strPart = $(this).serialize();
+            console.log(strPart);
+            $.ajax({
+                type: "POST",
+                url: "<?php echo get_template_directory_uri() ?>/mail-partner.php",
+                data: strPart,
+                success: function(msg) {
+					//console.log(msg)
+                    if(!msg == 'OK') {messageSendPart.fadeIn();} else {messageSendPart.fadeIn();}
+                }
+            });
+            return false;
+        });
 });
 </script>
 </body>

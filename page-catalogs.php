@@ -126,10 +126,10 @@ get_header(); ?>
                                 </div>
                                 <div class="functional-app">
                                     <div class="functional-app-layout">
-                                        <a href="<?php echo get_theme_mod('appApple'); ?>" target="_blank">
+                                        <a href="https://apps.apple.com/ru/app/ujin/id1442949662" target="_blank">
                                             <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/apple-market.png">
                                         </a>
-                                        <a href="<?php echo get_theme_mod('appGoogle'); ?>" target="_blank">
+                                        <a href="https://play.google.com/store/apps/details?id=ru.mysmartflat.sapfir" target="_blank">
                                             <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/google_market.png">
                                         </a>
                                     </div>

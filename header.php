@@ -48,7 +48,7 @@
                 <a href="http://localhost:3000/#" class="call-link">Заказать звонок</a>
             </div> -->
             <div class="header-card">
-                <a href="#" class="card-link"><span class="card-title">Корзина</span> <span class="icon-card"></span><span class="card-orders">0</span></a>
+                <a href="<?php echo get_site_url(); ?>/cart/" class="card-link"><span class="card-title">Корзина</span> <span class="icon-card"></span><span class="card-orders"><?php echo WC()->cart->get_cart_contents_count(); ?></span></a>
             </div>
             <div class="call-phone" style="margin-bottom: 5px;">
                 <a href="tel:88007750519">8 800 775 05 19</a>
