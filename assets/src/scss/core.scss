@@ -3,35 +3,10 @@
 ////font-family: 'Roboto', sans-serif;
 //
 @import "base/variables";
-//@import "base/common";
-//
-//@import "layouts/header";
-//@import "layouts/footer";
-//
-//@import "blocks/headerMenu";
-//@import "blocks/headBanner";
-//@import "blocks/opportunities";
-//@import "blocks/tabs";
-//@import "blocks/mobileApp";
-//@import "blocks/ourSolutions";
-//@import "blocks/button";
-//@import "blocks/productPreview";
-//@import "blocks/boxesDesc";
-//@import "blocks/listsServices";
-//@import "blocks/functional";
-//@import "blocks/partners";
-//@import "blocks/projects";
-//@import "blocks/productItem";
-//@import "blocks/productCount";
-//@import "blocks/content";
-//@import "blocks/modals";
-//
-//@import "blocks/form/input";
-//
-//
-//
-//@import "libs/swiper";
-//@import "libs/mag-popup";
 
 @import "prod/core";
 @import "cart/base";
+
+@import "layouts/header";
+//@import "layouts/footer";
+//

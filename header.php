@@ -47,6 +47,9 @@
 <!--             <div class="call-set">
                 <a href="http://localhost:3000/#" class="call-link">Заказать звонок</a>
             </div> -->
+            <div class="header-card">
+                <a href="#" class="card-link"><span class="card-title">Корзина</span> <span class="icon-card"></span><span class="card-orders">0</span></a>
+            </div>
             <div class="call-phone" style="margin-bottom: 5px;">
                 <a href="tel:88007750519">8 800 775 05 19</a>
             </div>

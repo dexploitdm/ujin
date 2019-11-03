@@ -1,126 +1,84 @@
-
-header {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 9; }
-header .header-layout {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -ms-flex-align: end;
-  align-items: flex-end;
-  padding-top: 28px;
-  transition: .3s; }
-header .header-layout .logo {
-  -ms-flex-order: 1;
-  order: 1; }
-header .header-layout .u-menu {
-  -ms-flex-order: 2;
-  order: 2; }
-header .header-layout .call {
-  -ms-flex-order: 3;
-  order: 3;
-  text-align: right; }
-header .header-layout .call-set .call-link {
-  color: $color-default;
-  font-size: 14px;
-  line-height: 92%;
-  text-decoration: underline; }
-header .header-layout .call-phone {
-  padding-top: 8px; }
-header .header-layout .call-phone a {
-  font-weight: 700;
-  font-size: 21px;
-  line-height: 92%;
-  color: #fff;
-  text-decoration: none;
-  text-shadow: 0 0 15px rgba(14, 245, 255, 0.6);
-}
-header.header-bg {
-  background-color: rgba(45, 60, 62, 0.9);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  pointer-events: auto;
-  z-index: 10;
-}
-header.header-bg .header-layout {
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 9px;
-}
-
-.drawer-menu {
-  display: none;
-  max-width: 300px;
-  height: 100vh;
-  background: $color-dark;
-  position: absolute;
-  top: 0;
-  margin-left: -300px;
+.header-card {
+  padding-bottom: 18px;
   transition: .3s;
-  padding: 20px;
-  .logo {
-
-  }
-  .u-menu-list {
+  .card-link {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 130%;
+    color: $color-white;
+    text-decoration: none;
+    transition: .3s;
+    margin-right: 16px;
     display: block;
-    &-item {
-      margin-top: 20px;
-      margin-bottom: 0;
-      padding-bottom: 0;
-      &:hover {
-        border-bottom: 0;
-      }
-      &.active {
-        border-bottom: 0;
+    position: relative;
+    &:hover {
+      color: $color-default;
+      .icon-card {
+        &:after {
+          background-image: url("data:image/svg+xml,%3Csvg width='15' height='18' viewBox='0 0 15 18' fill='%230EF5FF' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.75 4.5V15.75C14.75 16.0605 14.6885 16.3535 14.5654 16.6289C14.4482 16.8984 14.2871 17.1357 14.082 17.3408C13.8828 17.54 13.6455 17.7012 13.3701 17.8242C13.0947 17.9414 12.8047 18 12.5 18H2.375C2.06445 18 1.77148 17.9414 1.49609 17.8242C1.22656 17.7012 0.989258 17.54 0.78418 17.3408C0.584961 17.1357 0.423828 16.8984 0.300781 16.6289C0.183594 16.3535 0.125 16.0605 0.125 15.75V4.5H2.375V3.375C2.375 2.91211 2.46289 2.47559 2.63867 2.06543C2.82031 1.65527 3.06348 1.29785 3.36816 0.993164C3.67285 0.688477 4.03027 0.448242 4.44043 0.272461C4.85059 0.0908203 5.28711 0 5.75 0C6.35938 0 6.9248 0.152344 7.44629 0.457031C7.96777 0.152344 8.52734 0 9.125 0C9.58789 0 10.0244 0.0908203 10.4346 0.272461C10.8447 0.448242 11.2021 0.688477 11.5068 0.993164C11.8115 1.29785 12.0518 1.65527 12.2275 2.06543C12.4092 2.47559 12.5 2.91211 12.5 3.375V4.5H14.75ZM11.375 3.375C11.375 3.07031 11.3135 2.78027 11.1904 2.50488C11.0732 2.22949 10.9121 1.99219 10.707 1.79297C10.5078 1.58789 10.2705 1.42676 9.99512 1.30957C9.71973 1.18652 9.42969 1.125 9.125 1.125C8.86133 1.125 8.6123 1.16895 8.37793 1.25684C8.58887 1.52051 8.74707 1.77832 8.85254 2.03027C8.95801 2.28223 9.02832 2.53711 9.06348 2.79492C9.10449 3.05273 9.125 3.32227 9.125 3.60352C9.125 3.87891 9.125 4.17773 9.125 4.5H11.375V3.375ZM3.5 4.5H8V3.375C8 3.07031 7.93848 2.78027 7.81543 2.50488C7.69824 2.22949 7.53711 1.99219 7.33203 1.79297C7.13281 1.58789 6.89551 1.42676 6.62012 1.30957C6.34473 1.18652 6.05469 1.125 5.75 1.125C5.43945 1.125 5.14648 1.18652 4.87109 1.30957C4.60156 1.42676 4.36426 1.58789 4.15918 1.79297C3.95996 1.99219 3.79883 2.22949 3.67578 2.50488C3.55859 2.78027 3.5 3.07031 3.5 3.375V4.5ZM10.5488 16.875C10.3496 16.5234 10.25 16.1484 10.25 15.75V5.625H1.25V15.75C1.25 15.9082 1.2793 16.0547 1.33789 16.1895C1.39648 16.3242 1.47559 16.4443 1.5752 16.5498C1.68066 16.6494 1.80078 16.7285 1.93555 16.7871C2.07031 16.8457 2.2168 16.875 2.375 16.875H10.5488ZM13.625 5.625H11.375V15.75C11.375 15.9082 11.4043 16.0547 11.4629 16.1895C11.5215 16.3242 11.6006 16.4443 11.7002 16.5498C11.8057 16.6494 11.9258 16.7285 12.0605 16.7871C12.1953 16.8457 12.3418 16.875 12.5 16.875C12.6582 16.875 12.8047 16.8457 12.9395 16.7871C13.0742 16.7285 13.1914 16.6494 13.291 16.5498C13.3965 16.4443 13.4785 16.3242 13.5371 16.1895C13.5957 16.0547 13.625 15.9082 13.625 15.75V5.625Z' fill='%230EF5FF'/%3E%3C/svg%3E%0A");
+        }
       }
     }
   }
-}
-header.active {
-  .drawer-menu {
-    display: block;
-    margin-left: 0;
+  .icon-card {
+    position: relative;
+    padding-left: 4px;
+    &:after {
+      content: '';
+      position: absolute;
+      background-image: url("data:image/svg+xml,%3Csvg width='15' height='18' viewBox='0 0 15 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.75 4.5V15.75C14.75 16.0605 14.6885 16.3535 14.5654 16.6289C14.4482 16.8984 14.2871 17.1357 14.082 17.3408C13.8828 17.54 13.6455 17.7012 13.3701 17.8242C13.0947 17.9414 12.8047 18 12.5 18H2.375C2.06445 18 1.77148 17.9414 1.49609 17.8242C1.22656 17.7012 0.989258 17.54 0.78418 17.3408C0.584961 17.1357 0.423828 16.8984 0.300781 16.6289C0.183594 16.3535 0.125 16.0605 0.125 15.75V4.5H2.375V3.375C2.375 2.91211 2.46289 2.47559 2.63867 2.06543C2.82031 1.65527 3.06348 1.29785 3.36816 0.993164C3.67285 0.688477 4.03027 0.448242 4.44043 0.272461C4.85059 0.0908203 5.28711 0 5.75 0C6.35938 0 6.9248 0.152344 7.44629 0.457031C7.96777 0.152344 8.52734 0 9.125 0C9.58789 0 10.0244 0.0908203 10.4346 0.272461C10.8447 0.448242 11.2021 0.688477 11.5068 0.993164C11.8115 1.29785 12.0518 1.65527 12.2275 2.06543C12.4092 2.47559 12.5 2.91211 12.5 3.375V4.5H14.75ZM11.375 3.375C11.375 3.07031 11.3135 2.78027 11.1904 2.50488C11.0732 2.22949 10.9121 1.99219 10.707 1.79297C10.5078 1.58789 10.2705 1.42676 9.99512 1.30957C9.71973 1.18652 9.42969 1.125 9.125 1.125C8.86133 1.125 8.6123 1.16895 8.37793 1.25684C8.58887 1.52051 8.74707 1.77832 8.85254 2.03027C8.95801 2.28223 9.02832 2.53711 9.06348 2.79492C9.10449 3.05273 9.125 3.32227 9.125 3.60352C9.125 3.87891 9.125 4.17773 9.125 4.5H11.375V3.375ZM3.5 4.5H8V3.375C8 3.07031 7.93848 2.78027 7.81543 2.50488C7.69824 2.22949 7.53711 1.99219 7.33203 1.79297C7.13281 1.58789 6.89551 1.42676 6.62012 1.30957C6.34473 1.18652 6.05469 1.125 5.75 1.125C5.43945 1.125 5.14648 1.18652 4.87109 1.30957C4.60156 1.42676 4.36426 1.58789 4.15918 1.79297C3.95996 1.99219 3.79883 2.22949 3.67578 2.50488C3.55859 2.78027 3.5 3.07031 3.5 3.375V4.5ZM10.5488 16.875C10.3496 16.5234 10.25 16.1484 10.25 15.75V5.625H1.25V15.75C1.25 15.9082 1.2793 16.0547 1.33789 16.1895C1.39648 16.3242 1.47559 16.4443 1.5752 16.5498C1.68066 16.6494 1.80078 16.7285 1.93555 16.7871C2.07031 16.8457 2.2168 16.875 2.375 16.875H10.5488ZM13.625 5.625H11.375V15.75C11.375 15.9082 11.4043 16.0547 11.4629 16.1895C11.5215 16.3242 11.6006 16.4443 11.7002 16.5498C11.8057 16.6494 11.9258 16.7285 12.0605 16.7871C12.1953 16.8457 12.3418 16.875 12.5 16.875C12.6582 16.875 12.8047 16.8457 12.9395 16.7871C13.0742 16.7285 13.1914 16.6494 13.291 16.5498C13.3965 16.4443 13.4785 16.3242 13.5371 16.1895C13.5957 16.0547 13.625 15.9082 13.625 15.75V5.625Z' fill='white'/%3E%3C/svg%3E%0A");
+      background-size: cover;
+      width: 15px;
+      height: 18px;
+      transition: .3s;
+    }
   }
-}
-.drawer-btn {
-  display: none;
-  width: 23px;
-  height: 23px;
-  order: 2;
-  position: relative;
-  cursor: pointer;
-  span {
+  .card-orders {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 130%;
+    color: $color-white;
+    background-color: $color-orange;
     position: absolute;
-    height: 2px;
-    right: 0;
-    background: white;
-    &:first-child {
-      width: 18px;
-    }
-    &:nth-child(2) {
-      width: 23px;
-      top: 8px;
-    }
-    &:last-child {
-      width: 23px;
-      top: 16px;
+    right: -24px;
+    top: -7px;
+    width: 13px;
+    height: 13px;
+    text-align: center;
+    border-radius: 50%;
+  }
+}
+@media (min-width: 968px) {
+  .header-bg {
+    .header-card {
+      padding-bottom: 4px;
     }
   }
 }
-@media (max-width: $tablet-media) {
-  .drawer-btn {
+
+@media (max-width: 968px) {
+  header .header-layout .call {
     display: block;
   }
-  header .header-layout {
-    align-items: center;
-    .call {
-      display: none;
-    }
-    .u-menu {
-      display: none;
+  header .header-layout .call-phone {
+    display: none;
+  }
+  .drawer-btn {
+    margin-left: auto;
+    transition: .3s;
+  }
+  .header-card {
+    position: absolute;
+    top: 15px;
+    right: 19px;
+    transition: .3s;
+  }
+  .card-title {
+    display: none;
+  }
+  .header-bg {
+    .drawer-btn {
+      margin-top: 20px;
     }
   }
-
 }
