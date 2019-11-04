@@ -449,6 +449,39 @@ function maskPhone(){
     $('.js-phone').inputmask({"mask": "(999) 999-9999"});
 }
 
+function card(){
+    //Обновление корзины
+    const totalAllSum = $('.info-cart-item .woocommerce-Price-amount');
+    $( "button[name = 'update_cart']" ).click(function() {
+        setTimeout(function(){
+            let currentSum = $('.order-total .woocommerce-Price-amount').text();
+            let resultSum  = currentSum.split('₽')[1];
+            totalAllSum.text(resultSum);
+
+        },3000);
+    });
+    //Обработчики кнопок количества
+    const qualityBtn = $('.js-quality-cart');
+
+
+    qualityBtn.bind("click", function() {
+
+        let currentInput = $(this).parent().find('input');
+        let qualityCount  = currentInput.val();
+
+        let currentBtnQuality = $(this).attr('data-count');
+        if(currentBtnQuality === 'min'){
+            if(qualityCount > 1) {
+                qualityCount -= 1;
+            }
+        } else {
+            qualityCount++;
+        }
+        currentInput.val(qualityCount);
+        $( "button[name = 'update_cart']" ).removeAttr('disabled').click();
+    });
+}
+
 $(window).on('resize', function(){
     initSolutions();
     initServices();
@@ -472,4 +505,5 @@ $( document ).ready(function() {
     validateContact();
     orderSubmitClick();
     //maskPhone();
+    card();
 });
