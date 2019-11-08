@@ -174,7 +174,7 @@ get_header(); ?>
                                     <div class="info-cart-item bold"><?php wc_cart_totals_order_total_html(); ?> руб.</div>
                                 </div>
 
-                                <a href="http://ujinv2.io/checkout/" class="checkout-button button alt wc-forward">
+                                <a href="<?php echo get_site_url(); ?>/checkout/" class="checkout-button button alt wc-forward">
                                     Оформить заказ</a>
                                 <div class="cart-text">
                                     Способы оплаты и доставки товара можно выбрать при оформлении заказа
