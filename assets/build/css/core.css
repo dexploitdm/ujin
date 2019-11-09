@@ -4634,3 +4634,87 @@ img.mfp-img {
             font-size: 12px; }
     .checkout-btn {
       max-width: 100%; } }
+
+.check-end {
+  padding-top: 80px;
+  transition: .3s;
+  max-width: 370px;
+  margin: 0 auto;
+  color: #2D3C3E;
+  text-align: center; }
+  .check-end-title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+    padding-bottom: 4px; }
+  .check-end-desc {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 130%;
+    padding-bottom: 20px; }
+  .check-end-content {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    padding-bottom: 34px; }
+  .check-end-info {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 130%;
+    padding-bottom: 45px;
+    transition: .3s; }
+  .check-end .check-block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: baseline;
+        align-items: baseline;
+    position: relative;
+    margin-bottom: 20px; }
+    .check-end .check-block:last-child {
+      margin-bottom: 0; }
+    .check-end .check-block-item {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 130%;
+      background-color: white;
+      z-index: 9; }
+      .check-end .check-block-item:nth-child(2) {
+        border-bottom: 1px dashed #B8C2C4;
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        z-index: 1; }
+  .check-end-btn .check-repay {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 130%;
+    background-color: #2D3C3E;
+    color: #fff;
+    display: block;
+    text-align: center;
+    transition: .3s;
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-decoration: none; }
+  @media (max-width: 768px) {
+    .check-end {
+      max-width: 100%;
+      padding-top: 36px; }
+      .check-end-title {
+        padding-bottom: 10px;
+        font-size: 18px; }
+      .check-end-desc {
+        font-size: 12px;
+        padding-bottom: 10px; }
+      .check-end-content {
+        font-size: 12px;
+        padding-bottom: 20px; }
+      .check-end-info {
+        font-size: 12px;
+        padding-bottom: 20px; }
+      .check-end .check-block-item {
+        font-size: 12px; } }

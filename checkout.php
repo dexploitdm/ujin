@@ -11,7 +11,9 @@ get_header(); ?>
         <h1 class="title-h2">
             <?php the_title(); ?>
         </h1>
+        <?php if(is_wc_endpoint_url()): ?>
 
+        <?php else: ?>
         <div class="checkout">
             <div class="checkout-box">
                 <div class="checkout-box-title">
@@ -138,8 +140,43 @@ get_header(); ?>
 
             </div>
         </div>
-
-
+        <?php endif; ?>
+        <div class="check-end">
+            <div class="check-end-title">
+                Спасибо за ваш заказ!
+            </div>
+            <div class="check-end-desc">
+                Сейчас он отправлен на склад для сборки.
+            </div>
+            <div class="check-end-content">
+                Ожидайте смс или звонок от оператора контакт-центра по статусу заказа.
+            </div>
+            <div class="check-end-info">
+                <div class="check-block">
+                    <div class="check-block-item">Номер заказа: </div>
+                    <div class="check-block-item"></div>
+                    <div class="check-block-item">COXD-631121</div>
+                </div>
+                <div class="check-block">
+                    <div class="check-block-item">Дата доставки: </div>
+                    <div class="check-block-item"></div>
+                    <div class="check-block-item">18.11.2019</div>
+                </div>
+                <div class="check-block">
+                    <div class="check-block-item">Сумма заказа: </div>
+                    <div class="check-block-item"></div>
+                    <div class="check-block-item">17 500руб.</div>
+                </div>
+                <div class="check-block">
+                    <div class="check-block-item">Способ оплаты: </div>
+                    <div class="check-block-item"></div>
+                    <div class="check-block-item">Оплата наличными</div>
+                </div>
+            </div>
+            <div class="check-end-btn">
+                <a href="<?php echo get_site_url(); ?>/catalogs" class="check-repay">Продолжить покупки</a>
+            </div>
+        </div>
 
 
 
