@@ -24,6 +24,7 @@
     <meta name="author" content="Dexploitdm | Дмитрий Паршаков">
     <meta name="theme-color" content="#2D3C3E">
     <link href="<?php  echo get_template_directory_uri() ?>/assets/build/css/core.css" rel="stylesheet">
+    <script type="text/javascript" id="ISDEKscript" src="<?php  echo get_template_directory_uri() ?>/core/cdek/widget/widjet.js"></script>
     <?php  wp_head(); ?>
 <meta name="cmsmagazine" content="2fb71f840aeb70e2fdb7bc5b0ed28704" />
 </head>
