@@ -8,9 +8,143 @@ get_header(); ?>
     <div class="empty-block"></div>
     <?php while (have_posts()) : the_post(); ?>
     <div class="content box">
+        <h1 class="title-h2">
+            <?php the_title(); ?>
+        </h1>
+
+        <div class="checkout">
+            <div class="checkout-box">
+                <div class="checkout-box-title">
+                    <span class="t-number">1. </span>Ваши данные
+                </div>
+                <div class="checkout-box-form">
+                    <div class="checkout-control">
+                        <span class="place">Ваше имя и фамилия<span class="required">*</span></span>
+                        <input type="text" name="fio" class="check-input js-check-fio" />
+                    </div>
+                    <div class="checkout-control">
+                        <span class="place">Телефон<span class="required">*</span></span>
+                        <input type="text" name="phone" class="check-input js-check-phone" />
+                    </div>
+                    <div class="checkout-control">
+                        <span class="place">E-mail<span class="required">*</span></span>
+                        <input type="text" name="email" class="check-input js-check-email" />
+                    </div>
+                </div>
+
+
+
+                <div class="checkout-box-title">
+                    <span class="t-number">2. </span>Способ получения и доставки
+                </div>
+                <div class="checkout-box-form">
+                    <div class="checkout-method">
+                        <div class="checkout-check">
+                            <div class="uj-radio">
+                                <input id="radio-1" name="method" type="radio" value="cur" checked>
+                                <label for="radio-1" class="uj-radio-label">Доставка курьером</label>
+                                <div class="price">
+                                    390руб.
+                                </div>
+                            </div>
+
+                            <div class="uj-radio">
+                                <input id="radio-2" name="method" type="radio" value="pnz">
+                                <label  for="radio-2" class="uj-radio-label">Самовывоз с пункта выдачи</label>
+                                <div class="price bold">
+                                    190руб.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="method-content method-cur">
+                            <div class="checkout-control">
+                                <span class="place">Населенный пункт<span class="required">*</span></span>
+                                <input type="text" name="city" class="check-input js-check-city" />
+                            </div>
+                            <div class="checkout-control">
+                                <span class="place">Улица, дом<span class="required">*</span></span>
+                                <input type="text" name="street" class="check-input js-check-street" />
+                            </div>
+                            <div class="checkout-control">
+                                <span class="place">Квартира<span class="required">*</span></span>
+                                <input type="text" name="home" class="check-input js-check-home" />
+                            </div>
+                        </div>
+                        <div class="method-content method-pnz" style="display: none">
+                            <div id="forpvz" style="height:600px;"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="checkout-box-title">
+                    <span class="t-number">3. </span>Оплата
+                </div>
+                <div class="checkout-box-form">
+                    <div class="checkout-pay checkout-check">
+                        <div class="uj-radio">
+                            <input id="radio-3" name="setpay" type="radio" value="cur" checked>
+                            <label for="radio-3" class="uj-radio-label">Картой онлайн</label>
+                            <div class="price icon-pay"></div>
+                        </div>
+
+                        <div class="uj-radio">
+                            <input id="radio-4" name="setpay" type="radio" value="pnz">
+                            <label  for="radio-4" class="uj-radio-label">Наличными или картой при получении</label>
+                            <div class="price">
+                                Бесплатно
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-info">
+                    <div class="checkout-info-layout">
+                        <div class="info-check">
+                            <div class="info-check-item">
+                                Товаров
+                            </div>
+                            <div class="info-check-item"></div>
+                            <div class="info-check-item bold">
+                                5
+                            </div>
+                        </div>
+                        <div class="info-check">
+                            <div class="info-check-item">
+                                Скидка
+                            </div>
+                            <div class="info-check-item"></div>
+                            <div class="info-check-item">
+                                <div class="opacity">1 500 руб.</div>
+                            </div>
+                        </div>
+                        <div class="info-check">
+                            <div class="info-check-item">
+                                Сумма заказа
+                            </div>
+                            <div class="info-check-item"></div>
+                            <div class="info-check-item bold">
+                                17 500 руб.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-btn">
+                    <button type="button" class="check-btn js-btn-checkout">Перейти к оплате</button>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
 
         <?php the_content();  ?>
-        <div id="forpvz" style="height:600px;"></div>
+
     </div>
         <?php endwhile; ?>
 
@@ -23,4 +157,6 @@ get_header(); ?>
             servicepath: '<?php  echo get_template_directory_uri() ?>/core/cdek/widget/scripts/service.php'
         });
     </script>
+    <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>
+    <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/checkout.js"></script>
 <?php get_footer(); ?>

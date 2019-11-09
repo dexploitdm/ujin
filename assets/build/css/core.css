@@ -3001,7 +3001,8 @@ ul.tabs {
   border: 1px solid #0090A1; }
 
 .content {
-  padding: 70px 0; }
+  padding: 70px 0;
+  transition: .3s; }
   .content p {
     padding-bottom: 10px;
     color: #2D3C3E; }
@@ -3012,6 +3013,10 @@ ul.tabs {
 @media (max-width: 1260px) {
   .content {
     margin: 0 30px; } }
+
+@media (max-width: 768px) {
+  .content {
+    padding: 30px 0; } }
 
 .white-popup {
   position: relative;
@@ -4354,3 +4359,278 @@ img.mfp-img {
         width: 18px;
         height: 17px;
         left: 0; }
+
+.uj-radio {
+  margin: 0.5rem; }
+
+.uj-radio input[type="radio"] {
+  position: absolute;
+  opacity: 0; }
+
+.uj-radio input[type="radio"] + .uj-radio-label:before {
+  content: '';
+  background: #fff;
+  border-radius: 100%;
+  border: 1px solid #0090A1;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: 1px;
+  bottom: 0;
+  margin-right: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 250ms ease; }
+
+.uj-radio input[type="radio"]:checked + .uj-radio-label:before {
+  background-color: #3197EE;
+  box-shadow: inset 0 0 0 4px #f4f4f4; }
+
+.uj-radio input[type="radio"]:focus + .uj-radio-label:before {
+  outline: none;
+  border-color: #3197EE; }
+
+.uj-radio input[type="radio"]:disabled + .uj-radio-label:before {
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+  border-color: #b4b4b4;
+  background: #b4b4b4; }
+
+.uj-radio input[type="radio"] + .uj-radio-label:empty:before {
+  margin-right: 0; }
+
+.uj-radio-label {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  color: #2D3C3E; }
+
+.checkout {
+  padding-top: 55px;
+  max-width: 960px;
+  transition: .3s; }
+  .checkout-box-title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+    color: #2D3C3E;
+    padding-bottom: 26px; }
+  .checkout-box-form {
+    padding-bottom: 40px; }
+
+.checkout-control {
+  margin-bottom: 26px;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 610px; }
+  .checkout-control:last-child {
+    margin-bottom: 0; }
+  .checkout-control .place {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    color: #0090A1;
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    transition: .3s;
+    z-index: -1; }
+    .checkout-control .place .required {
+      color: #EB5757; }
+  .checkout-control.is-focus .place {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 130%;
+    color: #B8C2C4;
+    top: -6px;
+    background-color: #fff;
+    z-index: 2;
+    padding: 0 5px; }
+    .checkout-control.is-focus .place .required {
+      color: #B8C2C4; }
+  .checkout-control.this-error .place {
+    color: #EB5757; }
+    .checkout-control.this-error .place .required {
+      color: #EB5757; }
+  .checkout-control.this-error .check-input {
+    color: #EB5757;
+    border: 1px solid #EB5757; }
+
+.check-input {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #0090A1;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  color: #2D3C3E;
+  padding: 13px 18px;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  z-index: 1; }
+
+.checkout-method .price {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 130%;
+  color: #2D3C3E;
+  padding-top: 5px;
+  padding-left: 20px; }
+  .checkout-method .price.bold {
+    font-weight: bold; }
+
+.method-content {
+  position: relative; }
+
+.checkout-check {
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 16px; }
+  .checkout-check .uj-radio:first-child {
+    margin-right: 40px; }
+  .checkout-check .uj-radio-label {
+    color: #0090A1; }
+
+.checkout-pay .price {
+  padding-top: 5px;
+  padding-left: 20px; }
+  .checkout-pay .price.icon-pay {
+    position: relative; }
+    .checkout-pay .price.icon-pay:before {
+      content: '';
+      position: absolute;
+      background-size: cover;
+      background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M1 4.65002C0.447825 4.65002 0 5.09772 0 5.65002V19.35C0 19.9023 0.44805 20.35 1 20.35H24C24.5522 20.35 25 19.9023 25 19.35V5.65002C25 5.09775 24.552 4.65002 24 4.65002H1ZM14.9313 9.32892C15.5397 9.32892 16.0273 9.46332 16.3383 9.5883L16.1258 10.925L15.9852 10.8539C15.6955 10.7289 15.3234 10.6087 14.8102 10.6172C14.1958 10.6172 13.9117 10.8913 13.9117 11.1477C13.9081 11.4366 14.2436 11.6272 14.7922 11.9125C15.6976 12.3528 16.1161 12.8866 16.1102 13.5883C16.098 14.8687 15.0271 15.6961 13.3773 15.6961C12.6735 15.6884 11.9955 15.5394 11.6289 15.3672L11.8492 13.9859L12.0516 14.0844C12.567 14.3147 12.9008 14.4078 13.5289 14.4078C13.98 14.4078 14.4641 14.219 14.468 13.8055C14.4709 13.5355 14.2656 13.343 13.6547 13.0406C13.0594 12.7455 12.2702 12.2512 12.2789 11.3649C12.2882 10.1658 13.3805 9.32892 14.9313 9.32892ZM2.21092 9.52502H4.74453C5.0857 9.53792 5.36115 9.64777 5.45625 10.018L6.00235 12.8367C6.00242 12.837 6.00225 12.838 6.00235 12.8383L6.1664 13.6828L7.70468 9.52502H9.36875L6.8953 15.611L5.2328 15.6125L3.90937 10.7016C4.69683 11.1187 5.36723 11.6014 5.75548 12.2656C5.65538 12.0555 5.52348 11.8182 5.3547 11.5844C5.15815 11.3121 4.73368 10.9605 4.55625 10.8109C3.938 10.2898 3.09838 9.86885 2.1914 9.64612L2.21092 9.52502ZM10.0305 9.53205H11.6578L10.6398 15.6086H9.0125L10.0305 9.53205ZM19.2219 9.53205H20.4547L21.7453 15.6086H20.2656C20.2656 15.6086 20.1188 14.9105 20.0711 14.6977C19.8385 14.6977 18.2119 14.6953 18.0289 14.6953C17.967 14.8598 17.693 15.6086 17.693 15.6086H16.0188L18.3867 10.0367C18.5544 9.6408 18.8402 9.53205 19.2219 9.53205ZM19.343 11.1664C19.2629 11.3924 19.1235 11.7574 19.1328 11.7414C19.1328 11.7414 18.6319 13.0774 18.5008 13.4242L19.8172 13.4234C19.7537 13.1221 19.45 11.6852 19.45 11.6852L19.343 11.1665V11.1664Z' fill='%23B8C2C4'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='25' height='25' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+      width: 25px;
+      height: 25px; }
+    .checkout-pay .price.icon-pay:after {
+      content: '';
+      position: absolute;
+      left: 45px;
+      background-size: cover;
+      background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M1.16328 4.87503C0.521025 4.87503 0 5.39578 0 6.0383V19.4118C0 20.0542 0.5211 20.575 1.16328 20.575H23.8368C24.479 20.575 25 20.0543 25 19.4117V6.03828C25 5.39585 24.4789 4.875 23.8368 4.875H1.16325L1.16328 4.87503ZM8.19765 6.76488C9.62468 6.76488 10.9353 7.26135 11.9641 8.09065C11.0985 8.86513 10.4529 9.88265 10.1344 11.036H10.6336C10.9276 10.0845 11.4617 9.23743 12.1656 8.56565C12.8696 9.23743 13.4036 10.0845 13.6976 11.036H14.2047C13.8818 9.88872 13.2352 8.87727 12.3703 8.10785C13.4011 7.26802 14.7168 6.76485 16.15 6.76485C19.4573 6.76485 22.1383 9.44615 22.1383 12.7539C22.1383 16.0617 19.4573 18.743 16.15 18.743C14.693 18.743 13.357 18.223 12.3188 17.3578C13.2475 16.5498 13.9322 15.4667 14.2453 14.2344H13.757C13.479 15.2687 12.9194 16.1885 12.1656 16.9079C11.4118 16.1885 10.853 15.2687 10.575 14.2344H10.1101C10.4251 15.4488 11.1008 16.5168 12.0156 17.3172C10.9792 18.1716 9.6485 18.6852 8.19763 18.6852C4.89038 18.6852 2.20938 16.0168 2.20938 12.725C2.20938 9.43328 4.89038 6.76488 8.19765 6.76488ZM15.7008 10.975C14.9813 10.975 14.2812 11.6041 14.2812 12.7852C14.2812 13.5684 14.6594 14.0852 15.4031 14.0852C15.6134 14.0853 15.9485 13.9993 15.9485 13.9993L16.0594 13.3149C16.0594 13.3149 15.7536 13.4696 15.5437 13.4696C15.1016 13.4696 14.9242 13.1295 14.9242 12.7641C14.9242 12.0228 15.3046 11.6149 15.7281 11.6149C16.0457 11.6149 16.3008 11.7946 16.3008 11.7946L16.4023 11.1289C16.4023 11.1289 16.0248 10.975 15.7008 10.975H15.7008ZM21.75 11.0328L21.1242 11.0344L20.9899 11.8579C20.9899 11.8579 20.7546 11.5383 20.3867 11.5383C19.8147 11.5383 19.3383 12.2178 19.3383 12.9993C19.3383 13.5037 19.5919 13.9985 20.1117 13.9985C20.4857 13.9985 20.693 13.7415 20.693 13.7415L20.6656 13.961H21.2735L21.75 11.0328ZM3.82655 11.0414L3.32812 13.9766H3.9289L4.3086 11.7633L4.36485 13.9766H4.79453L5.5961 11.7633L5.24062 13.9766H5.8789L6.3711 11.0414H5.3836L4.76875 12.8422L4.73672 11.0415H3.82658L3.82655 11.0414ZM10.1031 11.2321C10.0896 11.2457 9.73985 13.2622 9.73985 13.5078C9.73985 13.8715 9.94368 14.0339 10.2305 14.0313C10.436 14.0295 10.5951 13.9779 10.6687 13.9563C10.6764 13.9542 10.6914 13.95 10.6914 13.95L10.7688 13.425C10.7267 13.425 10.6648 13.443 10.6102 13.443C10.396 13.443 10.3723 13.3291 10.3859 13.2446L10.5586 12.1735H10.8844L10.9633 11.593H10.6562L10.7188 11.2321H10.1031ZM17.3649 11.5274C16.9455 11.5274 16.6242 11.6657 16.6242 11.6657L16.5352 12.2047C16.5352 12.2047 16.8005 12.0946 17.2016 12.0946C17.4293 12.0946 17.5961 12.1206 17.5961 12.3102C17.5961 12.4253 17.5758 12.468 17.5758 12.468C17.5758 12.468 17.3957 12.4524 17.3125 12.4524C16.7837 12.4524 16.2281 12.6841 16.2281 13.3813C16.2281 13.9306 16.5928 14.0563 16.8188 14.0563C17.2502 14.0563 17.4363 13.7697 17.4461 13.7688L17.4258 14.0078H17.9641L18.2047 12.2828C18.2048 11.5509 17.5814 11.5273 17.3649 11.5273V11.5274ZM7.26718 11.5305C6.84633 11.5305 6.52343 11.6688 6.52343 11.6688L6.43438 12.2078C6.43438 12.2078 6.70062 12.0977 7.10313 12.0977C7.33168 12.0977 7.49923 12.1238 7.49923 12.3133C7.49923 12.4284 7.4789 12.4711 7.4789 12.4711C7.4789 12.4711 7.29833 12.4555 7.21485 12.4555C6.68402 12.4555 6.12657 12.6869 6.12657 13.3836C6.12657 13.9326 6.49202 14.0586 6.71875 14.0586C7.15177 14.0586 7.3385 13.772 7.34845 13.7711L7.32812 14.0102H7.86875L8.11015 12.286C8.11015 11.5545 7.48448 11.5305 7.26718 11.5305V11.5305ZM9.17655 11.5305C8.72463 11.5305 8.26562 11.7129 8.26562 12.336C8.26562 13.0419 9.03047 12.9706 9.03047 13.268C9.03047 13.4665 8.81703 13.4829 8.65235 13.4829C8.36735 13.4829 8.11108 13.3844 8.11015 13.3891L8.02812 13.9282C8.04288 13.9327 8.20158 14.0039 8.71408 14.0039C8.85168 14.0039 9.63828 14.0389 9.63828 13.2196C9.63828 12.4536 8.91015 12.6054 8.91015 12.2977C8.91015 12.1445 9.02838 12.0961 9.2453 12.0961C9.33145 12.0961 9.6633 12.1235 9.6633 12.1235L9.73985 11.5789C9.73985 11.579 9.52572 11.5305 9.17657 11.5305H9.17655ZM12.0016 11.5305C11.3736 11.5306 10.9086 12.2059 10.9086 12.9688C10.9086 13.8493 11.4911 14.0586 11.9875 14.0586C12.4457 14.0586 12.6477 13.9563 12.6477 13.9563L12.757 13.3555C12.757 13.3555 12.4085 13.5086 12.0938 13.5086C11.4231 13.5086 11.5406 13.0094 11.5406 13.0094H12.8102C12.8102 13.0094 12.8922 12.606 12.8922 12.4414C12.8922 12.0309 12.6873 11.5305 12.0016 11.5305H12.0016ZM14.2758 11.5563C13.9929 11.5563 13.7828 11.9367 13.7828 11.9367L13.8391 11.5875H13.2516L12.857 13.9985H13.5063C13.6901 12.9689 13.7237 12.1329 14.1625 12.286C14.2393 11.8875 14.3138 11.7335 14.3977 11.5649C14.3977 11.5649 14.3583 11.5563 14.2758 11.5563H14.2758ZM19.5359 11.5563C19.253 11.5563 19.043 11.9367 19.043 11.9367L19.0992 11.5875H18.5117L18.1172 13.9985H18.7656C18.9496 12.9689 18.984 12.1329 19.4227 12.286C19.4996 11.8875 19.5741 11.7335 19.6578 11.5649C19.6578 11.5649 19.6184 11.5563 19.5359 11.5563H19.5359ZM11.9984 12.0743C12.3551 12.0743 12.2899 12.4769 12.2899 12.5094H11.5875C11.5875 12.4679 11.6539 12.0743 11.9985 12.0743H11.9984ZM20.4852 12.1211C20.7122 12.1211 20.8289 12.2744 20.8289 12.6352C20.8289 12.9625 20.6638 13.4 20.3219 13.4C20.0949 13.4 19.9883 13.2126 19.9883 12.9188C19.9883 12.4383 20.2081 12.1211 20.4852 12.1211H20.4852ZM17.3656 12.9414C17.4582 12.9416 17.4774 12.9506 17.493 12.9547C17.4907 12.9544 17.4903 12.9548 17.4992 12.9563C17.511 13.0637 17.4344 13.5672 17.0641 13.5672C16.8731 13.5672 16.8242 13.4154 16.8242 13.3258C16.8242 13.1511 16.9152 12.9414 17.3656 12.9414ZM7.26797 12.9438C7.37315 12.9439 7.38462 12.9557 7.40235 12.9586C7.4141 13.066 7.3372 13.5688 6.96563 13.5688C6.77395 13.5688 6.72423 13.4177 6.72423 13.3282C6.72423 13.1536 6.81572 12.9438 7.26797 12.9438Z' fill='%23B8C2C4'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='25' height='25' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+      width: 25px;
+      height: 25px; }
+
+.checkout-info {
+  border: 1px solid #B8C2C4;
+  box-sizing: border-box;
+  max-width: 610px;
+  margin-bottom: 30px; }
+  .checkout-info-layout {
+    padding: 40px; }
+  .checkout-info .info-check {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: baseline;
+        align-items: baseline;
+    position: relative;
+    margin-bottom: 40px; }
+    .checkout-info .info-check-item {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 130%;
+      color: #2D3C3E;
+      background-color: white;
+      z-index: 9; }
+      .checkout-info .info-check-item:nth-child(2) {
+        border-bottom: 1px dashed #B8C2C4;
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        z-index: 1; }
+      .checkout-info .info-check-item:last-child {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 130%;
+        color: #2D3C3E;
+        background-color: white;
+        z-index: 9; }
+      .checkout-info .info-check-item .opacity {
+        opacity: 0.5; }
+      .checkout-info .info-check-item.bold {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 120%; }
+
+.checkout-btn {
+  max-width: 610px;
+  box-sizing: border-box; }
+  .checkout-btn .check-btn {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 130%;
+    background-color: #2D3C3E;
+    color: #fff;
+    display: block;
+    text-align: center;
+    transition: .3s;
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    cursor: pointer; }
+    .checkout-btn .check-btn:hover {
+      background-color: #0090A1; }
+
+@media (max-width: 768px) {
+  .checkout {
+    padding-top: 20px;
+    max-width: 100%; }
+    .checkout-box-title {
+      padding-bottom: 15px;
+      font-size: 18px; }
+      .checkout-box-title .t-number {
+        display: none; }
+    .checkout-control {
+      margin-bottom: 20px;
+      max-width: 100%; }
+      .checkout-control .place {
+        font-size: 12px; }
+    .checkout-check {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      padding-bottom: 10px; }
+      .checkout-check .uj-radio:first-child {
+        margin-right: 0; }
+      .checkout-check .uj-radio-label {
+        font-size: 12px; }
+    .checkout .uj-radio input[type="radio"] + .uj-radio-label:before {
+      top: 3px; }
+    .checkout .check-input {
+      padding: 8px 18px; }
+    .checkout .uj-radio {
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+      .checkout .uj-radio .price {
+        font-size: 12px; }
+      .checkout .uj-radio .price.icon-pay {
+        display: block; }
+        .checkout .uj-radio .price.icon-pay:before {
+          right: 25px; }
+        .checkout .uj-radio .price.icon-pay:after {
+          left: inherit;
+          right: 0; }
+    .checkout-info {
+      border: 0;
+      border-top: 1px solid #B8C2C4;
+      max-width: 100%; }
+      .checkout-info-layout {
+        padding: 30px 0 0; }
+      .checkout-info .info-check {
+        margin-bottom: 16px; }
+        .checkout-info .info-check-item {
+          font-size: 12px; }
+          .checkout-info .info-check-item:last-child, .checkout-info .info-check-item.bold {
+            font-size: 12px; }
+    .checkout-btn {
+      max-width: 100%; } }
