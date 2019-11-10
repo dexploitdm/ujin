@@ -203,6 +203,9 @@ get_header(); ?>
                     </div>
                 </div>
 
+                <!-- TODO: Отключение стандартных сообщений -->
+                <style>.woocommerce-message{display: none}</style>
+
                 <div class="block-mobile">
                     <div class="product-head">
                         <a href="#runmodal" class="product-head_item open-popup-run">
