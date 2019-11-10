@@ -78,7 +78,7 @@ get_header(); ?>
                     <div class="checkout-method">
                         <div class="checkout-check">
                             <div class="uj-radio">
-                                <input id="radio-1" name="method" type="radio" value="cur" checked>
+                                <input id="radio-1" name="method" type="radio"  value="cur" checked>
                                 <label for="radio-1" class="uj-radio-label">Доставка курьером</label>
                                 <div class="price">
                                     390руб.
@@ -122,13 +122,13 @@ get_header(); ?>
                 <div class="checkout-box-form">
                     <div class="checkout-pay checkout-check">
                         <div class="uj-radio">
-                            <input id="radio-3" name="setpay" type="radio" value="cur" checked>
+                            <input id="radio-3" name="setpay" type="radio" value="card" checked>
                             <label for="radio-3" class="uj-radio-label">Картой онлайн</label>
                             <div class="price icon-pay"></div>
                         </div>
 
                         <div class="uj-radio">
-                            <input id="radio-4" name="setpay" type="radio" value="pnz">
+                            <input id="radio-4" name="setpay" type="radio" value="nal">
                             <label  for="radio-4" class="uj-radio-label">Наличными или картой при получении</label>
                             <div class="price">
                                 Бесплатно
