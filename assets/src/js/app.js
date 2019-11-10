@@ -481,6 +481,26 @@ function card(){
         $( "button[name = 'update_cart']" ).removeAttr('disabled').click();
     });
 }
+function culcSale() {
+    const orderItem = $('.cart-product-item'),
+        cartDiscountNode = $('.js-cart-discount');
+    let sumDiscount = 0;
+
+    orderItem.each(function( index ) {
+        let itemSale = $(this).find('.js-cart-sale');
+        let itemPrice = $(this).find('.js-cart-price');
+
+        let strPrice = itemPrice.text().substring(4).slice(0, -3);
+        let numEl = parseInt(strPrice.replace(/[^\d]/g, ''))
+
+        let discount = Number(itemSale.text()) - Number(numEl);
+
+        sumDiscount = sumDiscount + discount;
+    });
+    //console.log('Итоговая скидка' + sumDiscount)
+    cartDiscountNode.text(sumDiscount);
+}
+
 
 $(window).on('resize', function(){
     initSolutions();
@@ -506,4 +526,5 @@ $( document ).ready(function() {
     orderSubmitClick();
     //maskPhone();
     card();
+    culcSale();
 });

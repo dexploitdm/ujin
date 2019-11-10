@@ -65,14 +65,16 @@ get_header(); ?>
 
                                             <div class="product-price" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
                                                 <div class="product-sale">
-                                                    <?php
-                                                    echo $_product->regular_price;
-                                                    ?> <span> Руб.</span>
+                                                    <span class="js-cart-sale"><?php
+                                                        echo $_product->regular_price;
+                                                        ?></span>
+                                                     <span> Руб.</span>
                                                 </div>
                                                 <div class="product-price-total">
-                                                    <?php
-                                                    echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // PHPCS: XSS ok.
-                                                    ?><span> Руб.</span>
+                                                    <span class="js-cart-price"><?php
+                                                        echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // PHPCS: XSS ok.
+                                                        ?></span>
+                                                    <span> Руб.</span>
                                                 </div>
 
                                             </div>
@@ -169,7 +171,7 @@ get_header(); ?>
                                 <div class="info-cart">
                                     <div class="info-cart-item">Скидка</div>
                                     <div class="info-cart-item"></div>
-                                    <div class="info-cart-item "><div class="opacity">1 500 руб.</div></div>
+                                    <div class="info-cart-item "><div class="opacity"><span class="js-cart-discount">1 500</span> руб.</div></div>
                                 </div>
                                 <div class="info-cart">
                                     <div class="info-cart-item">Сумма заказа</div>
