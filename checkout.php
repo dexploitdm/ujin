@@ -155,7 +155,7 @@ get_header(); ?>
                             </div>
                             <div class="info-check-item"></div>
                             <div class="info-check-item">
-                                <div class="opacity">1 500 руб.</div>
+                                <div class="opacity"><span class="js-cart-discount">0</span> руб.</div>
                             </div>
                         </div>
                         <div class="info-check">
@@ -164,7 +164,7 @@ get_header(); ?>
                             </div>
                             <div class="info-check-item"></div>
                             <div class="info-check-item bold">
-                                17 500 руб.
+                                <span class="js-checkout-total-price">0</span> руб.
                             </div>
                         </div>
                     </div>
@@ -178,43 +178,28 @@ get_header(); ?>
         </div>
         <?php endif; ?>
 
-
-
-
-
-
+        <!-- TODO: Скрытый блок бля извлечение скидки товаров -->
+        <div class="hidden-col">
             <?php
-            do_action( 'woocommerce_review_order_before_cart_contents' );
-
             foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
                 $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 
                 if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
                     ?>
-                    <tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-                        <td class="product-name">
-                            <?php echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-                            <?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times; %s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-                            <?php echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-                        </td>
-                        <td class="product-total">
+                    <div class="cart-product-item">
+                        <div class="js-cart-price">
                             <?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-                        </td>
-
-                        <?php
-                        echo $_product->regular_price;
-                        ?> <span> Руб.</span>
-                    </tr>
+                        </div>
+                        <div class="js-cart-sale">
+                            <?php echo $_product->regular_price; ?>
+                        </div>
+                    </div>
                     <?php
                 }
             }
-
             ?>
-
-
-
-        <hr>
-        <?php wc_cart_totals_order_total_html(); ?>
+            <div class="checkout-total-price"><?php wc_cart_totals_order_total_html(); ?></div>
+        </div>
 
         <?php the_content();  ?>
 
@@ -231,5 +216,5 @@ get_header(); ?>
         });
     </script>
     <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>
-    <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/checkout.js"></script>
+    <script src="<?php  echo get_template_directory_uri() ?>/components/checkout.js"></script>
 <?php get_footer(); ?>

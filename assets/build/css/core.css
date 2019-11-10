@@ -4718,3 +4718,6 @@ img.mfp-img {
         padding-bottom: 20px; }
       .check-end .check-block-item {
         font-size: 12px; } }
+
+.hidden-col {
+  display: none; }

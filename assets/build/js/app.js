@@ -490,8 +490,8 @@ function culcSale() {
         let itemSale = $(this).find('.js-cart-sale');
         let itemPrice = $(this).find('.js-cart-price');
 
-        let strPrice = itemPrice.text().substring(4).slice(0, -3);
-        let numEl = parseInt(strPrice.replace(/[^\d]/g, ''))
+        let strPrice = itemPrice.text().replace(/\s/g, '').substring(4).slice(0, -3);
+        let numEl = parseInt(strPrice.replace(/[^\d]/g, ''));
 
         let discount = Number(itemSale.text()) - Number(numEl);
 
@@ -499,6 +499,16 @@ function culcSale() {
     });
     //console.log('Итоговая скидка' + sumDiscount)
     cartDiscountNode.text(sumDiscount);
+}
+function checkoutOrder(){
+    const totalPrice = $('.checkout-total-price .amount'),
+        totalPriceNode = $('.js-checkout-total-price');
+
+    //Получение общей стоимости
+    let strTotalPrice = totalPrice.text().replace(/\s/g, '').substring(4).slice(0, -3);
+    let numTotal = parseInt(strTotalPrice.replace(/[^\d]/g, ''));
+    let formatPrice = String(Number(numTotal)).replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1 ');
+    totalPriceNode.text(formatPrice)
 }
 
 
@@ -527,4 +537,5 @@ $( document ).ready(function() {
     //maskPhone();
     card();
     culcSale();
+    checkoutOrder();
 });
