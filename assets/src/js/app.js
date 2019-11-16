@@ -520,8 +520,13 @@ function checkoutOrder(){
 
 $('.js-add-card').on("click", async function(e) {
     e.preventDefault();
-    let request = await fetch(this.href);
-    let text = await request.text();
+    let currentCountCart = $('.card-orders');
+    if(!$(this).hasClass('cart-in')) {
+        let request = await fetch(this.href);
+        let text = await request.text();
+        $(this).addClass('cart-in').text('В корзине');
+        currentCountCart.text(Number(currentCountCart.text()) + 1);
+    }
 });
 
 $(window).on('resize', function(){

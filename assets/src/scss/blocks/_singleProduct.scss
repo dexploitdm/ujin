@@ -106,3 +106,60 @@
     }
   }
 }
+.product-card-btn {
+  .cart-link {
+    position: absolute;
+    bottom: 0;
+    left: 59px;
+    right: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 130%;
+    background-color: $color-dark;
+    color: $color-white;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 0;
+    transition: .3s;
+    &:hover {
+      background-color: $color-blue;
+    }
+    &.cart-in {
+      background-color: transparent;
+      color: $color-blue;
+      cursor: default;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 79px;
+        bottom: 0;
+        margin: auto;
+        width: 25px;
+        height: 18px;
+        background-size: cover;
+        background-image: url("data:image/svg+xml,%3Csvg width='22' height='17' viewBox='0 0 22 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.4727 1.47266L20.5273 2.52734L8 15.0664L1.47266 8.52734L2.52734 7.47266L8 12.9336L19.4727 1.47266Z' fill='%230090A1'/%3E%3Cpath d='M19.4727 1.47266L20.1798 0.76555L19.473 0.058804L18.7659 0.765188L19.4727 1.47266ZM20.5273 2.52734L21.2348 3.23412L21.9412 2.52701L21.2345 1.82024L20.5273 2.52734ZM8 15.0664L7.29226 15.7729L7.9997 16.4816L8.70744 15.7732L8 15.0664ZM1.47266 8.52734L0.765549 7.82024L0.0590765 8.52671L0.764916 9.23382L1.47266 8.52734ZM2.52734 7.47266L3.23369 6.76479L2.52659 6.0592L1.82024 6.76555L2.52734 7.47266ZM8 12.9336L7.29365 13.6415L8.0004 14.3467L8.70675 13.6411L8 12.9336ZM18.7655 2.17976L19.8202 3.23445L21.2345 1.82024L20.1798 0.76555L18.7655 2.17976ZM19.8199 1.82057L7.29256 14.3596L8.70744 15.7732L21.2348 3.23412L19.8199 1.82057ZM8.70774 14.3599L2.1804 7.82087L0.764916 9.23382L7.29226 15.7729L8.70774 14.3599ZM2.17976 9.23445L3.23445 8.17976L1.82024 6.76555L0.765549 7.82024L2.17976 9.23445ZM1.821 8.18052L7.29365 13.6415L8.70635 12.2257L3.23369 6.76479L1.821 8.18052ZM8.70675 13.6411L20.1794 2.18012L18.7659 0.765188L7.29325 12.2261L8.70675 13.6411Z' fill='%230090A1'/%3E%3C/svg%3E%0A");
+      };
+    }
+  }
+  @media (max-width: $tablet-media) {
+    .cart-link {
+      left: 25px;
+      right: 25px;
+    }
+  }
+  @media (max-width: $mobile-media) {
+    .cart-link {
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      &.cart-in {
+        max-width: 167px;
+        margin: auto;
+        &:before {
+          left: 0;
+        }
+      }
+    }
+  }
+}

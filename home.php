@@ -169,6 +169,13 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
+                        <div class="product-card-btn">
+                            <?php if (is_product_in_cart()): ?>
+                                <a class="cart-link cart-in">В корзине</a>
+                            <?php else: ?>
+                                <a href="?add-to-cart=<?php echo $product->id; ?>" class="cart-link js-add-card">В корзину</a>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 <?php endwhile; ?>
 

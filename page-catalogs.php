@@ -8,10 +8,13 @@ get_header(); ?>
         <div class="head-box-two" style="background-image: url(<?php the_post_thumbnail_url(); ?>">
             <div class="head-box-two-layout box">
                 <div class="head-box-two-layout-content">
-                    <h1 class="title-h1"><?php echo get_field( "title_bannner" ); ?></h1>
+                    <h1 class="title-h1"><?php echo get_field("title_bannner"); ?></h1>
                     <div class="head-box-two-desc">
                         <p>
-                            Умные устройства на базе концепции интернета вещей с искусственным интеллектом. Дистанционное управление светом и отоплением, контроль движений, тепла, влажности, предотвращение протечек. Все это в комплекте с удобным и понятным приложением для вашего смартфона.
+                            Умные устройства на базе концепции интернета вещей с искусственным интеллектом.
+                            Дистанционное управление светом и отоплением, контроль движений, тепла, влажности,
+                            предотвращение протечек. Все это в комплекте с удобным и понятным приложением для вашего
+                            смартфона.
 
                         </p>
                     </div>
@@ -20,17 +23,16 @@ get_header(); ?>
         </div>
 
 
-
         <div class="product-preview full-list box">
             <div class="grid-three">
                 <?php
-                $loop = new WP_Query( array(
+                $loop = new WP_Query(array(
                     'post_type' => 'product',
                     'posts_per_page' => get_field('products_per_page'),
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
                 )); ?>
-                <?php  while ( $loop->have_posts() ): $loop->the_post(); ?>
+                <?php while ($loop->have_posts()): $loop->the_post(); ?>
                     <div class="product-box">
                         <div class="product-box-layout">
                             <div class="product-box-header">
@@ -39,27 +41,28 @@ get_header(); ?>
                                 </div>
                                 <a href="<?php the_permalink(); ?>" class="product-box-header__icon"></a>
                             </div>
-                            <div class="product-box-cover" style="background-image: url(<?php the_post_thumbnail_url(); ?>); "></div>
+                            <div class="product-box-cover"
+                                 style="background-image: url(<?php the_post_thumbnail_url(); ?>); "></div>
                             <div class="product-box-desc">
                                 <div class="product-box-desc_price">
-                                    <span><?php echo $product->get_price();  ?> руб.</span>
-                                    <?php if($product->is_on_sale()):  ?>
+                                    <span><?php echo $product->get_price(); ?> руб.</span>
+                                    <?php if ($product->is_on_sale()): ?>
                                         <span class="old"><?php echo $product->regular_price; ?> руб. </span>
                                     <?php endif; ?>
                                 </div>
                                 <div class="product-box-desc_content">
                                     <div class="product-box-desc_content_box">
-                                        <p><?php  the_excerpt(); ?></p>
+                                        <p><?php the_excerpt(); ?></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="product-card-btn">
-                                                    <?php if ( is_product_in_cart() ): ?>
-                                                        <a href="">В корзине</a>
-                                                    <?php else: ?>
-                                                        <a href="?add-to-cart=<?php echo $product->id;?>" class="js-add-card">В корзину <?php echo $product->id;?></a>
-                                                    <?php endif; ?>
+                            <?php if (is_product_in_cart()): ?>
+                                <a class="cart-link cart-in">В корзине</a>
+                            <?php else: ?>
+                                <a href="?add-to-cart=<?php echo $product->id; ?>" class="cart-link js-add-card">В корзину</a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 <?php endwhile; ?>
@@ -82,11 +85,12 @@ get_header(); ?>
                                     <div class="functional-lists_item">
                                         <div class="functional-lists-layout">
                                             <div class="functional-lists-head">
-                                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_home_phone.svg">
+                                                <img src="<?php echo get_template_directory_uri() ?>/assets/build/images/icons/ic_home_phone.svg">
                                                 <span>Автоматизация <br> процессов</span>
                                             </div>
                                             <ul>
-                                                <li>Автоматический учёт расхода ресурсов (тепло, электроэнергия, вода)</li>
+                                                <li>Автоматический учёт расхода ресурсов (тепло, электроэнергия, вода)
+                                                </li>
                                                 <li>Создание сценариев работы оборудования по заданному расписанию</li>
                                             </ul>
                                         </div>
@@ -95,7 +99,7 @@ get_header(); ?>
                                     <div class="functional-lists_item">
                                         <div class="functional-lists-layout">
                                             <div class="functional-lists-head">
-                                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_controls.svg">
+                                                <img src="<?php echo get_template_directory_uri() ?>/assets/build/images/icons/ic_controls.svg">
                                                 <span>Удаленное управление <br> и контроль</span>
                                             </div>
                                             <ul>
@@ -110,23 +114,25 @@ get_header(); ?>
                                     <div class="functional-lists_item">
                                         <div class="functional-lists-layout">
                                             <div class="functional-lists-head">
-                                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_dash.svg">
+                                                <img src="<?php echo get_template_directory_uri() ?>/assets/build/images/icons/ic_dash.svg">
                                                 <span>Мониторинг <br> показателей</span>
                                             </div>
                                             <ul>
-                                                <li>Мониторинг потребления  ресурсов в режиме реального времени</li>
+                                                <li>Мониторинг потребления ресурсов в режиме реального времени</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="functional-lists_item">
                                         <div class="functional-lists-layout">
                                             <div class="functional-lists-head">
-                                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/ic_alarm.svg">
+                                                <img src="<?php echo get_template_directory_uri() ?>/assets/build/images/icons/ic_alarm.svg">
                                                 <span>Система <br> оповещений</span>
                                             </div>
                                             <ul>
                                                 <li>Оповещения о наличии протечек в квартире</li>
-                                                <li>Оповещения о несанкционированном доступе в помещение при соответствующих настройках сценариев</li>
+                                                <li>Оповещения о несанкционированном доступе в помещение при
+                                                    соответствующих настройках сценариев
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -134,10 +140,11 @@ get_header(); ?>
                                 <div class="functional-app">
                                     <div class="functional-app-layout">
                                         <a href="https://apps.apple.com/ru/app/ujin/id1442949662" target="_blank">
-                                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/apple-market.png">
+                                            <img src="<?php echo get_template_directory_uri() ?>/assets/build/images/covers/apple-market.png">
                                         </a>
-                                        <a href="https://play.google.com/store/apps/details?id=ru.mysmartflat.sapfir" target="_blank">
-                                            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/google_market.png">
+                                        <a href="https://play.google.com/store/apps/details?id=ru.mysmartflat.sapfir"
+                                           target="_blank">
+                                            <img src="<?php echo get_template_directory_uri() ?>/assets/build/images/covers/google_market.png">
                                         </a>
                                     </div>
                                 </div>
@@ -155,7 +162,7 @@ get_header(); ?>
                                                 <li>Поставить таймер на нужное время</li>
                                                 <li>Включить\выключить свет</li>
                                                 <li>Включить\выключить заданый сценарий работы</li>
-                                                <li>Перекрыть воду </li>
+                                                <li>Перекрыть воду</li>
                                                 <li>Управление сотнями других устройств от партнеров Яндекса</li>
                                             </ul>
                                         </div>
@@ -168,15 +175,16 @@ get_header(); ?>
 
                 </div>
                 <div class="functional-cover js-cover">
-                    <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/iPhone2.png">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/build/images/covers/iPhone2.png">
                 </div>
                 <div class="functional-cover cover-2 fade js-cover-two">
-                    <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/ban_cover_bg.svg">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/build/images/covers/ban_cover_bg.svg">
                 </div>
                 <style>
                     .cover-2 {
                         width: 40%;
                     }
+
                     .functional-cover.fade {
                         display: none;
                     }
@@ -184,7 +192,7 @@ get_header(); ?>
             </div>
         </div>
 
-        <?php get_template_part( 'components/partnerForm'); ?>
+        <?php get_template_part('components/partnerForm'); ?>
 
     </main>
 <?php get_footer(); ?>
