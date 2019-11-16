@@ -488,9 +488,9 @@ function culcSale() {
 
     orderItem.each(function( index ) {
 
-         let itemSale = $(this).find('.js-cart-sale');
-         let itemPrice = $(this).find('.js-cart-price');
-         let itemQuantity = $(this).find('.quantity input').val();
+        let itemSale = $(this).find('.js-cart-sale');
+        let itemPrice = $(this).find('.js-cart-price');
+        let itemQuantity = $(this).find('.quantity input').val();
 
         let strPrice = itemPrice.text().replace(/\s/g, '').substring(4).slice(0, -3);
         let numEl = parseInt(strPrice.replace(/[^\d]/g, ''));
@@ -518,6 +518,11 @@ function checkoutOrder(){
     totalPriceNode.text(formatPrice)
 }
 
+$('.js-add-card').on("click", async function(e) {
+    e.preventDefault();
+    let request = await fetch(this.href);
+    let text = await request.text();
+});
 
 $(window).on('resize', function(){
     initSolutions();
