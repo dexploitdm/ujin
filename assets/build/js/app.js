@@ -487,15 +487,22 @@ function culcSale() {
     let sumDiscount = 0;
 
     orderItem.each(function( index ) {
-        let itemSale = $(this).find('.js-cart-sale');
-        let itemPrice = $(this).find('.js-cart-price');
+
+         let itemSale = $(this).find('.js-cart-sale');
+         let itemPrice = $(this).find('.js-cart-price');
+         let itemQuantity = $(this).find('.quantity input').val();
 
         let strPrice = itemPrice.text().replace(/\s/g, '').substring(4).slice(0, -3);
         let numEl = parseInt(strPrice.replace(/[^\d]/g, ''));
 
         let discount = Number(itemSale.text()) - Number(numEl);
 
-        sumDiscount = sumDiscount + discount;
+        //console.log(discount)
+        let totalItemDiscount =  itemQuantity * discount;
+        // console.log(totalItemDiscount);
+        // console.log('------');
+
+        sumDiscount = sumDiscount + totalItemDiscount;
     });
     //console.log('Итоговая скидка' + sumDiscount)
     cartDiscountNode.text(sumDiscount);
