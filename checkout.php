@@ -11,6 +11,16 @@ get_header(); ?>
         <h1 class="title-h2">
             <?php the_title(); ?>
         </h1>
+        
+        <style>
+         #forpvz    .CDEK-widget__panel-details__block p {
+                color: #fff;
+            }
+        </style>
+        
+        
+       
+        
         <?php if(is_wc_endpoint_url()): ?>
             <div class="check-end">
                 <div class="check-end-title">
@@ -212,9 +222,16 @@ get_header(); ?>
             defaultCity: 'Пермь',
             cityFrom: 'Омск',
             link: 'forpvz',
-            servicepath: '<?php  echo get_template_directory_uri() ?>/core/cdek/widget/scripts/service.php'
+            servicepath: '<?php  echo get_template_directory_uri() ?>/core/cdek/widget/scripts/service.php',
+            apikey: '2a3d5b28-22d2-4edb-a505-2ce50fb19ed2'
         });
     </script>
     <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>
     <script src="<?php  echo get_template_directory_uri() ?>/components/checkout.js"></script>
+     <script>
+            // /FeMAG_choose_button
+            $('#forpvz .CDEK-widget__choose widget__loading').click(function() {
+                console.log('test1')
+            });
+        </script>
 <?php get_footer(); ?>
