@@ -268,8 +268,12 @@ get_header(); ?>
         padding-top: 70px;
         margin-top: -70px;
     }
-    .woocommerce-Price-currencySymbol {
+    .woocommerce-Price-currencySymbol,
+    .woocommerce {
         display: none;
+    }
+    #forpvz p {
+        color: #ffffff;
     }
 </style>
     <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>
