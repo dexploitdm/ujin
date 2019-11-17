@@ -163,9 +163,9 @@ get_header(); ?>
                                 <div class="info-cart">
                                     <div class="info-cart-item">Товаров</div>
                                     <div class="info-cart-item"></div>
-                                    <div class="info-cart-item bold">
-                                        <?php $_cartQty = count( WC()->cart->get_cart() );
-                                        echo $_cartQty; ?>
+                                    <div class="info-cart-item bold js-cart-total-all">0
+<!--                                        --><?php //$_cartQty = count( WC()->cart->get_cart() );
+//                                        echo $_cartQty; ?>
                                     </div>
                                 </div>
                                 <div class="info-cart">

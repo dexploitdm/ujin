@@ -70,8 +70,10 @@ function duplicateData() {
         if (this.checked) {
             if (this.value == 'nal') {
                 $('label[for="payment_method_cod"]').click();
+                btnSubOrder.text('Оформить заказ');
             } else {
                 $('label[for="payment_method_ym_api_epl"]').click();
+                btnSubOrder.text('Перейти к оплате');
             }
         }
     });

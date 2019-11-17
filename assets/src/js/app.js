@@ -483,29 +483,51 @@ function card(){
 }
 function culcSale() {
     const orderItem = $('.cart-product-item'),
-        cartDiscountNode = $('.js-cart-discount');
-    let sumDiscount = 0;
+        cartDiscountNode = $('.js-cart-discount'), //Скидка
+        checkoutDiscountNode = $('.js-discount-checkout'), //Скидка
+        totalAllInCart = $('.js-cart-total-all'), //Общее количество товаров
+        totalAllInCheckout = $('.js-total-checkout-all'); //Общее количество товаров
+    let sumDiscount = 0; //Сумма скидки в корзине
+    let stateCountAll = 0; //Количество в корзине
+    let checkoutAllQuality = 0; //Количество на странице оформления заказа
+    let sumDiscountCheckout = 0;
+
+    //console.log($('.product-quantity').text())
+    //console.log(parseInt($('.product-quantity').text().replace(/[^\d]/g, '')))
+
 
     orderItem.each(function( index ) {
 
         let itemSale = $(this).find('.js-cart-sale');
         let itemPrice = $(this).find('.js-cart-price');
+        //Количество: Для корзины
         let itemQuantity = $(this).find('.quantity input').val();
+        //Количество: Для оформления заказа
+        let itemCheckoutQuality = $(this).find('.js-item-count-product').text();
+        let formatTotalCheckout = Number(parseInt(itemCheckoutQuality.replace(/[^\d]/g, '')));
 
         let strPrice = itemPrice.text().replace(/\s/g, '').substring(4).slice(0, -3);
         let numEl = parseInt(strPrice.replace(/[^\d]/g, ''));
 
-        let discount = Number(itemSale.text()) - Number(numEl);
+        let discount = Number(itemSale.text()) - Number(numEl)
 
-        //console.log(discount)
         let totalItemDiscount =  itemQuantity * discount;
-        // console.log(totalItemDiscount);
-        // console.log('------');
+        let totalCheckoutDiscount = formatTotalCheckout * discount;
 
+        //Корзина
+        stateCountAll = stateCountAll + Number(itemQuantity);
         sumDiscount = sumDiscount + totalItemDiscount;
+        //Оформление
+        checkoutAllQuality = checkoutAllQuality + Number(formatTotalCheckout);
+        sumDiscountCheckout = sumDiscountCheckout + totalCheckoutDiscount;
     });
     //console.log('Итоговая скидка' + sumDiscount)
+    //Корзина
+    totalAllInCart.text(stateCountAll);
     cartDiscountNode.text(sumDiscount);
+    //Оформление
+    totalAllInCheckout.text(checkoutAllQuality);
+    checkoutDiscountNode.text(sumDiscountCheckout);
 }
 function checkoutOrder(){
     const totalPrice = $('.checkout-total-price .amount'),

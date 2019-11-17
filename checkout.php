@@ -154,9 +154,9 @@ get_header(); ?>
                                 Товаров
                             </div>
                             <div class="info-check-item"></div>
-                            <div class="info-check-item bold">
-                                <?php $_cartQty = count( WC()->cart->get_cart() );
-                                echo $_cartQty; ?>
+                            <div class="info-check-item bold js-total-checkout-all">
+<!--                                --><?php //$_cartQty = count( WC()->cart->get_cart() );
+//                                echo $_cartQty; ?>
                             </div>
                         </div>
                         <div class="info-check">
@@ -165,7 +165,7 @@ get_header(); ?>
                             </div>
                             <div class="info-check-item"></div>
                             <div class="info-check-item">
-                                <div class="opacity"><span class="js-cart-discount">0</span> руб.</div>
+                                <div class="opacity"><span class="js-discount-checkout">0</span> руб.</div>
                             </div>
                         </div>
                         <div class="info-check">
@@ -198,10 +198,16 @@ get_header(); ?>
                     ?>
                     <div class="cart-product-item">
                         <div class="js-cart-price">
-                            <?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+<!--                            --><?php //echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                            <?php
+                            echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // PHPCS: XSS ok.
+                            ?>
                         </div>
                         <div class="js-cart-sale">
                             <?php echo $_product->regular_price; ?>
+                        </div>
+                        <div class="js-item-count-product">
+                            <?php echo $cart_item['quantity'] ?>
                         </div>
                     </div>
                     <?php
