@@ -126,7 +126,7 @@ get_header(); ?>
 
 
 
-                <div class="checkout-box-title">
+                <div id="pay-methods" class="checkout-box-title">
                     <span class="t-number">3. </span>Оплата
                 </div>
                 <div class="checkout-box-form">
@@ -141,7 +141,7 @@ get_header(); ?>
                             <input id="radio-4" name="setpay" type="radio" value="nal">
                             <label  for="radio-4" class="uj-radio-label">Наличными или картой при получении</label>
                             <div class="price">
-                                Бесплатно
+
                             </div>
                         </div>
                     </div>
@@ -229,9 +229,30 @@ get_header(); ?>
             cityFrom: 'Омск',
             link: 'forpvz',
             servicepath: '<?php  echo get_template_directory_uri() ?>/core/cdek/widget/scripts/service.php',
-            apikey: '2a3d5b28-22d2-4edb-a505-2ce50fb19ed2'
+            //apikey: '2a3d5b28-22d2-4edb-a505-2ce50fb19ed2',
+            hidedelt: true
+            //onReady: startWidget
         });
+        // function startWidget() {
+        //     alert('Виджет загружен');
+        // }
+        widjet.binders.add(choosePVZ, 'onChoose');
+
+        function choosePVZ(wat) {
+            //console.log(wat.PVZ['Address']);
+            //Скрытое поле адреса самовывоза
+            $('#billing_new_fild12').val(wat.PVZ['Address']);
+            $('html, body').animate({
+                scrollTop: $('#pay-methods').offset().top
+            }, 'slow');
+        }
     </script>
+<style>
+    #pay-methods {
+        padding-top: 70px;
+        margin-top: -70px;
+    }
+</style>
     <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>
     <script src="<?php  echo get_template_directory_uri() ?>/components/checkout.js"></script>
      <script>

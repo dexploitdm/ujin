@@ -119,7 +119,12 @@ function duplicateData() {
     });
 }
 
+function cdekData() {
+
+}
+
 $( document ).ready(function() {
     inputsCheck();
     duplicateData();
+    cdekData();
 });
