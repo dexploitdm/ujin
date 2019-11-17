@@ -11,16 +11,9 @@ get_header(); ?>
         <h1 class="title-h2">
             <?php the_title(); ?>
         </h1>
-        
-        <style>
-         #forpvz    .CDEK-widget__panel-details__block p {
-                color: #fff;
-            }
-        </style>
-        
-        
-       
-        
+
+
+
         <?php if(is_wc_endpoint_url()): ?>
             <div class="check-end">
                 <div class="check-end-title">
@@ -32,26 +25,49 @@ get_header(); ?>
                 <div class="check-end-content">
                     Ожидайте смс или звонок от оператора контакт-центра по статусу заказа.
                 </div>
+                <?php
+                global $wp;
+                $order_id  = apply_filters( 'woocommerce_thankyou_order_id', absint( $wp->query_vars['order-received'] ) );
+                $order_key = apply_filters( 'woocommerce_thankyou_order_key', empty( $_GET['key'] ) ? '' : wc_clean( $_GET['key'] ) );
+                if ( $order_id > 0 ) {
+                    $order = wc_get_order( $order_id );
+                    if ( $order->get_order_key() != $order_key ) {
+                        $order = false;
+                    }
+                }
+//                if ( isset ( $order ) ) {
+//                    echo $order->get_formatted_order_total();
+//                    echo $order->get_payment_method_title();
+//                }
+                ?>
                 <div class="check-end-info">
                     <div class="check-block">
                         <div class="check-block-item">Номер заказа: </div>
                         <div class="check-block-item"></div>
-                        <div class="check-block-item">COXD-631121</div>
+                        <div class="check-block-item js-success-number">0</div>
                     </div>
                     <div class="check-block">
                         <div class="check-block-item">Дата доставки: </div>
                         <div class="check-block-item"></div>
-                        <div class="check-block-item">18.11.2019</div>
+                        <div class="check-block-item js-success-date">18.11.2019</div>
                     </div>
                     <div class="check-block">
                         <div class="check-block-item">Сумма заказа: </div>
                         <div class="check-block-item"></div>
-                        <div class="check-block-item">17 500руб.</div>
+                        <div class="check-block-item">
+                            <?php  if ( isset ( $order ) ) {
+                                echo $order->get_formatted_order_total();
+                            } ?>
+                            руб.</div>
                     </div>
                     <div class="check-block">
                         <div class="check-block-item">Способ оплаты: </div>
                         <div class="check-block-item"></div>
-                        <div class="check-block-item">Оплата наличными</div>
+                        <div class="check-block-item js-success-methods">
+                            <?php  if ( isset ( $order ) ) {
+                                echo $order->get_payment_method_title();
+                            } ?>
+                        </div>
                     </div>
                 </div>
                 <div class="check-end-btn">
@@ -251,6 +267,9 @@ get_header(); ?>
     #pay-methods {
         padding-top: 70px;
         margin-top: -70px;
+    }
+    .woocommerce-Price-currencySymbol {
+        display: none;
     }
 </style>
     <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>

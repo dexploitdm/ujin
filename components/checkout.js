@@ -113,18 +113,25 @@ function duplicateData() {
         }
 
         function subPush() {
-            alert('Push')
+            //('Push');
+            $('#place_order').click()
         }
 
     });
 }
 
-function cdekData() {
-
+function checkoutSuccess(){
+    const blockSuccess = $('.check-end'),
+        cusNumber = $('.js-success-number');
+    if(blockSuccess.length > 0){
+        //Номер заказа
+        let wooNumber = $('.woocommerce-order-overview__order strong').text();
+        cusNumber.text(wooNumber)
+    }
 }
 
 $( document ).ready(function() {
     inputsCheck();
     duplicateData();
-    cdekData();
+    checkoutSuccess();
 });
