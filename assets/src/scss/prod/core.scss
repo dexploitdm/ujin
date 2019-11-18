@@ -4508,6 +4508,9 @@ ul.tabs {
   font-size: 18px;
   line-height: 130%;
   color: #B8C2C4;
+  &.error {
+    border: 1px solid #ff0000;
+  }
 }
 
 .u-form {

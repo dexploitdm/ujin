@@ -278,10 +278,4 @@ get_header(); ?>
 </style>
     <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>
     <script src="<?php  echo get_template_directory_uri() ?>/components/checkout.js"></script>
-     <script>
-            // /FeMAG_choose_button
-            $('#forpvz .CDEK-widget__choose widget__loading').click(function() {
-                console.log('test1')
-            });
-        </script>
 <?php get_footer(); ?>

@@ -18,6 +18,12 @@
                 <div class="u-controls">
                     <input type="text" class="u-input js-email-part" name="email" placeholder="E-mail">
                 </div>
+                <div class="u-controls">
+                    <input type="text" class="u-input js-phone-part" name="phone" placeholder="Телефон">
+                </div>
+                <div class="u-controls">
+                    <input type="text" class="u-input js-company-part" name="company" placeholder="Компания">
+                </div>
                 <button class="u-btn u-btn-white js-submit-part" type="submit" disabled>
                     Получить прайс
                 </button>

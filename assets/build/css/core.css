@@ -3127,6 +3127,8 @@ ul.tabs {
   font-size: 18px;
   line-height: 130%;
   color: #B8C2C4; }
+  .u-controls .u-input.error {
+    border: 1px solid #ff0000; }
 
 .u-form {
   text-align: center; }

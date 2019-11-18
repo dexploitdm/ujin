@@ -7,6 +7,8 @@ $mail->CharSet = 'utf-8';
 if ($_POST) { // если передан массив POST
     $name = $_POST['name'];
     $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $company = $_POST['company'];
     $json = array(); // подготовим массив ответа
 
     function mime_header_encode($str, $data_charset, $send_charset) { // функция преобразования заголовков в верную кодировку
@@ -24,14 +26,16 @@ if ($_POST) { // если передан массив POST
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
     $mail->setFrom('info@email.ujin.tech');
-    $mail->addAddress('panych@mysmartflat.ru');
+    $mail->addAddress('dexploitdm@yandex.ru'); //panych@mysmartflat.ru
     $mail->isHTML(true);                                  // Set email format to HTML panych@mysmartflat.ru
 
     $mail->Subject = 'Ujin';
     $mail->Body    = '
     Клиент оставил заявку:<br>
     <b>Имя:</b> ' .$name . '<br> 
-    <b>Почта:</b> ' .$email. '';
+    <b>Почта:</b> ' .$email . '<br> 
+    <b>Телефон:</b> ' .$phone . '<br> 
+    <b>Компания:</b> ' .$company. '';
     $mail->AltBody = '';
     $mail->send();
     $json['error'] = 0; // ошибок не было

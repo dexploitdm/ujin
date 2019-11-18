@@ -324,6 +324,8 @@ function validateContact () {
 
         nameInputPart = $('.js-name-part'),
         emailInputPart = $('.js-email-part'),
+        phoneInputPart = $('.js-phone-part'),
+        companyInputPart = $('.js-company-part'),
         bntSubmitPart = $('.js-submit-part');
 
     function valid(){
@@ -345,8 +347,24 @@ function validateContact () {
 
     }
     function validPart(){
-        if(nameInputPart.val().length > 0 && emailInputPart.val().length > 0){
+        if($('.js-name-part').val().length > 0 && $('.js-email-part').val().length > 0 && $('.js-phone-part').val().length > 0 && $('.js-company-part').val().length > 0){
             bntSubmitPart.removeAttr('disabled');
+        } else {
+            if($('.js-name-part').val().length === 0) {
+                nameInputPart.addClass('error');
+            } else {
+                nameInputPart.removeClass('error');
+            }
+            if($('.js-email-part').val().length > 0) {
+                emailInputPart.removeClass('error');
+            } else {
+                emailInputPart.addClass('error');
+            }
+            if($('.js-phone-part').val().length > 0) {
+                phoneInputPart.removeClass('error');
+            } else {
+                phoneInputPart.addClass('error');
+            }
         }
     }
     bntSubmit.click( function( e ) {
@@ -381,11 +399,36 @@ function validateContact () {
     msgInput.on('input', function() {
         valid();
     });
+    //Форма партнеров
     nameInputPart.on('input', function() {
         validPart();
     });
     emailInputPart.on('input', function() {
         validPart();
+    });
+    phoneInputPart.on('input', function() {
+        validPart();
+    });
+    companyInputPart.on('input', function() {
+        validPart();
+    });
+    nameInputPart.focusout(function() {
+        validPart();
+        if($('.js-name-part').val().length > 0) {
+            nameInputPart.removeClass('error');
+        }
+    });
+    emailInputPart.focusout(function() {
+        validPart();
+        if($('.js-email-part').val().length > 0) {
+            emailInputPart.removeClass('error');
+        }
+    });
+    phoneInputPart.focusout(function() {
+        validPart();
+        if($('.js-phone-part').val().length > 0) {
+            phoneInputPart.removeClass('error');
+        }
     });
 }
 
