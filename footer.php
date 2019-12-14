@@ -215,6 +215,22 @@ jQuery(document).ready(function($) {
             });
             return false;
         });
+
+    $("#form-present").submit(function(e) {
+        e.preventDefault();
+        var str = $(this).serialize();
+        window.open($("#form-present").find('.js-present').val());
+        $.ajax({
+            type: "POST",
+            url: "<?php echo get_template_directory_uri() ?>/mail-present.php",
+            data: str,
+            success: function(msg) {
+                //console.log(msg)
+                if(!msg == 'OK') {$('.msg-note-present').fadeIn();} else {$('.msg-note-present').fadeIn();}
+            }
+        });
+        return false;
+    });
 });
 </script>
 </body>

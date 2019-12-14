@@ -1,7 +1,7 @@
-<div class="head-box box-developers" style="background-image: url(<?php the_post_thumbnail_url(); ?>">
+<div class="head-box box-developers" style="background-image: url(<?php echo get_field( "illustrat_ban" ); ?>)">
     <div class="head-box-layout box">
 		<div class="cover-ban" style="
-					background-image: url(<?php echo get_field( "illustrat_ban" ); ?>);">
+					background-image: url(<?php the_post_thumbnail_url(); ?>);">
 			
 		</div>
 		<div class="head-box-desc other-desc">

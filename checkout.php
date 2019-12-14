@@ -12,9 +12,37 @@ get_header(); ?>
             <?php the_title(); ?>
         </h1>
 
-
+<!--        --><?php // foreach ($loop as $post) : ?>
+<!--            --><?php //print_r($post); ?>
+<!---->
+<!--        --><?php //endforeach; ?>
 
         <?php if(is_wc_endpoint_url()): ?>
+            <?php
+            $itemCount = 0;
+            $lastOrderTotal = 0;
+            $lastOrderNumber = 0;
+
+            $loop = new WP_Query( array( 'post_type' => 'shop_order', 'post_status' => 'wc-processing', 'posts_per_page' => -1 ) );
+
+            while ($loop->have_posts()) : $loop->the_post();
+                $order = wc_get_order( $post->ID );
+                $order_data = $order->get_data();
+                $itemCount++;
+
+                if($itemCount == 1){
+                    $lastOrderNumber = $order_data['id'];
+                    foreach ($order_data['line_items'] as $item) {
+                        $lastOrderTotal = $item['total'];
+                    }
+                }
+
+                //echo $loop;
+
+            endwhile;
+            //echo $lastOrderTotal;
+            //echo $lastOrderNumber;
+            ?>
             <div class="check-end">
                 <div class="check-end-title">
                     Спасибо за ваш заказ!
@@ -44,8 +72,9 @@ get_header(); ?>
                     <div class="check-block">
                         <div class="check-block-item">Номер заказа: </div>
                         <div class="check-block-item"></div>
-                        <div class="check-block-item js-success-number">0</div>
+                        <div class="check-block-item"><?php echo $lastOrderNumber; ?></div>
                     </div>
+<!--                    js-success-number-->
                     <div class="check-block">
                         <div class="check-block-item">Дата доставки: </div>
                         <div class="check-block-item"></div>
@@ -212,6 +241,7 @@ get_header(); ?>
 
                 if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
                     ?>
+               
                     <div class="cart-product-item">
                         <div class="js-cart-price">
 <!--                            --><?php //echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
@@ -231,8 +261,26 @@ get_header(); ?>
             }
             ?>
             <div class="checkout-total-price"><?php wc_cart_totals_order_total_html(); ?></div>
+            <?php 
+                do_action( 'woocommerce_review_order_before_cart_contents' );
+        
+        		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+        			$_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+        
+        			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+        				?>
+        			    
+        			    <div class="js-date-product">
+        			        	<?php $value = get_field("date_count", $cart_item['product_id'] ); echo $value; ?>
+        			    </div>
+        				
+        				<?php
+        			}
+        		} ?>
         </div>
 
+        
+        
         <?php the_content();  ?>
 
     </div>
@@ -258,6 +306,7 @@ get_header(); ?>
             //console.log(wat.PVZ['Address']);
             //Скрытое поле адреса самовывоза
             $('#billing_new_fild12').val(wat.PVZ['Address']);
+            $('#billing_address_1').val(wat.PVZ['Address']);
             $('html, body').animate({
                 scrollTop: $('#pay-methods').offset().top
             }, 'slow');

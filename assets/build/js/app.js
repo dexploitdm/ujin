@@ -527,10 +527,18 @@ function card(){
     });
     //Обработчики кнопок количества
     const qualityBtn = $('.js-quality-cart');
-
+    const remove = $('.product-remove .remove');
+    
+    remove.bind("click", function() {
+        function update() {
+          location.reload()
+        }
+        
+        setTimeout(update, 1000);
+    });
+    
 
     qualityBtn.bind("click", function() {
-
         let currentInput = $(this).parent().find('input');
         let qualityCount  = currentInput.val();
 
@@ -616,6 +624,13 @@ $('.js-add-card').on("click", async function(e) {
     }
 });
 
+function presentModal(){
+    $('.open-present-form').magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
+}
+
 $(window).on('resize', function(){
     initSolutions();
     initServices();
@@ -642,4 +657,5 @@ $( document ).ready(function() {
     card();
     culcSale();
     checkoutOrder();
+    presentModal();
 });

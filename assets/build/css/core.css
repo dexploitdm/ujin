@@ -609,7 +609,7 @@ footer {
   .u-menu-list-item.active, .u-menu-list-item:hover {
     border-bottom: 1px solid #0EF5FF;
     padding-bottom: 24px;
-    margin-bottom: -24px; }
+    margin-bottom: -26px; }
     .u-menu-list-item.active a, .u-menu-list-item:hover a {
       color: #0EF5FF; }
 
@@ -4077,7 +4077,9 @@ img.mfp-img {
         font-size: 24px;
         line-height: 120%; }
       .cart-all .info-cart-item .opacity {
-        opacity: 0.5; }
+        opacity: 0.5; 
+              text-decoration: line-through;
+      }
     .cart-all .info-cart .woocommerce-Price-currencySymbol {
       display: none; }
   .cart-all .checkout-button {
@@ -4920,3 +4922,140 @@ img.mfp-img {
 
 .hidden-col {
   display: none; }
+
+.mfp-wrap {
+  overflow: hidden auto;
+  background: rgba(45, 60, 62, 0.2);
+  mix-blend-mode: normal;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+.present-modal {
+  position: relative;
+  background-color: #2D3C3E;
+  box-sizing: border-box;
+  border-radius: 23px;
+  width: auto;
+  margin: auto;
+  max-width: 577px;
+}
+.present-modal-layout {
+  padding: 44px;
+}
+.msg-note {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  background-color: #0EF5FF;
+  border-radius: 5px;
+  padding: 20px 0;
+  display: none;
+}
+.present-modal  .manager-title {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 130%;
+  color: #fff;
+  padding-bottom: 5px;
+  padding-right: 47px;
+}
+.present-modal .u-controls {
+  margin-top: 20px;
+}
+.present-modal .u-controls .u-input {
+  padding: 14px 0 14px 16px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 130%;
+  color: #B8C2C4;
+  width: 100%;
+  border: 1px solid #0EF5FF;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+.present-modal .u-controls .u-input::placeholder {
+  color: #0EF5FF;
+  opacity: 1;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 130%;
+  text-shadow: 0 0 10px rgba(14, 245, 255, 0.8);
+}
+.present-modal .u-controls .u-input::-ms-input-placeholder {
+  color: #0EF5FF;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 130%;
+  text-shadow: 0 0 10px rgba(14, 245, 255, 0.8);
+}
+.present-modal .u-controls .u-input::-ms-input-placeholder {
+  color: #0EF5FF;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 130%;
+  text-shadow: 0 0 10px rgba(14, 245, 255, 0.8);
+}
+.present-modal .manager-agree {
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 130%;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.present-modal .manager-agree a {
+  text-decoration: none;
+  color: #0EF5FF;
+}
+.present-modal .manager-btn .jk-btn {
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #0EF5FF;
+  color: #0EF5FF;
+  box-sizing: border-box;
+  border-radius: 23px;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  position: relative;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  transition: .3s;
+  text-decoration: none;
+}
+.present-modal .manager-btn .jk-btn:before {
+  content: '';
+  position: absolute;
+  background-size: cover;
+  width: 15px;
+  height: 16px;
+  top: 13px;
+  left: 25px;
+  left: 18px;
+  top: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.6171 1.01041L1.00009 5.6066L9.13182 9.49569M17.6171 1.01041L12.6673 17.2739L9.13182 9.49569M17.6171 1.01041L9.13182 9.49569' stroke='%230EF5FF' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+.present-modal .mfp-close {
+  position: absolute;
+  margin-top: 34px;
+  top: 0;
+  right: 45px;
+  width: 20px;
+  height: 20px;
+}
+.present-modal .mfp-close:before {
+  content: '';
+  position: absolute;
+  opacity: 1;
+  background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L23 23' stroke='%23FF9500' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M23 2L2 23' stroke='%23FF9500' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  top: 12px;
+  right: 0;
+}
+.present-modal.white-popup button.mfp-close {
+  display: block;
+}

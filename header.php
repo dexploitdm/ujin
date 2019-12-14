@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
 <head>
+	<!-- Carrot quest BEGIN -->
+<script type="text/javascript">
+!function(){function t(t,e){return function(){window.carrotquestasync.push(t,arguments)}}if("undefined"==typeof carrotquest){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//cdn.carrotquest.io/api.min.js",document.getElementsByTagName("head")[0].appendChild(e),window.carrotquest={},window.carrotquestasync=[],carrotquest.settings={};for(var n=["connect","track","identify","auth","oth","onReady","addCallback","removeCallback","trackMessageInteraction"],a=0;a<n.length;a++)carrotquest[n[a]]=t(n[a])}}(),carrotquest.connect("30435-d141c03d9a67f2d3c5e044141d");
+</script>
+<!-- Carrot quest END -->
 	<!-- Yandex.Metrika counter -->
-<!--<script type="text/javascript" >-->
-<!--   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};-->
-<!--   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})-->
-<!--   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");-->
-<!---->
-<!--   ym(55570948, "init", {-->
-<!--        clickmap:true,-->
-<!--        trackLinks:true,-->
-<!--        accurateTrackBounce:true,-->
-<!--        webvisor:true-->
-<!--   });-->
-<!--</script>-->
-<!--<noscript><div><img src="https://mc.yandex.ru/watch/55570948" style="position:absolute; left:-9999px;" alt="" /></div></noscript>-->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(55570948, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/55570948" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 	<meta name="yandex-verification" content="7f0b39ad81c7cb25" />
     <meta charset="UTF-8">
@@ -24,7 +29,6 @@
     <meta name="author" content="Dexploitdm">
     <meta name="theme-color" content="#2D3C3E">
     <link href="<?php  echo get_template_directory_uri() ?>/assets/build/css/core.css" rel="stylesheet">
-    <!--<script type="text/javascript" id="ISDEKscript" src="<?php  echo get_template_directory_uri() ?>/core/cdek/widget/widjet.js"></script>-->
     <script type="text/javascript" id="ISDEKscript" src="https://dexploitdm.ru/projects/widget/widjet.js"></script>
     <?php  wp_head(); ?>
 <meta name="cmsmagazine" content="2fb71f840aeb70e2fdb7bc5b0ed28704" />

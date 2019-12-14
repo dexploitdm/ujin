@@ -1,5 +1,16 @@
 function inputsCheck() {
+
+    
     const nodeInputCheck = $('.check-input');
+    
+    
+    for (i = 0; i < nodeInputCheck.length; i++) {
+        if($(nodeInputCheck[i]).val().length > 0){
+            $(nodeInputCheck[i]).parent().addClass('is-focus')
+        }
+    }
+   
+    
     nodeInputCheck.focus(function() {
         $(this).parent().addClass('is-focus');
     });
@@ -56,6 +67,7 @@ function duplicateData() {
     });
     cityCus.on('input', function() {
         cityWoo.val(cityCus.val());
+          $('#billing_address_1').val(cityCus.val());
     });
     streetCus.on('input', function() {
         streetWoo.val(streetCus.val());
@@ -64,7 +76,12 @@ function duplicateData() {
         homeWoo.val(homeCus.val());
     });
     //По умолчанию делаем оплуту - по яндекс
-    $('label[for="payment_method_ym_api_epl"]').click();
+     if($('label[for="payment_method_ym_api_epl"]').length > 0){
+             $('label[for="payment_method_ym_api_epl"]').click();
+     } else {
+         $('label[for="payment_method_ym_api_widget"]').click();
+     }
+
     //Переключение методов
     $('input:radio[name="setpay"]').change(function() {
         if (this.checked) {
@@ -72,7 +89,12 @@ function duplicateData() {
                 $('label[for="payment_method_cod"]').click();
                 btnSubOrder.text('Оформить заказ');
             } else {
-                $('label[for="payment_method_ym_api_epl"]').click();
+                if($('label[for="payment_method_ym_api_epl"]').length > 0){
+                     $('label[for="payment_method_ym_api_epl"]').click();
+                } else {
+                      $('label[for="payment_method_ym_api_widget"]').click();
+                }
+               
                 btnSubOrder.text('Перейти к оплате');
             }
         }
@@ -130,8 +152,48 @@ function checkoutSuccess(){
     }
 }
 
+function dateProduct() {
+    const dateProduct = $('.js-date-product');
+    const blockSucces = $('.address .form-field-wide');
+    const successResultDate = $('.js-success-date');
+    
+    if(dateProduct.length > 0 ){
+        let arrDate = [];
+
+        for (i = 0; i < dateProduct.length; ++i) {
+            let itemDate = Number($(dateProduct[i]).text());
+            //console.log(itemDate)
+            arrDate.push(itemDate)
+        }
+        //console.log(arrDate)
+        var maxDay = Number(Math.max.apply(null, arrDate));
+        
+        var currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + maxDay);
+
+        const resultDate = currentDate.getDate() + '.' + currentDate.getMonth() + '.' + currentDate.getFullYear()
+       
+        $('#billing_new_fild13').val(resultDate);
+    }
+    if(blockSucces.length > 0){
+        for (box = 0; box < blockSucces.length; ++box) {
+            let targetBox = $(blockSucces[box]).find('strong').text()
+            if(targetBox === 'Дата доставки:'){
+                $(blockSucces[box]).find('label').remove();
+                //console.log($(blockSucces[box]).text());
+                successResultDate.text($(blockSucces[box]).text())
+            }
+        }
+    }
+    
+
+       
+    
+}
+
 $( document ).ready(function() {
     inputsCheck();
     duplicateData();
     checkoutSuccess();
+    dateProduct();
 });

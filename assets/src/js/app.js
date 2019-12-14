@@ -527,10 +527,18 @@ function card(){
     });
     //Обработчики кнопок количества
     const qualityBtn = $('.js-quality-cart');
-
+    const remove = $('.product-remove .remove');
+    
+    remove.bind("click", function() {
+        function update() {
+          location.reload()
+        }
+        
+        setTimeout(update, 1000);
+    });
+    
 
     qualityBtn.bind("click", function() {
-
         let currentInput = $(this).parent().find('input');
         let qualityCount  = currentInput.val();
 

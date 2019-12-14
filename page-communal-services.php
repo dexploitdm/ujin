@@ -22,13 +22,44 @@ get_header(); ?>
                             <div class="download-link">
                                 <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/download.png">
                                 <div class="download-link-box">
-                                    <a href="<?php echo get_field( "link_present" ); ?>" class="download-pull">Скачать презентацию</a>
+                                    <a href="#present-modal" data-link="<?php echo get_field( "link_present" ); ?>" class="download-pull open-present-form">Скачать презентацию</a>
                                     <span class="download-info"><span id="fileSize">10 Mb</span>, pptx</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div id="present-modal" class="white-popup present-modal mfp-hide">
+                <div class="present-modal-layout">
+                    <div class="manager-title">
+                        Введите ваш номер телефона и E-mail
+                    </div>
+                    <form id="form-present" class="manager-form">
+                        <div class="u-controls">
+                            <input type="text" class="u-input js-pr-Имя" name="name" placeholder="Имя">
+                        </div>
+                        <div class="u-controls">
+                            <input type="text" class="u-input js-pr-company" name="company" placeholder="Компания">
+                        </div>
+                        <div class="u-controls">
+                            <input type="text" class="u-input js-pr-email" name="email" placeholder="E-mail">
+                        </div>
+                        <div class="u-controls">
+                            <input type="text" class="u-input js-pr-phone" name="phone" placeholder="Телефон">
+                        </div>
+                        <div class="u-controls">
+                            <input type="hidden" class="u-input js-present" name="present" value="<?php echo get_template_directory_uri() ?><?php echo get_field( "link_present" ); ?>">
+                        </div>
+                        <div class="manager-agree">
+                            Нажимая кнопку Отправить, вы принимаете <a href="http://dvp.ujin.tech/wp-content/uploads/2019/11/oferta.pdf" target="blank">условия соглашения</a>
+                        </div>
+                        <div class="manager-btn">
+                            <button type="submit" class="jk-btn jk-btn-neon call js-submit-present">Скачать презентацию</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="msg-note msg-note-present">Сообщение отправленно</div>
             </div>
         <?php  endwhile; ?>
 
